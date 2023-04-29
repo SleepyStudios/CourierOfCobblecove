@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed = 400
+@export var speed = 300
 
 var destination: Vector2
 var has_destination: bool

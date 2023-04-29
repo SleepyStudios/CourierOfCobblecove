@@ -8,19 +8,19 @@
 [ext_resource type="PackedScene" uid="uid://chn0p0xyugfe3" path="res://scenes/inventory_slot.tscn" id="6_6qlu3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qc31m"]
-size = Vector2(1920, 87.5)
+size = Vector2(1920, 166.375)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q7ph3"]
-size = Vector2(79, 69)
+size = Vector2(84, 79)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mgqbl"]
-size = Vector2(66.5, 52)
+size = Vector2(85, 118)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nfskc"]
-size = Vector2(44, 41)
+size = Vector2(41, 81.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ecrbu"]
-size = Vector2(67, 58)
+size = Vector2(67, 63)
 
 [node name="ForestScene1" type="Node2D"]
 
@@ -46,41 +46,41 @@ texture = ExtResource("3_g6c8m")
 position = Vector2(0, -600)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopCollision"]
-position = Vector2(600, 900)
+position = Vector2(600, 938.625)
 shape = SubResource("RectangleShape2D_qc31m")
 
 [node name="BottomCollision" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomCollision"]
-position = Vector2(600, 980)
+position = Vector2(600, 979.188)
 shape = SubResource("RectangleShape2D_qc31m")
 
 [node name="Stump" type="StaticBody2D" parent="."]
 position = Vector2(479, 657)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stump"]
-position = Vector2(0, -2)
+position = Vector2(1, 0.5)
 shape = SubResource("RectangleShape2D_q7ph3")
 
 [node name="Rock" type="StaticBody2D" parent="."]
 position = Vector2(652, 487)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Rock"]
-position = Vector2(-2, 7)
+position = Vector2(-4.5, -18)
 shape = SubResource("RectangleShape2D_mgqbl")
 
 [node name="Rock2" type="StaticBody2D" parent="."]
 position = Vector2(978, 449)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Rock2"]
-position = Vector2(-7, 15)
+position = Vector2(-8.5, -5.25)
 shape = SubResource("RectangleShape2D_nfskc")
 
 [node name="Rock3" type="StaticBody2D" parent="."]
 position = Vector2(302, 779)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Rock3"]
-position = Vector2(-7, 12)
+position = Vector2(-7, 9.5)
 shape = SubResource("RectangleShape2D_ecrbu")
 
 [node name="UI" type="CanvasLayer" parent="."]
