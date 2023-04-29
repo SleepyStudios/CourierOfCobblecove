@@ -1,14 +1,26 @@
-[gd_scene load_steps=6 format=3 uid="uid://bbyb7lb2imes7"]
+[gd_scene load_steps=12 format=3 uid="uid://cm4icfflsyu1f"]
 
 [ext_resource type="Texture2D" uid="uid://b3yf0ono46koc" path="res://sprites/forest_scene1.png" id="1_0wk51"]
+[ext_resource type="Script" path="res://scripts/inventory_ui.gd" id="1_ixxyp"]
 [ext_resource type="PackedScene" uid="uid://dm5txbfgjhjlf" path="res://scenes/player.tscn" id="2_r4bdp"]
 [ext_resource type="Texture2D" uid="uid://nwiea7ndaabl" path="res://sprites/forest_scene1_overlay.png" id="3_g6c8m"]
+[ext_resource type="PackedScene" uid="uid://dfrgxp4rwlufe" path="res://scenes/inventory.tscn" id="4_rjrje"]
+[ext_resource type="PackedScene" uid="uid://chn0p0xyugfe3" path="res://scenes/inventory_slot.tscn" id="6_6qlu3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qc31m"]
 size = Vector2(1169.5, 87.5)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ar1nj"]
-radius = 48.0104
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q7ph3"]
+size = Vector2(86, 83)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mgqbl"]
+size = Vector2(93, 68)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nfskc"]
+size = Vector2(51, 52)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ecrbu"]
+size = Vector2(82, 65)
 
 [node name="ForestScene1" type="Node2D"]
 
@@ -50,7 +62,29 @@ shape = SubResource("RectangleShape2D_qc31m")
 position = Vector2(454, 492)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stump"]
-shape = SubResource("CircleShape2D_ar1nj")
+position = Vector2(-1, 1.5)
+shape = SubResource("RectangleShape2D_q7ph3")
+
+[node name="Rock" type="StaticBody2D" parent="."]
+position = Vector2(621, 320)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rock"]
+position = Vector2(1.5, 8)
+shape = SubResource("RectangleShape2D_mgqbl")
+
+[node name="Rock2" type="StaticBody2D" parent="."]
+position = Vector2(951, 281)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rock2"]
+position = Vector2(-7.5, 12)
+shape = SubResource("RectangleShape2D_nfskc")
+
+[node name="Rock3" type="StaticBody2D" parent="."]
+position = Vector2(274, 612)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rock3"]
+position = Vector2(-5, 11.5)
+shape = SubResource("RectangleShape2D_ecrbu")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(713, 363)
@@ -61,3 +95,44 @@ limit_bottom = 760
 limit_smoothed = true
 position_smoothing_enabled = true
 editor_draw_limits = true
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="InventoryInterface" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -240.0
+offset_top = -238.0
+offset_right = -240.0
+offset_bottom = -238.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+script = ExtResource("1_ixxyp")
+
+[node name="GrabbedSlot" parent="UI/InventoryInterface" instance=ExtResource("6_6qlu3")]
+visible = false
+modulate = Color(1, 1, 1, 0.545098)
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+
+[node name="PlayerInventory" parent="UI/InventoryInterface" instance=ExtResource("4_rjrje")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
