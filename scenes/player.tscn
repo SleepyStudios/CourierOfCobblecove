@@ -66,11 +66,11 @@ size = Vector2(48, 54)
 script = ExtResource("1_c2prk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -100)
 sprite_frames = SubResource("SpriteFrames_t2ixg")
 animation = &"run"
-frame_progress = 0.647741
+frame = 1
+frame_progress = 0.622102
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-6, -2)
+position = Vector2(-6, 96)
 shape = SubResource("RectangleShape2D_hfoaj")

@@ -5,10 +5,14 @@ extends CharacterBody2D
 var destination: Vector2
 var has_destination: bool
 
+const MIN_MOVE_RANGE = 4
+
 func get_input():
-	if Input.is_action_just_pressed("click"):
-		destination = get_global_mouse_position()
-		has_destination = true
+	if Input.is_action_just_pressed("click") and get_global_mouse_position().y < 960:
+		var possible = get_global_mouse_position() + Vector2(0, -96)
+		if position.distance_to(possible) >= MIN_MOVE_RANGE:
+			destination = possible
+			has_destination = true
 		
 	if not has_destination:
 		velocity = Vector2.ZERO
@@ -27,7 +31,7 @@ func _physics_process(delta):
 	
 	move_and_slide()
 
-	if get_slide_collision_count() > 0 or position.distance_to(destination) <= 4:
+	if get_slide_collision_count() > 0 or position.distance_to(destination) <= MIN_MOVE_RANGE:
 		velocity = Vector2.ZERO
 		has_destination = false
 
