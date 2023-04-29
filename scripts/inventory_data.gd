@@ -55,8 +55,8 @@ func drop_slot_data(grabbed_slot_data: SlotData, index: int, original_grabbed_in
 		var temp = slots[index]
 		var recipe: RecipeData = null
 		
-		if slot_data and temp:
-			recipe = get_available_recipe(slot_data, grabbed_slot_data)
+		#if slot_data and temp:
+		#	recipe = get_available_recipe(slot_data, grabbed_slot_data)
 		if recipe:
 			slots[index].item_data = recipe.result
 		else:
