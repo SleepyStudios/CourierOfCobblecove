@@ -23,7 +23,7 @@ func get_input():
 	if (velocity.x < 0):
 		$AnimatedSprite2D.flip_h = true;
 	else:
-		$AnimatedSprite2D.flip_h = false;	
+		$AnimatedSprite2D.flip_h = false;
 
 
 func _physics_process(delta):
