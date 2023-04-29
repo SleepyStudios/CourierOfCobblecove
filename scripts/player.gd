@@ -6,7 +6,7 @@ var destination: Vector2
 var has_destination: bool
 
 func get_input():
-	if Input.is_action_just_pressed("click"):
+	if Input.is_action_just_pressed("click") and get_global_mouse_position().y < 960:
 		destination = get_global_mouse_position()
 		has_destination = true
 		

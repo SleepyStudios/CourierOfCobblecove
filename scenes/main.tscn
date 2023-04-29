@@ -25,10 +25,10 @@ size = Vector2(67, 58)
 [node name="ForestScene1" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -360.0
-offset_top = -90.0
-offset_right = 1560.0
-offset_bottom = 990.0
+offset_left = -400.0
+offset_top = -500.0
+offset_right = 1600.0
+offset_bottom = 1500.0
 color = Color(0, 0, 0, 1)
 
 [node name="BG" type="Sprite2D" parent="."]
@@ -42,6 +42,13 @@ position = Vector2(804, 603)
 position = Vector2(600, 450)
 texture = ExtResource("3_g6c8m")
 
+[node name="OverlayRect" type="ColorRect" parent="."]
+offset_left = -400.0
+offset_top = 900.0
+offset_right = 1600.0
+offset_bottom = 1000.0
+color = Color(0, 0, 0, 1)
+
 [node name="TopCollision" type="StaticBody2D" parent="."]
 position = Vector2(0, -600)
 
@@ -52,7 +59,7 @@ shape = SubResource("RectangleShape2D_qc31m")
 [node name="BottomCollision" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomCollision"]
-position = Vector2(600, 980)
+position = Vector2(600, 940)
 shape = SubResource("RectangleShape2D_qc31m")
 
 [node name="Stump" type="StaticBody2D" parent="."]
@@ -87,16 +94,13 @@ shape = SubResource("RectangleShape2D_ecrbu")
 
 [node name="InventoryInterface" type="Control" parent="UI"]
 layout_mode = 3
-anchors_preset = 3
-anchor_left = 1.0
+anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -240.0
-offset_top = -238.0
-offset_right = -240.0
-offset_bottom = -238.0
-grow_horizontal = 0
+offset_top = -100.0
+offset_bottom = -36.0
+grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 8
 size_flags_vertical = 8
