@@ -66,6 +66,7 @@ size = Vector2(48, 54)
 script = ExtResource("1_c2prk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
 sprite_frames = SubResource("SpriteFrames_t2ixg")
 animation = &"run"
 frame = 1

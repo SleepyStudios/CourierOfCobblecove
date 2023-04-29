@@ -3,8 +3,8 @@ extends PanelContainer
 signal slot_clicked(index: int)
 signal slot_dropped(index: int)
 
-@onready var texture_rect = $TextureRect
-@onready var quantity_label = $QuantityLabel
+@onready var texture_rect = $MarginContainer/TextureRect
+@onready var quantity_label = $MarginContainer2/QuantityLabel
 
 var _grabbed_slot: bool
 var _is_hovered: bool

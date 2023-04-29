@@ -37,3 +37,12 @@ func drop_slot_data(grabbed_slot_data: SlotData, index: int, original_grabbed_in
 		slots[original_grabbed_index] = temp
 
 	inventory_updated.emit(self)
+
+func pickup_item(slot_data: SlotData) -> bool:
+	for i in range(0, slots.size()):
+		if !slots[i]:
+			slots[i] = slot_data
+			inventory_updated.emit(self)			
+			return true
+			
+	return false

@@ -8,7 +8,7 @@ var has_destination: bool
 const MIN_MOVE_RANGE = 4
 
 func get_input():
-	if Input.is_action_just_pressed("click") and get_global_mouse_position().y < 960:
+	if Input.is_action_just_pressed("click") and get_global_mouse_position().y < 900:
 		var possible = get_global_mouse_position() + Vector2(0, -96)
 		if position.distance_to(possible) >= MIN_MOVE_RANGE:
 			destination = possible
@@ -24,7 +24,6 @@ func get_input():
 		$AnimatedSprite2D.flip_h = true;
 	else:
 		$AnimatedSprite2D.flip_h = false;
-
 
 func _physics_process(delta):
 	get_input()

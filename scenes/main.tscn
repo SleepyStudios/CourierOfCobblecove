@@ -39,10 +39,12 @@ texture = ExtResource("1_0wk51")
 position = Vector2(804, 603)
 
 [node name="Overlay" type="Sprite2D" parent="."]
+z_index = 999
 position = Vector2(600, 450)
 texture = ExtResource("3_g6c8m")
 
 [node name="OverlayRect" type="ColorRect" parent="."]
+z_index = 999
 offset_left = -400.0
 offset_top = 900.0
 offset_right = 1600.0
