@@ -24,7 +24,7 @@ func _physics_process(delta):
 	if grabbed_slot.visible:
 		grabbed_slot.global_position = get_global_mouse_position() - Vector2(24, 32)
 
-func update_grabbed_slot(index: int):
+func update_grabbed_slot(index: int = -1):
 	if grabbed_slot_data:
 		grabbed_slot.show()
 		grabbed_slot.set_slot_data(grabbed_slot_data, true, index)

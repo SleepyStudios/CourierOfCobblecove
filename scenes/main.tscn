@@ -11,10 +11,10 @@
 size = Vector2(1169.5, 87.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q7ph3"]
-size = Vector2(86, 83)
+size = Vector2(80, 74)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mgqbl"]
-size = Vector2(93, 68)
+size = Vector2(79, 60)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nfskc"]
 size = Vector2(51, 52)
@@ -62,14 +62,14 @@ shape = SubResource("RectangleShape2D_qc31m")
 position = Vector2(454, 492)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stump"]
-position = Vector2(-1, 1.5)
+position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_q7ph3")
 
 [node name="Rock" type="StaticBody2D" parent="."]
 position = Vector2(621, 320)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Rock"]
-position = Vector2(1.5, 8)
+position = Vector2(-2, 8)
 shape = SubResource("RectangleShape2D_mgqbl")
 
 [node name="Rock2" type="StaticBody2D" parent="."]
@@ -113,6 +113,7 @@ grow_horizontal = 0
 grow_vertical = 0
 size_flags_horizontal = 8
 size_flags_vertical = 8
+mouse_filter = 1
 script = ExtResource("1_ixxyp")
 
 [node name="GrabbedSlot" parent="UI/InventoryInterface" instance=ExtResource("6_6qlu3")]

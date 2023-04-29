@@ -1,22 +1,37 @@
 extends CharacterBody2D
 
-@export var speed = 300
+@export var speed = 400
+
+var destination: Vector2
+var has_destination: bool
 
 func get_input():
-	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	velocity = input_direction * speed
+	if Input.is_action_just_pressed("click"):
+		destination = get_global_mouse_position()
+		has_destination = true
+		
+	if not has_destination:
+		velocity = Vector2.ZERO
+		return
+
+	velocity = (destination - position).normalized() * speed
+	
+	if (velocity.x < 0):
+		$AnimatedSprite2D.flip_h = true;
+	else:
+		$AnimatedSprite2D.flip_h = false;	
+
 
 func _physics_process(delta):
 	get_input()
+	
+	move_and_slide()
 
-	if (Input.is_action_pressed("move_left")):
-		$AnimatedSprite2D.flip_h = true;
-	if (Input.is_action_pressed("move_right")):
-		$AnimatedSprite2D.flip_h = false;		
-		
+	if get_slide_collision_count() > 0 or position.distance_to(destination) <= 4:
+		velocity = Vector2.ZERO
+		has_destination = false
+
 	if (velocity != Vector2.ZERO):
 		$AnimatedSprite2D.play("run")
 	else:
 		$AnimatedSprite2D.play("idle")
-	
-	move_and_slide()
