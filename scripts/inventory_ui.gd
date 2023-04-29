@@ -12,11 +12,11 @@ const DroppedItem = preload("res://scenes/dropped_item.tscn")
 @onready var grabbed_slot = $GrabbedSlot
 @onready var player = $"../../Player"
 
-var inventory_data = preload("res://resources/inventory.tres")
+var _inventory_data = preload("res://resources/inventory.tres")
 
 func _ready():
-	inventory_data.inventory_interact.connect(_on_inventory_interact)
-	player_inventory.set_inventory_data(inventory_data)
+	_inventory_data.inventory_interact.connect(_on_inventory_interact)
+	player_inventory.set_inventory_data(_inventory_data)
 	player_inventory.on_item_dropped.connect(_on_inventory_item_dropped)
 
 func _on_inventory_interact(inventory_data: InventoryData, index: int, event_name: String):
@@ -32,7 +32,7 @@ func _on_inventory_interact(inventory_data: InventoryData, index: int, event_nam
 func _on_inventory_item_dropped():
 	if grabbed_slot_data:
 		var dropped_item = DroppedItem.instantiate()
-		dropped_item.inventory_data = inventory_data
+		dropped_item.inventory_data = _inventory_data
 		dropped_item.slot_data = grabbed_slot_data
 		dropped_item.spawn_pos = player.position + Vector2(0, 96)
 		root.add_child(dropped_item)

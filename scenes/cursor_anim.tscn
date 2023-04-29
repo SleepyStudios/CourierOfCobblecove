@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://ceqn6ptbr7sxw"]
+
+[ext_resource type="Texture2D" uid="uid://du3iv3k4pav24" path="res://sprites/cursor_animation.png" id="1_k6mrb"]
+[ext_resource type="Script" path="res://scripts/custom_anim.gd" id="2_gysyo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xquub"]
+atlas = ExtResource("1_k6mrb")
+region = Rect2(0, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwpa0"]
+atlas = ExtResource("1_k6mrb")
+region = Rect2(120, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ly0e2"]
+atlas = ExtResource("1_k6mrb")
+region = Rect2(240, 0, 120, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eww6t"]
+atlas = ExtResource("1_k6mrb")
+region = Rect2(360, 0, 120, 120)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bne5b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xquub")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uwpa0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ly0e2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eww6t")
+}],
+"loop": false,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="CursorAnim" type="Node2D"]
+z_index = 998
+script = ExtResource("2_gysyo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_bne5b")
+frame = 1
+frame_progress = 0.775214
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

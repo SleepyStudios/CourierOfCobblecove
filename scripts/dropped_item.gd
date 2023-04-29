@@ -13,7 +13,7 @@ func _ready():
 	position = spawn_pos
 
 func _on_area_2d_body_entered(body):
-	if can_pick_up:
+	if can_pick_up: #todo check if player
 		if inventory_data.pickup_item(slot_data):
 			queue_free()
 

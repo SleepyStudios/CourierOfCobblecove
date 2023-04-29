@@ -1,11 +1,13 @@
 extends CharacterBody2D
 
+const CursorAnim = preload("res://scenes/cursor_anim.tscn")
+
+const MIN_MOVE_RANGE = 4
+
 @export var speed = 300
 
 var destination: Vector2
 var has_destination: bool
-
-const MIN_MOVE_RANGE = 4
 
 func get_input():
 	if Input.is_action_just_pressed("click") and get_global_mouse_position().y < 900:
@@ -13,6 +15,10 @@ func get_input():
 		if position.distance_to(possible) >= MIN_MOVE_RANGE:
 			destination = possible
 			has_destination = true
+
+			var cursor_anim = CursorAnim.instantiate()
+			cursor_anim.position = get_global_mouse_position()
+			get_tree().get_root().add_child(cursor_anim)
 		
 	if not has_destination:
 		velocity = Vector2.ZERO
