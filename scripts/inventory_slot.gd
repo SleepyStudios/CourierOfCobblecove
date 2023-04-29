@@ -43,5 +43,4 @@ func _on_mouse_exited():
 
 func _process(delta):
 	if Input.is_action_just_released("click") and _is_hovered:
-		
 		slot_dropped.emit(get_index())
