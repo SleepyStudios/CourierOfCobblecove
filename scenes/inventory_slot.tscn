@@ -1,6 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://chn0p0xyugfe3"]
+[gd_scene load_steps=5 format=3 uid="uid://chn0p0xyugfe3"]
 
 [ext_resource type="Script" path="res://scripts/inventory_slot.gd" id="1_mcjsp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c1xqq"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0.117647, 0.117647, 0.117647, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.235294, 0.235294, 0.235294, 1)
+
+[sub_resource type="Theme" id="Theme_gr5ur"]
+TooltipLabel/font_sizes/font_size = 22
+TooltipPanel/styles/panel = SubResource("StyleBoxFlat_c1xqq")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rdam3"]
 bg_color = Color(0.117647, 0.117647, 0.117647, 1)
@@ -19,6 +35,7 @@ corner_detail = 12
 custom_minimum_size = Vector2(64, 64)
 offset_right = 40.0
 offset_bottom = 40.0
+theme = SubResource("Theme_gr5ur")
 theme_override_styles/panel = SubResource("StyleBoxFlat_rdam3")
 script = ExtResource("1_mcjsp")
 
