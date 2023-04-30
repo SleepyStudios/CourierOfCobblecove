@@ -19,7 +19,6 @@ func _on_dropped_item_registered(dropped_item: DroppedItem):
 func _on_dropped_item_unregistered(dropped_item: DroppedItem):
 	picked_up[current_zone].push_back(dropped_item.drop_id)
 
-	# idk why array.find isnt working
 	var idx = -1
 	for i in len(dropped[current_zone]):
 		if dropped[current_zone][i].drop_id == dropped_item.drop_id:

@@ -2,8 +2,6 @@ extends Control
 
 var grabbed_slot_data: SlotData
 
-const DroppedItem = preload("res://scenes/dropped_item.tscn")
-
 @onready var player_inventory = $PlayerInventory
 @onready var grabbed_slot = $GrabbedSlot
 @onready var player = $"../../Player"
@@ -25,11 +23,7 @@ func _on_inventory_interact(inventory_data: InventoryData, index: int, event_nam
 	
 func _on_inventory_item_dropped():
 	if grabbed_slot_data:
-		var dropped_item = DroppedItem.instantiate()
-		dropped_item.slot_data = grabbed_slot_data
-		dropped_item.spawn_pos = player.position + Vector2(0, 96)
-		Global.add_child(dropped_item)
-
+		grabbed_slot_data.drop()
 		grabbed_slot_data = null
 		update_grabbed_slot()
 

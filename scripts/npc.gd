@@ -11,7 +11,7 @@ func _ready():
 	if dialogue_data:
 		dialogue_box = DialogueBox.instantiate()
 		dialogue_box.dialogue_data = dialogue_data
-		dialogue_box.npc_name = name
+		dialogue_box.npc = self
 		dialogue_box.hide()
 		$CanvasLayer.add_child(dialogue_box)
 

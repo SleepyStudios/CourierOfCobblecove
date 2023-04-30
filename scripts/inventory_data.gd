@@ -9,16 +9,21 @@ const INTERACTION_EVENT_SLOT_DROPPED = "slot_dropped"
 
 @export var slots: Array[SlotData]
 var recipes: Array[RecipeData]
+var items: Array[ItemData]
 
 func _init():
-	var base_path = "res://resources/recipes"
+	load_data("recipes", recipes)
+	load_data("items", items)
+
+func load_data(subfolder: String, array: Array):
+	var base_path = "res://resources/" + subfolder
 	var dir = DirAccess.open(base_path)
 	dir.list_dir_begin()
 
 	var file_name = dir.get_next()
 	while file_name != "":
 		if not dir.current_is_dir():
-			recipes.push_back(load(base_path + "/" + file_name))
+			array.push_back(load(base_path + "/" + file_name))
 		file_name = dir.get_next()
 
 func _on_slot_clicked(index: int):
@@ -73,6 +78,14 @@ func pickup_item(slot_data: SlotData) -> bool:
 			return true
 			
 	return false
+	
+func try_add_item(item_name: String):
+	var slot_data = SlotData.new()
+	slot_data.quantity = 1
+	slot_data.item_data = items.filter(func (i): return i.name == item_name).front()
+	
+	if not pickup_item(slot_data):
+		slot_data.drop()
 	
 func has_item(item_data: ItemData) -> bool:
 	return slots.map(func (slot): return slot.item_data.name if slot else "").has(item_data.name)
