@@ -1,9 +1,13 @@
-[gd_scene format=3 uid="uid://ho13a61mxxjs"]
+[gd_scene load_steps=2 format=3 uid="uid://ho13a61mxxjs"]
+
+[ext_resource type="Theme" uid="uid://ehq1gd12dyb" path="res://resources/theme.tres" id="1_f2dpc"]
 
 [node name="DialogueAction" type="MarginContainer"]
 size_flags_horizontal = 4
+theme = ExtResource("1_f2dpc")
 
 [node name="Button" type="Button" parent="."]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
+theme = ExtResource("1_f2dpc")
 text = "Text 1 is actually quite long"

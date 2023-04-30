@@ -1,0 +1,23 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://ehq1gd12dyb"]
+
+[ext_resource type="FontFile" uid="uid://bijwsgm38kuwg" path="res://fonts/LGGothic.ttf" id="1_sggte"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jw7aa"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bgpre"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sc86c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3nv0l"]
+
+[resource]
+Button/colors/font_hover_color = Color(0.156863, 0.705882, 1, 1)
+Button/colors/font_pressed_color = Color(0, 0.623529, 0.905882, 1)
+Button/font_sizes/font_size = 28
+Button/fonts/font = ExtResource("1_sggte")
+Button/styles/focus = SubResource("StyleBoxEmpty_jw7aa")
+Button/styles/hover = SubResource("StyleBoxEmpty_bgpre")
+Button/styles/normal = SubResource("StyleBoxEmpty_sc86c")
+Button/styles/pressed = SubResource("StyleBoxEmpty_3nv0l")
+Label/fonts/font = ExtResource("1_sggte")
+TooltipLabel/fonts/font = ExtResource("1_sggte")

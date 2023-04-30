@@ -12,7 +12,7 @@ var recipes: Array[RecipeData]
 var items: Array[ItemData]
 
 func _init():
-	load_data("recipes", recipes)
+	#load_data("recipes", recipes)
 	load_data("items", items)
 
 func load_data(subfolder: String, array: Array):

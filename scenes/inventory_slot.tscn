@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://chn0p0xyugfe3"]
+[gd_scene load_steps=6 format=3 uid="uid://chn0p0xyugfe3"]
 
+[ext_resource type="FontFile" uid="uid://bijwsgm38kuwg" path="res://fonts/LGGothic.ttf" id="1_fr41l"]
 [ext_resource type="Script" path="res://scripts/inventory_slot.gd" id="1_mcjsp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c1xqq"]
@@ -15,7 +16,8 @@ border_width_bottom = 1
 border_color = Color(0.235294, 0.235294, 0.235294, 1)
 
 [sub_resource type="Theme" id="Theme_gr5ur"]
-TooltipLabel/font_sizes/font_size = 22
+TooltipLabel/font_sizes/font_size = 28
+TooltipLabel/fonts/font = ExtResource("1_fr41l")
 TooltipPanel/styles/panel = SubResource("StyleBoxFlat_c1xqq")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rdam3"]
