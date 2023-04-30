@@ -14,8 +14,8 @@ var in_dialogue_with_npc: NPC
 func _ready():
 	Global.register_player(self)
 
-func get_input():
-	if Input.is_action_just_pressed("click") and get_global_mouse_position().y < 900:
+func _unhandled_input(event):
+	if event.is_action_pressed("click") and get_global_mouse_position().y < 900:
 		var possible = get_global_mouse_position() + Vector2(0, -96)
 		if position.distance_to(possible) >= MIN_MOVE_RANGE:
 			destination = possible
@@ -28,7 +28,8 @@ func get_input():
 			if in_dialogue_with_npc:
 				in_dialogue_with_npc.hide_dialogue()
 				in_dialogue_with_npc = null
-		
+
+func get_input():
 	if not has_destination:
 		velocity = Vector2.ZERO
 		return
@@ -57,7 +58,7 @@ func _physics_process(delta):
 	if collision_count > 0:
 		for i in collision_count:
 			var collider = get_slide_collision(i).get_collider()
-			if collider.get_groups().has("NPCs"):
+			if collider.get_groups().has("NPCs") and not in_dialogue_with_npc:
 				in_dialogue_with_npc = collider
 				in_dialogue_with_npc.show_dialogue()
 

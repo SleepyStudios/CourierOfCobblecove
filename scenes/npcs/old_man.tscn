@@ -7,10 +7,11 @@
 [sub_resource type="Resource" id="Resource_khmam"]
 script = ExtResource("2_wciva")
 default_text = "Hello!"
-success_text = "Success!"
 post_success_text = "Post success"
-action_options = Array[String]([])
-action_requirements = Array[String]([])
+action_options = Array[String](["Yeah I have it right here!"])
+action_requirements = Array[String](["Blue Dust"])
+action_success_texts = Array[String](["Oh look my blue dust!"])
+action_callbacks = Array[String]([""])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hp1tn"]
 size = Vector2(75, 167)
@@ -50,39 +51,3 @@ sprite_frames = SubResource("SpriteFrames_hv581")
 animation = &"idle"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="DialogueBox" type="ColorRect" parent="CanvasLayer"]
-visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -300.0
-offset_top = -120.0
-offset_right = 300.0
-offset_bottom = 120.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-color = Color(0.443137, 0.360784, 0.333333, 1)
-
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/DialogueBox"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
-
-[node name="Text" type="Label" parent="CanvasLayer/DialogueBox/MarginContainer"]
-layout_mode = 2
-size_flags_vertical = 0
-theme_override_font_sizes/font_size = 22
-text = "Hello chap! Have you seen my gem?"
-autowrap_mode = 2

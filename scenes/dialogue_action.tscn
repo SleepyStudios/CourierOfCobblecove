@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://ho13a61mxxjs"]
+
+[node name="DialogueAction" type="MarginContainer"]
+size_flags_horizontal = 4
+
+[node name="Button" type="Button" parent="."]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+text = "Text 1 is actually quite long"

@@ -73,3 +73,13 @@ func pickup_item(slot_data: SlotData) -> bool:
 			return true
 			
 	return false
+	
+func has_item(item_name: String) -> bool:
+	return slots.map(func (slot): return slot.item_data.name if slot else "").has(item_name)
+
+func remove_item_by_name(item_name: String):
+	for i in range(0, slots.size()):
+		if slots[i] and slots[i].item_data.name == item_name:
+			slots[i] = null
+			inventory_updated.emit(self)			
+			break
