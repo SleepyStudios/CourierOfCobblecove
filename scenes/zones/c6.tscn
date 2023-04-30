@@ -40,6 +40,13 @@ offset_right = 1600.0
 offset_bottom = 1000.0
 color = Color(0, 0, 0, 1)
 
+[node name="LeftCollision" type="StaticBody2D" parent="."]
+position = Vector2(0, 500)
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftCollision"]
+shape = SubResource("RectangleShape2D_qc31m")
+
 [node name="TopCollision" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopCollision"]
@@ -62,6 +69,3 @@ anchor = "Left"
 
 [node name="RightAnchor" type="Node2D" parent="."]
 position = Vector2(1106, 265)
-
-[node name="LeftAnchor" type="Node2D" parent="."]
-position = Vector2(104, 540)
