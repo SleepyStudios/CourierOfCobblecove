@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://esdpm2jrxnpr"]
+[gd_scene load_steps=5 format=3 uid="uid://esdpm2jrxnpr"]
 
 [ext_resource type="Script" path="res://scripts/global.gd" id="1_kkwxs"]
 [ext_resource type="PackedScene" uid="uid://c8hkbr3ewl6ef" path="res://scenes/scene_transition.tscn" id="2_7hg2b"]
 [ext_resource type="Script" path="res://scripts/map_manager.gd" id="3_u14cu"]
+[ext_resource type="Script" path="res://scripts/quest_manager.gd" id="4_m3mpk"]
 
 [node name="Global" type="Node2D"]
 script = ExtResource("1_kkwxs")
@@ -11,3 +12,6 @@ script = ExtResource("1_kkwxs")
 
 [node name="MapManager" type="Node" parent="."]
 script = ExtResource("3_u14cu")
+
+[node name="QuestManager" type="Node" parent="."]
+script = ExtResource("4_m3mpk")

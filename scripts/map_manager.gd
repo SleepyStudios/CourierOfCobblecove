@@ -1,8 +1,8 @@
 extends Node
 
-var current_zone
-var picked_up = {}
-var dropped = {}
+@export var current_zone: String
+@export var picked_up: Dictionary = {}
+@export var dropped: Dictionary = {}
 
 func _ready():
 	Global.dropped_item_registered.connect(_on_dropped_item_registered)

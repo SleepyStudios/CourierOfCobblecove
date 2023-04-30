@@ -4,6 +4,7 @@ signal dropped_item_registered(dropped_item: DroppedItem)
 signal dropped_item_unregistered(dropped_item: DroppedItem)
 
 var inventory_data = preload("res://resources/inventory.tres")
+@onready var quest_manager = $QuestManager
 
 var post_teleport_data: Dictionary
 var _player: Player
