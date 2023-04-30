@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ba6x1t1gpuoar"]
+[gd_scene load_steps=14 format=3 uid="uid://ba6x1t1gpuoar"]
 
 [ext_resource type="Texture2D" uid="uid://br1wgqkaoq8kn" path="res://sprites/zones/b4.png" id="1_iscab"]
 [ext_resource type="PackedScene" uid="uid://dm5txbfgjhjlf" path="res://scenes/player.tscn" id="2_xeqlf"]
@@ -7,12 +7,20 @@
 [ext_resource type="PackedScene" uid="uid://do3axeenpwefl" path="res://scenes/teleporter.tscn" id="4_q5mfn"]
 [ext_resource type="PackedScene" uid="uid://chn0p0xyugfe3" path="res://scenes/inventory_slot.tscn" id="5_f77sa"]
 [ext_resource type="PackedScene" uid="uid://dfrgxp4rwlufe" path="res://scenes/inventory.tscn" id="6_2ihla"]
+[ext_resource type="PackedScene" uid="uid://i1l0jr3mfww4" path="res://scenes/dropped_item.tscn" id="8_3teom"]
+[ext_resource type="Resource" uid="uid://boujrhtj1pgae" path="res://resources/items/blue_book.tres" id="9_qjlbs"]
+[ext_resource type="Script" path="res://scripts/slot_data.gd" id="10_wwwbi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qc31m"]
 size = Vector2(1920, 166.375)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nfskc"]
 size = Vector2(41, 81.5)
+
+[sub_resource type="Resource" id="Resource_sim5p"]
+script = ExtResource("10_wwwbi")
+item_data = ExtResource("9_qjlbs")
+quantity = 1
 
 [node name="ForestSceneB4" type="Node2D"]
 
@@ -108,3 +116,7 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="DroppedItem" parent="." instance=ExtResource("8_3teom")]
+position = Vector2(640, 648)
+slot_data = SubResource("Resource_sim5p")

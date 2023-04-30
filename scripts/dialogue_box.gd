@@ -31,7 +31,7 @@ func toggle_options():
 			false if success else Global.inventory_data.has_item(dialogue_data.action_requirements[i])
 
 func _on_button_pressed(index: int):
-	Global.inventory_data.remove_item_by_name(dialogue_data.action_requirements[index])
+	Global.inventory_data.remove_item(dialogue_data.action_requirements[index])
 	$MarginContainer/Text.text = dialogue_data.action_success_texts[index]
 	success = true
 	toggle_options()
