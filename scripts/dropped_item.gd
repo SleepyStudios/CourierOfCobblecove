@@ -1,3 +1,5 @@
+@tool
+
 extends Node2D
 class_name DroppedItem
 
@@ -30,3 +32,7 @@ func _on_area_2d_body_entered(body):
 
 func _on_ready_timer_timeout():
 	can_pick_up = true
+
+func _process(delta):
+	if not sprite_2d.texture and slot_data and slot_data.item_data and Engine.is_editor_hint():
+		sprite_2d.texture = slot_data.item_data.texture		

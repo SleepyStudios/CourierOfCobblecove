@@ -19,13 +19,10 @@ func _on_dropped_item_registered(dropped_item: DroppedItem):
 func _on_dropped_item_unregistered(dropped_item: DroppedItem):
 	picked_up[current_zone].push_back(dropped_item.drop_id)
 
-	var idx = -1
 	for i in len(dropped[current_zone]):
 		if dropped[current_zone][i].drop_id == dropped_item.drop_id:
-			idx = i
+			dropped[current_zone].remove_at(i)
 			break
-
-	dropped[current_zone].remove_at(0)
 
 func _on_scene_changed(new_scene_path: String):
 	var old_zone = current_zone

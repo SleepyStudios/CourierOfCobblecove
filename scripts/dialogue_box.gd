@@ -49,11 +49,17 @@ func _on_button_pressed(index: int):
 func handle_quest_completed(index: int, from_ready = false):
 	quest_already_completed = from_ready
 	
+	if dialogue_data.action_callbacks[index].is_empty():
+		return
+
 	for line in dialogue_data.action_callbacks[index].split('\n'):
 		var parts = line.split(',')
 		callv("_action_callback_" + parts[0], parts.slice(1))
-	
+
 func _action_callback_add_item(item_name: String):
 	if quest_already_completed: return
 	Global.inventory_data.try_add_item(item_name)
 	
+func _action_callback_play_anim(anim_name: String):
+	npc.animation.play(anim_name)
+

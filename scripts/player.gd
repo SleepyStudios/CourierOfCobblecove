@@ -22,10 +22,6 @@ func _unhandled_input(event):
 			has_destination = true
 
 			on_destination_set.emit(destination)
-			
-			if in_dialogue_with_npc:
-				in_dialogue_with_npc.hide_dialogue()
-				in_dialogue_with_npc = null
 
 func get_input():
 	if not has_destination:
@@ -47,6 +43,10 @@ func _physics_process(delta):
 	var collision_count = get_slide_collision_count()
 	if collision_count > 0 or position.distance_to(destination) <= MIN_MOVE_RANGE:
 		has_destination = false
+	else:
+		if in_dialogue_with_npc:
+			in_dialogue_with_npc.hide_dialogue()
+			in_dialogue_with_npc = null
 
 	if (has_destination):
 		$AnimatedSprite2D.play("run")

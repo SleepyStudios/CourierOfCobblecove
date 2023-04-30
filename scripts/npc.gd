@@ -4,6 +4,8 @@ class_name NPC
 @export var dialogue_data: DialogueData
 const DialogueBox = preload("res://scenes/dialogue_box.tscn")
 
+@onready var animation = $Animation
+
 var dialogue_box: DialogueBox
 
 func _ready():

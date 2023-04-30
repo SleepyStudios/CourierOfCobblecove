@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://b068rgc5ap5dw"]
+[gd_scene load_steps=8 format=3 uid="uid://cvb5c7b3gj40v"]
 
+[ext_resource type="Script" path="res://scripts/cursor_anim.gd" id="1_hkqhs"]
 [ext_resource type="Texture2D" uid="uid://du3iv3k4pav24" path="res://sprites/cursor_animation.png" id="1_k6mrb"]
-[ext_resource type="Script" path="res://scripts/custom_anim.gd" id="2_gysyo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xquub"]
 atlas = ExtResource("1_k6mrb")
@@ -41,7 +41,7 @@ animations = [{
 
 [node name="CursorAnim" type="Node2D"]
 z_index = 998
-script = ExtResource("2_gysyo")
+script = ExtResource("1_hkqhs")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_bne5b")
