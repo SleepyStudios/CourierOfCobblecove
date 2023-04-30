@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0ejntopknfjd"
-path="res://.godot/imported/slot.png-d5ebdf253e1aae09d313bf4dcfe09ba3.ctex"
+uid="uid://bs1kvnurwwgc7"
+path="res://.godot/imported/old_man_idle.png-08e6fa5ba692cd88597af0d8ec112f51.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/slot.png"
-dest_files=["res://.godot/imported/slot.png-d5ebdf253e1aae09d313bf4dcfe09ba3.ctex"]
+source_file="res://sprites/npcs/old_man_idle.png"
+dest_files=["res://.godot/imported/old_man_idle.png-08e6fa5ba692cd88597af0d8ec112f51.ctex"]
 
 [params]
 

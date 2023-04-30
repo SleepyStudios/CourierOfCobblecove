@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b1qac3q1jo71w"]
+[gd_scene load_steps=14 format=3 uid="uid://dpp0sorly8pdx"]
 
 [ext_resource type="Texture2D" uid="uid://b3yf0ono46koc" path="res://sprites/zones/c4.png" id="1_xcr04"]
 [ext_resource type="PackedScene" uid="uid://dm5txbfgjhjlf" path="res://scenes/player.tscn" id="2_viq8b"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://do3axeenpwefl" path="res://scenes/teleporter.tscn" id="4_n8lym"]
 [ext_resource type="PackedScene" uid="uid://chn0p0xyugfe3" path="res://scenes/inventory_slot.tscn" id="5_q5dbi"]
 [ext_resource type="PackedScene" uid="uid://dfrgxp4rwlufe" path="res://scenes/inventory.tscn" id="6_r47qv"]
+[ext_resource type="PackedScene" uid="uid://cwc8cxbrj717a" path="res://scenes/npcs/old_man.tscn" id="8_umffp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qc31m"]
 size = Vector2(1920, 166.375)
@@ -137,3 +138,6 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="OldMan" parent="." instance=ExtResource("8_umffp")]
+position = Vector2(824, 533)

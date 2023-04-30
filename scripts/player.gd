@@ -9,6 +9,7 @@ const MIN_MOVE_RANGE = 4
 
 var destination: Vector2
 var has_destination: bool
+var in_dialogue_with_npc: NPC
 
 func _ready():
 	Global.register_player(self)
@@ -23,6 +24,10 @@ func get_input():
 			var cursor_anim = CursorAnim.instantiate()
 			cursor_anim.position = get_global_mouse_position()
 			get_tree().get_root().add_child(cursor_anim)
+			
+			if in_dialogue_with_npc:
+				in_dialogue_with_npc.hide_dialogue()
+				in_dialogue_with_npc = null
 		
 	if not has_destination:
 		velocity = Vector2.ZERO
@@ -40,14 +45,21 @@ func _physics_process(delta):
 	
 	move_and_slide()
 
-	if get_slide_collision_count() > 0 or position.distance_to(destination) <= MIN_MOVE_RANGE:
-		velocity = Vector2.ZERO
+	var collision_count = get_slide_collision_count()
+	if collision_count > 0 or position.distance_to(destination) <= MIN_MOVE_RANGE:
 		has_destination = false
 
-	if (velocity != Vector2.ZERO):
+	if (has_destination):
 		$AnimatedSprite2D.play("run")
 	else:
 		$AnimatedSprite2D.play("idle")
+
+	if collision_count > 0:
+		for i in collision_count:
+			var collider = get_slide_collision(i).get_collider()
+			if collider.get_groups().has("NPCs"):
+				in_dialogue_with_npc = collider
+				in_dialogue_with_npc.show_dialogue()
 
 func set_post_teleport_data(data: Dictionary):
 	if data:
