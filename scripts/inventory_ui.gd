@@ -2,9 +2,6 @@ extends Control
 
 var grabbed_slot_data: SlotData
 
-var base_cursor = load("res://sprites/cursor.png")
-var grab_cursor = load("res://sprites/cursor_grab.png")
-
 const DroppedItem = preload("res://scenes/dropped_item.tscn")
 
 @onready var player_inventory = $PlayerInventory
@@ -44,7 +41,7 @@ func update_grabbed_slot(index: int = -1):
 	if grabbed_slot_data:
 		grabbed_slot.show()
 		grabbed_slot.set_slot_data(grabbed_slot_data, true, index)
-		Input.set_custom_mouse_cursor(grab_cursor)
+		Global.cursor.start_dragging()
 	else:
 		grabbed_slot.hide()
-		Input.set_custom_mouse_cursor(base_cursor)
+		Global.cursor.stop_dragging()

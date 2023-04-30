@@ -5,21 +5,23 @@ signal dropped_item_unregistered(dropped_item: DroppedItem)
 
 var inventory_data = preload("res://resources/inventory.tres")
 @onready var quest_manager = $QuestManager
+@onready var cursor = $CanvasLayer/Cursor
 
 var post_teleport_data: Dictionary
-var _player: Player
+var player: Player
 
 func _ready():
 	$SceneTransition.load_initial_scene()
 
 func go_to_zone(zone: String):
 	$SceneTransition.change_scene("res://scenes/zones/%s.tscn" % zone)
-	post_teleport_data = _player.get_teleport_data()
+	post_teleport_data = player.get_teleport_data()
 
 func register_player(player: Player):
-	_player = player
+	self.player = player
 	player.set_post_teleport_data(post_teleport_data)
-	
+	cursor.connect_player(player)
+
 func register_dropped_item(dropped_item: DroppedItem):
 	dropped_item_registered.emit(dropped_item)
 	

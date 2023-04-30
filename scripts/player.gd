@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Player
 
-const CursorAnim = preload("res://scenes/cursor_anim.tscn")
+signal on_destination_set(destination: Vector2)
 
 const MIN_MOVE_RANGE = 4
 
@@ -21,9 +21,7 @@ func _unhandled_input(event):
 			destination = possible
 			has_destination = true
 
-			var cursor_anim = CursorAnim.instantiate()
-			cursor_anim.position = get_global_mouse_position()
-			get_tree().get_root().add_child(cursor_anim)
+			on_destination_set.emit(destination)
 			
 			if in_dialogue_with_npc:
 				in_dialogue_with_npc.hide_dialogue()

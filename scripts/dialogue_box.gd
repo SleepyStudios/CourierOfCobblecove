@@ -36,6 +36,8 @@ func toggle_options():
 			false if is_successful() else Global.inventory_data.has_item(dialogue_data.action_requirements[i])
 
 func _on_button_pressed(index: int):
+	Global.cursor.play_anim()
+	
 	Global.inventory_data.remove_item(dialogue_data.action_requirements[index])
 	$MarginContainer/Text.text = dialogue_data.action_success_texts[index]
 	Global.quest_manager.complete_quest(npc_name, index)
