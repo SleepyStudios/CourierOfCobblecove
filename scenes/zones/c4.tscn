@@ -1,12 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://dpp0sorly8pdx"]
+[gd_scene load_steps=12 format=3 uid="uid://dpp0sorly8pdx"]
 
 [ext_resource type="Texture2D" uid="uid://b3yf0ono46koc" path="res://sprites/zones/c4.png" id="1_xcr04"]
 [ext_resource type="PackedScene" uid="uid://dm5txbfgjhjlf" path="res://scenes/player.tscn" id="2_viq8b"]
 [ext_resource type="Texture2D" uid="uid://nwiea7ndaabl" path="res://sprites/zones/c4_overlay.png" id="3_ho4rx"]
-[ext_resource type="Script" path="res://scripts/inventory_ui.gd" id="4_i07o5"]
 [ext_resource type="PackedScene" uid="uid://do3axeenpwefl" path="res://scenes/teleporter.tscn" id="4_n8lym"]
-[ext_resource type="PackedScene" uid="uid://chn0p0xyugfe3" path="res://scenes/inventory_slot.tscn" id="5_q5dbi"]
-[ext_resource type="PackedScene" uid="uid://dfrgxp4rwlufe" path="res://scenes/inventory.tscn" id="6_r47qv"]
+[ext_resource type="PackedScene" uid="uid://cijsbj5edbq1f" path="res://scenes/ui.tscn" id="6_3k6pv"]
 [ext_resource type="PackedScene" uid="uid://cwc8cxbrj717a" path="res://scenes/npcs/old_man.tscn" id="8_umffp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qc31m"]
@@ -24,7 +22,7 @@ size = Vector2(41, 81.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ecrbu"]
 size = Vector2(67, 63)
 
-[node name="ForestSceneC4" type="Node2D"]
+[node name="C4" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -400.0
@@ -39,7 +37,7 @@ position = Vector2(600, 450)
 texture = ExtResource("1_xcr04")
 
 [node name="Player" parent="." instance=ExtResource("2_viq8b")]
-position = Vector2(120, 515)
+position = Vector2(1047, 563)
 
 [node name="Overlay" type="Sprite2D" parent="."]
 z_index = 999
@@ -71,6 +69,13 @@ shape = SubResource("RectangleShape2D_qc31m")
 position = Vector2(0, 500)
 rotation = 1.5708
 zone = "b4"
+anchor = "Right"
+
+[node name="Teleporter d4" parent="." instance=ExtResource("4_n8lym")]
+position = Vector2(1152, 500)
+rotation = 1.5708
+zone = "d4"
+anchor = "Left"
 
 [node name="Stump" type="StaticBody2D" parent="."]
 position = Vector2(479, 657)
@@ -100,45 +105,13 @@ position = Vector2(302, 779)
 position = Vector2(-7, 9.5)
 shape = SubResource("RectangleShape2D_ecrbu")
 
-[node name="UI" type="CanvasLayer" parent="."]
-
-[node name="InventoryInterface" type="Control" parent="UI"]
-layout_mode = 3
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_top = -55.0
-offset_bottom = -23.0
-grow_horizontal = 2
-grow_vertical = 0
-size_flags_horizontal = 8
-size_flags_vertical = 8
-mouse_filter = 1
-script = ExtResource("4_i07o5")
-
-[node name="GrabbedSlot" parent="UI/InventoryInterface" instance=ExtResource("5_q5dbi")]
-visible = false
-modulate = Color(1, 1, 1, 0.545098)
-self_modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_right = 64.0
-offset_bottom = 64.0
-
-[node name="PlayerInventory" parent="UI/InventoryInterface" instance=ExtResource("6_r47qv")]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-
 [node name="OldMan" parent="." instance=ExtResource("8_umffp")]
-position = Vector2(824, 533)
+position = Vector2(293, 380)
+
+[node name="UI" parent="." instance=ExtResource("6_3k6pv")]
+
+[node name="RightAnchor" type="Node2D" parent="."]
+position = Vector2(1048, 540)
+
+[node name="LeftAnchor" type="Node2D" parent="."]
+position = Vector2(104, 540)

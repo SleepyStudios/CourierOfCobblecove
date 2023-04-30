@@ -13,9 +13,10 @@ var player: Player
 func _ready():
 	$SceneTransition.load_initial_scene()
 
-func go_to_zone(zone: String):
+func go_to_zone(zone: String, anchor: String):
 	$SceneTransition.change_scene("res://scenes/zones/%s.tscn" % zone)
 	post_teleport_data = player.get_teleport_data()
+	post_teleport_data["anchor"] = anchor
 
 func register_player(player: Player):
 	self.player = player

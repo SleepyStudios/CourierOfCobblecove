@@ -9,7 +9,7 @@ const MAX_STACK_SIZE: int = 99
 const DroppedItem = preload("res://scenes/dropped_item.tscn")
 
 func can_merge_with_slot(other_slot_data: SlotData) -> bool:
-	return item_data == other_slot_data.item_data \
+	return other_slot_data and item_data == other_slot_data.item_data \
 			and item_data.stackable \
 			and quantity + other_slot_data.quantity < MAX_STACK_SIZE
 

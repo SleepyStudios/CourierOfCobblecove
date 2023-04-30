@@ -1,13 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://ba6x1t1gpuoar"]
+[gd_scene load_steps=12 format=3 uid="uid://ba6x1t1gpuoar"]
 
 [ext_resource type="Texture2D" uid="uid://br1wgqkaoq8kn" path="res://sprites/zones/b4.png" id="1_iscab"]
 [ext_resource type="PackedScene" uid="uid://dm5txbfgjhjlf" path="res://scenes/player.tscn" id="2_xeqlf"]
 [ext_resource type="Texture2D" uid="uid://brqbkqwwvcaph" path="res://sprites/zones/b4_overlay.png" id="3_8macn"]
-[ext_resource type="Script" path="res://scripts/inventory_ui.gd" id="4_f01pb"]
 [ext_resource type="PackedScene" uid="uid://do3axeenpwefl" path="res://scenes/teleporter.tscn" id="4_q5mfn"]
-[ext_resource type="PackedScene" uid="uid://chn0p0xyugfe3" path="res://scenes/inventory_slot.tscn" id="5_f77sa"]
-[ext_resource type="PackedScene" uid="uid://dfrgxp4rwlufe" path="res://scenes/inventory.tscn" id="6_2ihla"]
 [ext_resource type="PackedScene" uid="uid://i1l0jr3mfww4" path="res://scenes/dropped_item.tscn" id="8_3teom"]
+[ext_resource type="PackedScene" uid="uid://cijsbj5edbq1f" path="res://scenes/ui.tscn" id="8_gk7xi"]
 [ext_resource type="Resource" uid="uid://boujrhtj1pgae" path="res://resources/items/blue_book.tres" id="9_qjlbs"]
 [ext_resource type="Script" path="res://scripts/slot_data.gd" id="10_wwwbi"]
 
@@ -22,7 +20,7 @@ script = ExtResource("10_wwwbi")
 item_data = ExtResource("9_qjlbs")
 quantity = 1
 
-[node name="ForestSceneB4" type="Node2D"]
+[node name="B4" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -400.0
@@ -52,17 +50,18 @@ offset_right = 1600.0
 offset_bottom = 1000.0
 color = Color(0, 0, 0, 1)
 
+[node name="Teleporter c4" parent="." instance=ExtResource("4_q5mfn")]
+position = Vector2(1226, 500.625)
+rotation = 1.5708
+zone = "c4"
+anchor = "Left"
+
 [node name="TopCollision" type="StaticBody2D" parent="."]
 position = Vector2(0, -600)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopCollision"]
 position = Vector2(600, 850.625)
 shape = SubResource("RectangleShape2D_qc31m")
-
-[node name="Teleporter c4" parent="TopCollision/CollisionShape2D" instance=ExtResource("4_q5mfn")]
-position = Vector2(634, 250)
-rotation = 1.5708
-zone = "c4"
 
 [node name="BottomCollision" type="StaticBody2D" parent="."]
 
@@ -77,46 +76,11 @@ position = Vector2(978, 449)
 position = Vector2(-8.5, -5.25)
 shape = SubResource("RectangleShape2D_nfskc")
 
-[node name="UI" type="CanvasLayer" parent="."]
-
-[node name="InventoryInterface" type="Control" parent="UI"]
-layout_mode = 3
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_top = -55.0
-offset_bottom = -23.0
-grow_horizontal = 2
-grow_vertical = 0
-size_flags_horizontal = 8
-size_flags_vertical = 8
-mouse_filter = 1
-script = ExtResource("4_f01pb")
-
-[node name="GrabbedSlot" parent="UI/InventoryInterface" instance=ExtResource("5_f77sa")]
-visible = false
-modulate = Color(1, 1, 1, 0.545098)
-self_modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_right = 64.0
-offset_bottom = 64.0
-
-[node name="PlayerInventory" parent="UI/InventoryInterface" instance=ExtResource("6_2ihla")]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-
 [node name="DroppedItem" parent="." instance=ExtResource("8_3teom")]
 position = Vector2(640, 648)
 slot_data = SubResource("Resource_sim5p")
+
+[node name="UI" parent="." instance=ExtResource("8_gk7xi")]
+
+[node name="RightAnchor" type="Node2D" parent="."]
+position = Vector2(1104, 532)

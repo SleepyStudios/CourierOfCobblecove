@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ceqn6ptbr7sxw"]
+[gd_scene load_steps=8 format=3 uid="uid://b068rgc5ap5dw"]
 
 [ext_resource type="Texture2D" uid="uid://du3iv3k4pav24" path="res://sprites/cursor_animation.png" id="1_k6mrb"]
 [ext_resource type="Script" path="res://scripts/custom_anim.gd" id="2_gysyo"]

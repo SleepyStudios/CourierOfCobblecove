@@ -63,10 +63,19 @@ func _physics_process(delta):
 func set_post_teleport_data(data: Dictionary):
 	if data:
 		$AnimatedSprite2D.flip_h = data.flip
-		position.y = data.yPos
+		var anchor: Node2D = get_node("../" + data.anchor + "Anchor")
+		
+		match data.anchor:
+			"Top", "Bottom":
+				position.x = data.xPos				
+				position.y = anchor.position.y
+			"Left", "Right":
+				position.x = anchor.position.x
+				position.y = data.yPos
 
 func get_teleport_data() -> Dictionary:
 	return {
 		"flip": $AnimatedSprite2D.flip_h,
+		"xPos": position.x,
 		"yPos": position.y
 	}
