@@ -1,6 +1,5 @@
 extends Node2D
 
-@export var inventory_data: InventoryData
 @export var slot_data: SlotData
 @export var spawn_pos: Vector2
 
@@ -14,7 +13,7 @@ func _ready():
 
 func _on_area_2d_body_entered(body):
 	if can_pick_up: #todo check if player
-		if inventory_data.pickup_item(slot_data):
+		if Global.inventory_data.pickup_item(slot_data):
 			queue_free()
 
 func _on_ready_timer_timeout():
