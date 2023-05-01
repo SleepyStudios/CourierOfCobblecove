@@ -70,7 +70,7 @@ zone = "d6"
 anchor = "Top"
 
 [node name="LeftAnchor" type="Node2D" parent="."]
-position = Vector2(56, 408)
+position = Vector2(120, 398)
 
 [node name="TopAnchor" type="Node2D" parent="."]
 position = Vector2(644, 80)

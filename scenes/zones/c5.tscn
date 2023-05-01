@@ -65,7 +65,7 @@ position = Vector2(600, 959.094)
 shape = SubResource("RectangleShape2D_qc31m")
 
 [node name="Teleporter d5" parent="." instance=ExtResource("4_mxt7x")]
-position = Vector2(1181, 502)
+position = Vector2(1189, 500)
 rotation = 1.5708
 zone = "d5"
 anchor = "Left"
