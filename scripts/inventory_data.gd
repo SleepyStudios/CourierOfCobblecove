@@ -87,12 +87,12 @@ func try_add_item(item_name: String):
 	if not pickup_item(slot_data):
 		slot_data.drop()
 	
-func has_item(item_data: ItemData) -> bool:
-	return slots.map(func (slot): return slot.item_data.name if slot else "").has(item_data.name)
+func has_item(item_name: String) -> bool:
+	return slots.map(func (slot): return slot.item_data.name if slot else "").has(item_name)
 
-func remove_item(item_data: ItemData):
+func remove_item(item_name: String):
 	for i in range(0, slots.size()):
-		if slots[i] and slots[i].item_data.name == item_data.name:
+		if slots[i] and slots[i].item_data.name == item_name:
 			slots[i] = null
 			inventory_updated.emit(self)			
 			break
