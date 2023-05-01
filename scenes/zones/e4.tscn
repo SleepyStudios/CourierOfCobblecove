@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" path="res://scenes/teleporter.tscn" id="4_2d23q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qc31m"]
-size = Vector2(1920, 166.375)
+size = Vector2(1920, 211.188)
 
 [node name="E4" type="Node2D"]
 
@@ -23,7 +23,7 @@ position = Vector2(600, 450)
 texture = ExtResource("1_ghitq")
 
 [node name="Player" parent="." instance=ExtResource("2_68yr7")]
-position = Vector2(100, 460)
+position = Vector2(144, 449)
 
 [node name="Overlay" type="Sprite2D" parent="."]
 visible = false
@@ -41,19 +41,19 @@ offset_bottom = 1000.0
 color = Color(0, 0, 0, 1)
 
 [node name="Teleporter d4" parent="." instance=ExtResource("4_2d23q")]
-position = Vector2(-30, 500.625)
+position = Vector2(10, 501)
 rotation = 1.5708
 zone = "d4"
 anchor = "Right"
 
 [node name="Teleporter f4" parent="." instance=ExtResource("4_2d23q")]
-position = Vector2(1234, 500.625)
+position = Vector2(1192, 500)
 rotation = 1.5708
 zone = "f4"
 anchor = "Left"
 
 [node name="Teleporter e5" parent="." instance=ExtResource("4_2d23q")]
-position = Vector2(600, 952)
+position = Vector2(611, 915)
 zone = "e5"
 anchor = "Top"
 
@@ -61,14 +61,14 @@ anchor = "Top"
 position = Vector2(0, -600)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopCollision"]
-position = Vector2(600, 522.625)
+position = Vector2(593, 681.594)
 shape = SubResource("RectangleShape2D_qc31m")
 
 [node name="LeftAnchor" type="Node2D" parent="."]
-position = Vector2(104, 540)
+position = Vector2(147, 453)
 
 [node name="RightAnchor" type="Node2D" parent="."]
 position = Vector2(1115, 499)
 
 [node name="BottomAnchor" type="Node2D" parent="."]
-position = Vector2(608, 755)
+position = Vector2(618, 698)

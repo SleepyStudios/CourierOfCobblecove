@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://qwddombq55df"]
+[gd_scene load_steps=9 format=3 uid="uid://qwddombq55df"]
 
 [ext_resource type="Texture2D" uid="uid://br1wgqkaoq8kn" path="res://sprites/zones/b4.png" id="1_iscab"]
 [ext_resource type="PackedScene" uid="uid://dm5txbfgjhjlf" path="res://scenes/player.tscn" id="2_xeqlf"]
@@ -10,7 +10,10 @@
 size = Vector2(1920, 166.375)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nfskc"]
-size = Vector2(41, 81.5)
+size = Vector2(68, 116)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w6nc2"]
+size = Vector2(468, 986)
 
 [node name="B4" type="Node2D"]
 
@@ -27,7 +30,7 @@ position = Vector2(600, 450)
 texture = ExtResource("1_iscab")
 
 [node name="Player" parent="." instance=ExtResource("2_xeqlf")]
-position = Vector2(942, 649)
+position = Vector2(786, 671)
 
 [node name="Overlay" type="Sprite2D" parent="."]
 z_index = 999
@@ -43,7 +46,7 @@ offset_bottom = 1000.0
 color = Color(0, 0, 0, 1)
 
 [node name="Teleporter c4" parent="." instance=ExtResource("4_q5mfn")]
-position = Vector2(1226, 500.625)
+position = Vector2(1194, 526)
 rotation = 1.5708
 zone = "c4"
 anchor = "Left"
@@ -52,20 +55,20 @@ anchor = "Left"
 position = Vector2(0, -600)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopCollision"]
-position = Vector2(600, 850.625)
+position = Vector2(598, 917)
 shape = SubResource("RectangleShape2D_qc31m")
 
 [node name="BottomCollision" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomCollision"]
-position = Vector2(600, 980)
+position = Vector2(600, 961)
 shape = SubResource("RectangleShape2D_qc31m")
 
 [node name="Rock2" type="StaticBody2D" parent="."]
 position = Vector2(978, 449)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Rock2"]
-position = Vector2(-8.5, -5.25)
+position = Vector2(-12, -10)
 shape = SubResource("RectangleShape2D_nfskc")
 
 [node name="RightAnchor" type="Node2D" parent="."]
@@ -73,3 +76,9 @@ position = Vector2(1104, 532)
 
 [node name="Buttercup" parent="." instance=ExtResource("6_3fuq0")]
 position = Vector2(515, 539)
+
+[node name="LeftCollision" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftCollision"]
+position = Vector2(162, 639)
+shape = SubResource("RectangleShape2D_w6nc2")

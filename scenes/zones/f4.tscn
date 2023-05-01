@@ -2,12 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://dvl273pm8dxbm" path="res://sprites/zones/f4.png" id="1_8f8tm"]
 [ext_resource type="PackedScene" uid="uid://dm5txbfgjhjlf" path="res://scenes/player.tscn" id="2_qkfr0"]
-[ext_resource type="Texture2D" uid="uid://brqbkqwwvcaph" path="res://sprites/zones/b4_overlay.png" id="3_kl5w7"]
+[ext_resource type="Texture2D" uid="uid://20i26mnoytbo" path="res://sprites/zones/f4_overlay.png" id="3_1an35"]
 [ext_resource type="PackedScene" path="res://scenes/teleporter.tscn" id="4_4qnsu"]
 [ext_resource type="PackedScene" uid="uid://rjxyfqtvca26" path="res://scenes/npcs/bribe_guard.tscn" id="6_e82pt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qc31m"]
-size = Vector2(1920, 166.375)
+size = Vector2(1501.8, 166.375)
 
 [node name="F4" type="Node2D"]
 
@@ -24,12 +24,12 @@ position = Vector2(600, 450)
 texture = ExtResource("1_8f8tm")
 
 [node name="Player" parent="." instance=ExtResource("2_qkfr0")]
-position = Vector2(100, 460)
+position = Vector2(147, 460)
 
 [node name="Overlay" type="Sprite2D" parent="."]
 z_index = 999
 position = Vector2(600, 450)
-texture = ExtResource("3_kl5w7")
+texture = ExtResource("3_1an35")
 
 [node name="OverlayRect" type="ColorRect" parent="."]
 z_index = 999
@@ -40,7 +40,7 @@ offset_bottom = 1000.0
 color = Color(0, 0, 0, 1)
 
 [node name="Teleporter e4" parent="." instance=ExtResource("4_4qnsu")]
-position = Vector2(-30, 500.625)
+position = Vector2(5, 504)
 rotation = 1.5708
 zone = "e4"
 anchor = "Right"
@@ -49,17 +49,26 @@ anchor = "Right"
 position = Vector2(0, -600)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopCollision"]
-position = Vector2(600, 522.625)
+position = Vector2(613, 765)
+rotation = 0.359538
 shape = SubResource("RectangleShape2D_qc31m")
 
 [node name="BottomCollision" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomCollision"]
-position = Vector2(600, 980)
+position = Vector2(600, 948)
 shape = SubResource("RectangleShape2D_qc31m")
 
 [node name="LeftAnchor" type="Node2D" parent="."]
-position = Vector2(104, 540)
+position = Vector2(144, 535)
 
 [node name="BribeGuard" parent="." instance=ExtResource("6_e82pt")]
-position = Vector2(528, 193)
+position = Vector2(451, 220)
+
+[node name="TopCollision2" type="StaticBody2D" parent="."]
+position = Vector2(0, -600)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopCollision2"]
+position = Vector2(1143, 1376)
+rotation = 0.719076
+shape = SubResource("RectangleShape2D_qc31m")

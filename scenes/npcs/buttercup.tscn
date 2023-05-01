@@ -16,7 +16,7 @@ action_callbacks = Array[String](["add_item,Buttercup's Bell
 play_anim,with_lead"])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hp1tn"]
-size = Vector2(365, 167)
+size = Vector2(356, 266)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pc2f2"]
 atlas = ExtResource("5_t75i0")
@@ -56,7 +56,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"with_lead",
-"speed": 5.0
+"speed": 3.0
 }]
 
 [node name="Buttercup" type="StaticBody2D" groups=["NPCs"]]
@@ -64,12 +64,13 @@ script = ExtResource("1_jfc7w")
 dialogue_data = SubResource("Resource_5pr75")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
-position = Vector2(20.5, 4.5)
+position = Vector2(-11, -12)
 shape = SubResource("RectangleShape2D_hp1tn")
 
 [node name="Animation" type="AnimatedSprite2D" parent="."]
 z_index = 2
 sprite_frames = SubResource("SpriteFrames_7j183")
 animation = &"with_lead"
+frame_progress = 0.196911
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
