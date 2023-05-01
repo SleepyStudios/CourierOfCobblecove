@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqhm4bvjej8w3"
-path="res://.godot/imported/buttercup.png-7897dc7bf99b76d9c53cc128314f878c.ctex"
+uid="uid://3v7lwdxm1shk"
+path="res://.godot/imported/cow_idle.png-aa529ad964407349a38476978bc63e63.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/npcs/buttercup.png"
-dest_files=["res://.godot/imported/buttercup.png-7897dc7bf99b76d9c53cc128314f878c.ctex"]
+source_file="res://sprites/npcs/cow_idle.png"
+dest_files=["res://.godot/imported/cow_idle.png-aa529ad964407349a38476978bc63e63.ctex"]
 
 [params]
 

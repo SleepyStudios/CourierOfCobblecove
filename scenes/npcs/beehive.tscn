@@ -1,0 +1,65 @@
+[gd_scene load_steps=12 format=3 uid="uid://bc6qoitxfva87"]
+
+[ext_resource type="Script" path="res://scripts/npc.gd" id="1_vpgfd"]
+[ext_resource type="Script" path="res://scripts/item_data.gd" id="2_lyut6"]
+[ext_resource type="Script" path="res://scripts/dialogue_data.gd" id="3_kius4"]
+[ext_resource type="Texture2D" uid="uid://yxxebiqtht3t" path="res://sprites/npcs/bee_hive_idle.png" id="4_sn5di"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5xipl"]
+
+[sub_resource type="Resource" id="Resource_w40ec"]
+script = ExtResource("2_lyut6")
+name = "Blue Dust"
+description = "Useful for dyes"
+stackable = false
+texture = SubResource("CompressedTexture2D_5xipl")
+
+[sub_resource type="Resource" id="Resource_rq4ng"]
+script = ExtResource("3_kius4")
+default_text = "Oh you're looking to deliver something? Well I'm looking for some coins"
+post_success_text = "I think I'll have some ale with those coins, cheers"
+action_options = Array[String](["[Pay the bribe]"])
+action_requirements = Array[ExtResource("2_lyut6")]([SubResource("Resource_w40ec")])
+action_success_texts = Array[String](["Thought so, I'll take this"])
+action_callbacks = Array[String]([""])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hp1tn"]
+size = Vector2(116.042, 210.015)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0y14a"]
+atlas = ExtResource("4_sn5di")
+region = Rect2(0, 0, 282, 258)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdtkk"]
+atlas = ExtResource("4_sn5di")
+region = Rect2(282, 0, 282, 258)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_un6e6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0y14a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdtkk")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Beehive" type="StaticBody2D" groups=["NPCs"]]
+script = ExtResource("1_vpgfd")
+dialogue_data = SubResource("Resource_rq4ng")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2(-21, -20)
+rotation = -0.00431322
+shape = SubResource("RectangleShape2D_hp1tn")
+
+[node name="Animation" type="AnimatedSprite2D" parent="."]
+z_index = 2
+sprite_frames = SubResource("SpriteFrames_un6e6")
+animation = &"idle"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]

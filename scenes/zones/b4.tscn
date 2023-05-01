@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://br1wgqkaoq8kn" path="res://sprites/zones/b4.png" id="1_iscab"]
 [ext_resource type="PackedScene" uid="uid://dm5txbfgjhjlf" path="res://scenes/player.tscn" id="2_xeqlf"]
 [ext_resource type="Texture2D" uid="uid://brqbkqwwvcaph" path="res://sprites/zones/b4_overlay.png" id="3_8macn"]
-[ext_resource type="PackedScene" uid="uid://do3axeenpwefl" path="res://scenes/teleporter.tscn" id="4_q5mfn"]
-[ext_resource type="PackedScene" uid="uid://bgcv3ouw6plrk" path="res://scenes/npcs/buttercup.tscn" id="6_3fuq0"]
+[ext_resource type="PackedScene" path="res://scenes/teleporter.tscn" id="4_q5mfn"]
+[ext_resource type="PackedScene" uid="uid://ccpyxcgucmmup" path="res://scenes/npcs/buttercup.tscn" id="6_3fuq0"]
 [ext_resource type="PackedScene" uid="uid://cijsbj5edbq1f" path="res://scenes/ui.tscn" id="8_gk7xi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qc31m"]
@@ -28,7 +28,7 @@ position = Vector2(600, 450)
 texture = ExtResource("1_iscab")
 
 [node name="Player" parent="." instance=ExtResource("2_xeqlf")]
-position = Vector2(1099, 509)
+position = Vector2(942, 649)
 
 [node name="Overlay" type="Sprite2D" parent="."]
 z_index = 999
@@ -75,4 +75,4 @@ shape = SubResource("RectangleShape2D_nfskc")
 position = Vector2(1104, 532)
 
 [node name="Buttercup" parent="." instance=ExtResource("6_3fuq0")]
-position = Vector2(585, 517)
+position = Vector2(515, 539)

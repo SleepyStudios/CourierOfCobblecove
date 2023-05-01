@@ -12,4 +12,5 @@ script = ExtResource("1_mc2l2")
 
 [node name="ItemGrid" type="GridContainer" parent="."]
 layout_mode = 2
+theme_override_constants/h_separation = 8
 columns = 8

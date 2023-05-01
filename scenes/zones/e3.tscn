@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://ci867u5oy53a" path="res://sprites/zones/e3.png" id="1_hi1xr"]
 [ext_resource type="PackedScene" uid="uid://dm5txbfgjhjlf" path="res://scenes/player.tscn" id="2_45g22"]
 [ext_resource type="Texture2D" uid="uid://nwiea7ndaabl" path="res://sprites/zones/c4_overlay.png" id="3_iw5vl"]
-[ext_resource type="PackedScene" uid="uid://do3axeenpwefl" path="res://scenes/teleporter.tscn" id="4_kkndt"]
+[ext_resource type="PackedScene" path="res://scenes/teleporter.tscn" id="4_kkndt"]
 [ext_resource type="PackedScene" uid="uid://cijsbj5edbq1f" path="res://scenes/ui.tscn" id="5_tbev4"]
 [ext_resource type="PackedScene" uid="uid://i1l0jr3mfww4" path="res://scenes/dropped_item.tscn" id="6_stfa1"]
 [ext_resource type="Resource" uid="uid://bscx5tweu7p20" path="res://resources/items/cow_lead.tres" id="7_05vgt"]

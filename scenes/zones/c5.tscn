@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://caqdahpemrrha" path="res://sprites/zones/c5.png" id="1_dwusb"]
 [ext_resource type="PackedScene" uid="uid://dm5txbfgjhjlf" path="res://scenes/player.tscn" id="2_58aj1"]
 [ext_resource type="Texture2D" uid="uid://nwiea7ndaabl" path="res://sprites/zones/c4_overlay.png" id="3_olmjr"]
-[ext_resource type="PackedScene" uid="uid://do3axeenpwefl" path="res://scenes/teleporter.tscn" id="4_mxt7x"]
+[ext_resource type="PackedScene" path="res://scenes/teleporter.tscn" id="4_mxt7x"]
 [ext_resource type="PackedScene" uid="uid://cijsbj5edbq1f" path="res://scenes/ui.tscn" id="6_ltdbw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qc31m"]
@@ -27,6 +27,7 @@ texture = ExtResource("1_dwusb")
 position = Vector2(1047, 563)
 
 [node name="Overlay" type="Sprite2D" parent="."]
+visible = false
 z_index = 999
 position = Vector2(600, 450)
 texture = ExtResource("3_olmjr")
@@ -61,6 +62,3 @@ anchor = "Left"
 
 [node name="RightAnchor" type="Node2D" parent="."]
 position = Vector2(1048, 540)
-
-[node name="LeftAnchor" type="Node2D" parent="."]
-position = Vector2(104, 540)
