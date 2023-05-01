@@ -24,10 +24,11 @@ func _on_option_chosen(action_id: String):
 			Global.inventory_data.remove_item("Carrot")
 			complete_quest()
 		"give_potion":
-			Global.inventory_data.remove_item("Mysterious Potion")			
+			Global.inventory_data.remove_item("Mysterious Potion")
+			Global.quest_manager.start_quest("Goblin")
 			set_data("potion_given", true)
 			npc.animation.play("goblin")
-			npc.follow_path(320.0, 0.3)
+			npc.follow_path(350.0, 0.3)
 			npc.hide_dialogue()
 
 func _handle_quest_completed(from_check: bool):

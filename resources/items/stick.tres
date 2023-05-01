@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://bll7fdvp702xr"]
+
+[ext_resource type="Script" path="res://scripts/item_data.gd" id="1_0pm8s"]
+[ext_resource type="Texture2D" uid="uid://3a4ckw12p7ol" path="res://sprites/items/stick.png" id="2_yf2qi"]
+
+[resource]
+script = ExtResource("1_0pm8s")
+name = "\"Best\" Stick"
+description = "A truly fiece weapon capable of unspeakable damage"
+stackable = false
+texture = ExtResource("2_yf2qi")
