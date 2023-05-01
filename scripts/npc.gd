@@ -8,6 +8,7 @@ const DialogueBox = preload("res://scenes/dialogue_box.tscn")
 
 var dialogue_box: DialogueBox
 var speed: float
+var disable_collision_at_ratio: float
 var path_follow: PathFollow2D
 
 func _ready():
@@ -27,11 +28,15 @@ func hide_dialogue():
 	if quest_data:	
 		dialogue_box.hide_dialogue()
 		
-func follow_path(speed: float):
+func follow_path(speed: float, disable_collision_at_ratio = -1):
 	self.speed = speed
+	self.disable_collision_at_ratio = disable_collision_at_ratio
 	path_follow = get_parent()
 	animation.play("walking")
 
 func _physics_process(delta):
 	if path_follow:
 		path_follow.set_progress(path_follow.get_progress() + speed * delta)
+		if disable_collision_at_ratio > 0 and path_follow.progress_ratio >= disable_collision_at_ratio:
+			if $CollisionShape:
+				$CollisionShape.queue_free()

@@ -25,7 +25,7 @@ func _handle_quest_completed(from_check: bool):
 		if from_check:
 			npc.queue_free()
 		else:
-			npc.follow_path(300.0)
+			npc.follow_path(300.0, 0.5)
 			npc.hide_dialogue()
 			npc.quest_data = null
 	else:
