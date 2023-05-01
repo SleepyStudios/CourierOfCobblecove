@@ -32,7 +32,6 @@ func follow_path(speed: float, disable_collision_at_ratio = -1):
 	self.speed = speed
 	self.disable_collision_at_ratio = disable_collision_at_ratio
 	path_follow = get_parent()
-	animation.play("walking")
 
 func _physics_process(delta):
 	if path_follow:

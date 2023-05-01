@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://2fi7i8ry3fty"]
+[gd_scene load_steps=15 format=3 uid="uid://2fi7i8ry3fty"]
 
 [ext_resource type="Script" path="res://scripts/npc.gd" id="1_jfc7w"]
 [ext_resource type="Script" path="res://scripts/quests/buttercup_quest.gd" id="2_0cery"]
+[ext_resource type="Texture2D" uid="uid://gxum7dt0gpwe" path="res://sprites/npcs/goblin.png" id="3_6pyk7"]
 [ext_resource type="Texture2D" uid="uid://btp3v1e8dc3th" path="res://sprites/npcs/cow_walking.png" id="3_fruny"]
 [ext_resource type="Texture2D" uid="uid://3v7lwdxm1shk" path="res://sprites/npcs/cow_idle.png" id="5_t75i0"]
 
@@ -38,6 +39,14 @@ region = Rect2(1170, 0, 390, 258)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7j183"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_6pyk7")
+}],
+"loop": true,
+"name": &"goblin",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_sxk1i")
