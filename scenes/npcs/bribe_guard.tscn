@@ -15,7 +15,7 @@ action_success_texts = Array[String](["Thought so, I'll take this"])
 action_callbacks = Array[String]([""])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hp1tn"]
-size = Vector2(118, 256.5)
+size = Vector2(172, 190)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_diexa"]
 atlas = ExtResource("4_8mv4c")
@@ -28,7 +28,7 @@ region = Rect2(174, 0, 174, 324)
 [sub_resource type="SpriteFrames" id="SpriteFrames_njpas"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 2.0,
 "texture": SubResource("AtlasTexture_diexa")
 }, {
 "duration": 1.0,
@@ -36,7 +36,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 2.0
 }]
 
 [node name="BribeGuard" type="StaticBody2D" groups=["NPCs"]]
@@ -44,12 +44,14 @@ script = ExtResource("1_jwxim")
 dialogue_data = SubResource("Resource_ahw0l")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
-position = Vector2(-21, 18)
+position = Vector2(-5, 54)
 shape = SubResource("RectangleShape2D_hp1tn")
 
 [node name="Animation" type="AnimatedSprite2D" parent="."]
 z_index = 2
 sprite_frames = SubResource("SpriteFrames_njpas")
 animation = &"idle"
+frame_progress = 0.495386
+flip_h = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

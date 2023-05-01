@@ -15,7 +15,7 @@ action_success_texts = Array[String](["Oh look my blue dust!"])
 action_callbacks = Array[String]([""])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hp1tn"]
-size = Vector2(75, 167)
+size = Vector2(133, 167)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kp70r"]
 atlas = ExtResource("2_vn6y6")
@@ -28,7 +28,7 @@ region = Rect2(144, 0, 144, 258)
 [sub_resource type="SpriteFrames" id="SpriteFrames_hv581"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 1.3,
 "texture": SubResource("AtlasTexture_kp70r")
 }, {
 "duration": 1.0,
@@ -36,7 +36,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 3.0
+"speed": 1.0
 }]
 
 [node name="OldMan" type="StaticBody2D" groups=["NPCs"]]
@@ -44,12 +44,14 @@ script = ExtResource("1_shgcf")
 dialogue_data = SubResource("Resource_khmam")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
-position = Vector2(0, 38.5)
+position = Vector2(-13.5, 38.5)
 shape = SubResource("RectangleShape2D_hp1tn")
 
 [node name="Animation" type="AnimatedSprite2D" parent="."]
 z_index = 2
 sprite_frames = SubResource("SpriteFrames_hv581")
 animation = &"idle"
+frame_progress = 0.678732
+flip_h = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

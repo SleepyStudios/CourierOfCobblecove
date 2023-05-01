@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3]
+[gd_scene load_steps=11 format=3 uid="uid://e6r2uucaxi5a"]
 
 [ext_resource type="Script" path="res://scripts/npc.gd" id="1_yaoqw"]
 [ext_resource type="Resource" uid="uid://bemqdctbp7t36" path="res://resources/items/cow_bell.tres" id="2_khrtu"]
@@ -15,7 +15,7 @@ action_success_texts = Array[String](["She's alive! Take these coins, it's the l
 action_callbacks = Array[String](["add_item,Coins"])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hp1tn"]
-size = Vector2(384, 164)
+size = Vector2(393, 165)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2vwq7"]
 atlas = ExtResource("4_vysd6")
@@ -51,7 +51,7 @@ script = ExtResource("1_yaoqw")
 dialogue_data = SubResource("Resource_v1g27")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
-position = Vector2(-11, 42)
+position = Vector2(-15.5, 41.5)
 shape = SubResource("RectangleShape2D_hp1tn")
 
 [node name="Animation" type="AnimatedSprite2D" parent="."]

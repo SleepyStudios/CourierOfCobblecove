@@ -74,6 +74,6 @@ shape = SubResource("RectangleShape2D_hp1tn")
 z_index = 2
 sprite_frames = SubResource("SpriteFrames_rf1xg")
 animation = &"idle"
-frame_progress = 0.893052
+frame_progress = 0.752864
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

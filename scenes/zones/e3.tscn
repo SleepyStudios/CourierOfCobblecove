@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://i1l0jr3mfww4" path="res://scenes/dropped_item.tscn" id="6_stfa1"]
 [ext_resource type="Resource" uid="uid://bscx5tweu7p20" path="res://resources/items/cow_lead.tres" id="7_05vgt"]
 [ext_resource type="Script" path="res://scripts/slot_data.gd" id="8_xxdsm"]
-[ext_resource type="PackedScene" uid="uid://bsa8f3vqkih0k" path="res://scenes/npcs/farmer.tscn" id="9_kad0o"]
+[ext_resource type="PackedScene" uid="uid://e6r2uucaxi5a" path="res://scenes/npcs/farmer.tscn" id="9_kad0o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qc31m"]
 size = Vector2(1920, 166.375)
