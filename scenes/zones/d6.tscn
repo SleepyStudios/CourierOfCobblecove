@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dfv3ooviqjfej"]
+[gd_scene load_steps=9 format=3 uid="uid://dfv3ooviqjfej"]
 
 [ext_resource type="Texture2D" uid="uid://d3eed34wpl61c" path="res://sprites/zones/d6.png" id="1_e3bgh"]
 [ext_resource type="PackedScene" uid="uid://dm5txbfgjhjlf" path="res://scenes/player.tscn" id="2_db83d"]
@@ -9,6 +9,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qc31m"]
 size = Vector2(1920, 166.375)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wpkpl"]
+size = Vector2(502.683, 166.375)
 
 [node name="D6" type="Node2D"]
 
@@ -63,6 +66,15 @@ rotation = 0.0698132
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomCollision"]
 position = Vector2(2.79028, 39.9025)
 shape = SubResource("RectangleShape2D_qc31m")
+
+[node name="BottomCollision2" type="StaticBody2D" parent="."]
+position = Vector2(124, -48)
+rotation = -0.225147
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomCollision2"]
+position = Vector2(2.79, 39.903)
+shape = SubResource("RectangleShape2D_wpkpl")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
 [node name="Teleporter d5" parent="." instance=ExtResource("4_vktbm")]
 position = Vector2(600, -40)
