@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://b8jlo2d51beci"]
+[gd_scene load_steps=13 format=3 uid="uid://b8jlo2d51beci"]
 
 [ext_resource type="Texture2D" uid="uid://b1aevwci4u1ww" path="res://sprites/zones/d3.png" id="1_ukiva"]
 [ext_resource type="PackedScene" uid="uid://dm5txbfgjhjlf" path="res://scenes/player.tscn" id="2_bj23m"]
 [ext_resource type="Texture2D" uid="uid://c0ge1bg4tu17s" path="res://sprites/zones/d3_overlay.png" id="3_vyw6k"]
 [ext_resource type="PackedScene" uid="uid://do3axeenpwefl" path="res://scenes/teleporter.tscn" id="4_27eud"]
 [ext_resource type="PackedScene" uid="uid://xee701s6vps6" path="res://scenes/npcs/baker.tscn" id="5_hglk0"]
+[ext_resource type="PackedScene" uid="uid://c41wtrphcvh06" path="res://scenes/npcs/sign_d3.tscn" id="6_gyfqv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qc31m"]
 size = Vector2(1920, 166.375)
@@ -127,3 +128,6 @@ shape = SubResource("RectangleShape2D_nm3e3")
 
 [node name="Baker" parent="." instance=ExtResource("5_hglk0")]
 position = Vector2(363, 301)
+
+[node name="SignD3" parent="." instance=ExtResource("6_gyfqv")]
+position = Vector2(621, 276)
