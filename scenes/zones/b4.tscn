@@ -1,11 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://qwddombq55df"]
+[gd_scene load_steps=8 format=3 uid="uid://qwddombq55df"]
 
 [ext_resource type="Texture2D" uid="uid://br1wgqkaoq8kn" path="res://sprites/zones/b4.png" id="1_iscab"]
 [ext_resource type="PackedScene" uid="uid://dm5txbfgjhjlf" path="res://scenes/player.tscn" id="2_xeqlf"]
 [ext_resource type="Texture2D" uid="uid://brqbkqwwvcaph" path="res://sprites/zones/b4_overlay.png" id="3_8macn"]
-[ext_resource type="PackedScene" uid="uid://do3axeenpwefl" path="res://scenes/teleporter.tscn" id="4_q5mfn"]
-[ext_resource type="PackedScene" uid="uid://bgcv3ouw6plrk" path="res://scenes/npcs/buttercup.tscn" id="6_3fuq0"]
-[ext_resource type="PackedScene" uid="uid://cijsbj5edbq1f" path="res://scenes/ui.tscn" id="8_gk7xi"]
+[ext_resource type="PackedScene" path="res://scenes/teleporter.tscn" id="4_q5mfn"]
+[ext_resource type="PackedScene" uid="uid://ccpyxcgucmmup" path="res://scenes/npcs/buttercup.tscn" id="6_3fuq0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qc31m"]
 size = Vector2(1920, 166.375)
@@ -28,7 +27,7 @@ position = Vector2(600, 450)
 texture = ExtResource("1_iscab")
 
 [node name="Player" parent="." instance=ExtResource("2_xeqlf")]
-position = Vector2(1099, 509)
+position = Vector2(942, 649)
 
 [node name="Overlay" type="Sprite2D" parent="."]
 z_index = 999
@@ -69,10 +68,8 @@ position = Vector2(978, 449)
 position = Vector2(-8.5, -5.25)
 shape = SubResource("RectangleShape2D_nfskc")
 
-[node name="UI" parent="." instance=ExtResource("8_gk7xi")]
-
 [node name="RightAnchor" type="Node2D" parent="."]
 position = Vector2(1104, 532)
 
 [node name="Buttercup" parent="." instance=ExtResource("6_3fuq0")]
-position = Vector2(585, 517)
+position = Vector2(515, 539)

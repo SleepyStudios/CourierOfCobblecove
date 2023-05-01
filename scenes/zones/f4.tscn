@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dawbnivnp7toa"]
+[gd_scene load_steps=7 format=3 uid="uid://dawbnivnp7toa"]
 
 [ext_resource type="Texture2D" uid="uid://dvl273pm8dxbm" path="res://sprites/zones/f4.png" id="1_8f8tm"]
 [ext_resource type="PackedScene" uid="uid://dm5txbfgjhjlf" path="res://scenes/player.tscn" id="2_qkfr0"]
 [ext_resource type="Texture2D" uid="uid://brqbkqwwvcaph" path="res://sprites/zones/b4_overlay.png" id="3_kl5w7"]
-[ext_resource type="PackedScene" uid="uid://do3axeenpwefl" path="res://scenes/teleporter.tscn" id="4_4qnsu"]
-[ext_resource type="PackedScene" uid="uid://cijsbj5edbq1f" path="res://scenes/ui.tscn" id="5_ss154"]
+[ext_resource type="PackedScene" path="res://scenes/teleporter.tscn" id="4_4qnsu"]
 [ext_resource type="PackedScene" uid="uid://rjxyfqtvca26" path="res://scenes/npcs/bribe_guard.tscn" id="6_e82pt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qc31m"]
@@ -58,8 +57,6 @@ shape = SubResource("RectangleShape2D_qc31m")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomCollision"]
 position = Vector2(600, 980)
 shape = SubResource("RectangleShape2D_qc31m")
-
-[node name="UI" parent="." instance=ExtResource("5_ss154")]
 
 [node name="LeftAnchor" type="Node2D" parent="."]
 position = Vector2(104, 540)
