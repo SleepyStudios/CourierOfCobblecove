@@ -1,9 +1,7 @@
 extends Label
 
-var text_to_use: String
-
 func _ready():
-	Global.scene_transition.on_scene_changed.connect(_on_scene_changed)
+	$"../../SceneTransition".on_scene_changed.connect(_on_scene_changed)
 
 func _on_scene_changed(new_scene_path: String):
 	var regex = RegEx.new()
@@ -26,7 +24,6 @@ func _on_scene_changed(new_scene_path: String):
 		"f4": zone_name = "CASTLE GATE"
 	
 	var deliveries = len(Global.quest_manager.completed_quests)
-	text_to_use = "%s\n%s DELIVERIES" % [zone_name, deliveries]
+	var word = "DELIVERY" if deliveries == 1 else "DELIVERIES"
+	text = "%s\n%s %s COMPLETED" % [zone_name, deliveries, word]
 	
-func _process(delta):
-	text = text_to_use

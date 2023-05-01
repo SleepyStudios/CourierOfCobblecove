@@ -9,6 +9,9 @@ func is_quest_completed(quest_name: String) -> bool:
 func complete_quest(quest_name: String, action_index: int):
 	completed_quests.push_back(quest_name)
 	completed_quest_action_indexes.push_back(action_index)
+	
+	# hacky way to update label
+	$"../UI/ZoneNameProgressLabel"._on_scene_changed(get_tree().current_scene.scene_file_path)
 
 func get_completed_quest_action_index(quest_name: String) -> int:
 	return completed_quest_action_indexes[completed_quests.find(quest_name)]

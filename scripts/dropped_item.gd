@@ -22,7 +22,8 @@ func _ready():
 		
 	drop_id = "%s-%s-%s" % [slot_data.item_data.name, position.x, position.y]
 
-	Global.register_dropped_item(self)		
+	if not Engine.is_editor_hint():
+		Global.register_dropped_item(self)		
 
 func _on_area_2d_body_entered(body):
 	if can_pick_up:

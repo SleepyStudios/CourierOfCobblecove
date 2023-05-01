@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://esdpm2jrxnpr"]
+[gd_scene load_steps=10 format=3 uid="uid://esdpm2jrxnpr"]
 
 [ext_resource type="Script" path="res://scripts/global.gd" id="1_kkwxs"]
 [ext_resource type="PackedScene" path="res://scenes/scene_transition.tscn" id="2_7hg2b"]
 [ext_resource type="Script" path="res://scripts/map_manager.gd" id="3_u14cu"]
 [ext_resource type="Script" path="res://scripts/quest_manager.gd" id="4_m3mpk"]
 [ext_resource type="Texture2D" uid="uid://mkw4t8m47ifn" path="res://sprites/cursor.png" id="5_gfcq0"]
+[ext_resource type="PackedScene" uid="uid://cijsbj5edbq1f" path="res://scenes/ui.tscn" id="5_lrij6"]
 [ext_resource type="Texture2D" uid="uid://bpm0nhaybabnx" path="res://sprites/cursor_grab.png" id="6_kxn8n"]
 [ext_resource type="Script" path="res://scripts/cursor.gd" id="7_mjail"]
 
@@ -32,6 +33,8 @@ script = ExtResource("3_u14cu")
 
 [node name="QuestManager" type="Node" parent="."]
 script = ExtResource("4_m3mpk")
+
+[node name="UI" parent="." instance=ExtResource("5_lrij6")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 2

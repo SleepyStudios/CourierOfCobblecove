@@ -6,6 +6,6 @@
 [resource]
 script = ExtResource("1_6c7sl")
 name = "Box"
-description = "This is a special delivery"
+description = "To be delivered directly to Lord Reginald Bouy"
 stackable = false
 texture = ExtResource("2_cyovp")
