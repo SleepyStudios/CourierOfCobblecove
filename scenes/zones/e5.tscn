@@ -1,21 +1,27 @@
-[gd_scene load_steps=7 format=3 uid="uid://cs3j3pq14ujhi"]
+[gd_scene load_steps=9 format=3 uid="uid://cs3j3pq14ujhi"]
 
 [ext_resource type="Texture2D" uid="uid://x3knjfiqsr3w" path="res://sprites/zones/e5.png" id="1_js5wp"]
 [ext_resource type="PackedScene" uid="uid://dm5txbfgjhjlf" path="res://scenes/player.tscn" id="2_f3k3n"]
-[ext_resource type="Texture2D" uid="uid://brqbkqwwvcaph" path="res://sprites/zones/b4_overlay.png" id="3_1ql7g"]
-[ext_resource type="PackedScene" uid="uid://do3axeenpwefl" path="res://scenes/teleporter.tscn" id="4_h03s8"]
+[ext_resource type="Texture2D" uid="uid://bwxctsghhxi8u" path="res://sprites/zones/e5_overlay.png" id="3_mbw2s"]
+[ext_resource type="PackedScene" path="res://scenes/teleporter.tscn" id="4_h03s8"]
 [ext_resource type="PackedScene" uid="uid://cqyhxiaawm6gs" path="res://scenes/npcs/snake.tscn" id="5_ajbo4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qc31m"]
-size = Vector2(1920, 166.375)
+size = Vector2(1292.74, 371.479)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iyk4u"]
+size = Vector2(1107.66, 471.676)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6jsp0"]
+size = Vector2(400, 237)
 
 [node name="E5" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -400.0
-offset_top = -500.0
-offset_right = 1600.0
-offset_bottom = 1500.0
+offset_left = -342.0
+offset_top = -483.0
+offset_right = 1658.0
+offset_bottom = 1517.0
 mouse_filter = 1
 color = Color(0, 0, 0, 1)
 
@@ -24,13 +30,12 @@ position = Vector2(600, 450)
 texture = ExtResource("1_js5wp")
 
 [node name="Player" parent="." instance=ExtResource("2_f3k3n")]
-position = Vector2(100, 460)
+position = Vector2(139, 450)
 
 [node name="Overlay" type="Sprite2D" parent="."]
-visible = false
 z_index = 999
 position = Vector2(600, 450)
-texture = ExtResource("3_1ql7g")
+texture = ExtResource("3_mbw2s")
 
 [node name="OverlayRect" type="ColorRect" parent="."]
 z_index = 999
@@ -41,13 +46,13 @@ offset_bottom = 1000.0
 color = Color(0, 0, 0, 1)
 
 [node name="Teleporter d5" parent="." instance=ExtResource("4_h03s8")]
-position = Vector2(-30, 500.625)
+position = Vector2(3, 501)
 rotation = 1.5708
 zone = "d5"
 anchor = "Right"
 
 [node name="Teleporter e4" parent="." instance=ExtResource("4_h03s8")]
-position = Vector2(600, -40)
+position = Vector2(600, 36)
 zone = "e4"
 anchor = "Bottom"
 
@@ -55,13 +60,30 @@ anchor = "Bottom"
 position = Vector2(600, 980)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomCollision"]
+position = Vector2(-62, -87)
+rotation = -0.359538
 shape = SubResource("RectangleShape2D_qc31m")
 
 [node name="LeftAnchor" type="Node2D" parent="."]
-position = Vector2(104, 540)
+position = Vector2(119, 500)
 
 [node name="TopAnchor" type="Node2D" parent="."]
-position = Vector2(591, 132)
+position = Vector2(592, 147)
 
 [node name="Snake" parent="." instance=ExtResource("5_ajbo4")]
 position = Vector2(753, 555)
+
+[node name="RightCollision" type="StaticBody2D" parent="."]
+position = Vector2(600, 980)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightCollision"]
+position = Vector2(531, -410)
+rotation = -1.19904
+shape = SubResource("RectangleShape2D_iyk4u")
+
+[node name="TopLeftCollision" type="StaticBody2D" parent="."]
+position = Vector2(600, 980)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopLeftCollision"]
+position = Vector2(-498, -935.5)
+shape = SubResource("RectangleShape2D_6jsp0")
