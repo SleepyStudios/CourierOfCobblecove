@@ -20,6 +20,11 @@ func _unhandled_input(event):
 		if position.distance_to(possible) >= MIN_MOVE_RANGE:
 			destination = possible
 			has_destination = true
+			
+			if in_dialogue_with_npc:
+				in_dialogue_with_npc.hide_dialogue()
+				in_dialogue_with_npc = null
+
 
 			on_destination_set.emit(destination)
 
@@ -43,11 +48,7 @@ func _physics_process(delta):
 	var collision_count = get_slide_collision_count()
 	if collision_count > 0 or position.distance_to(destination) <= MIN_MOVE_RANGE:
 		has_destination = false
-	else:
-		if in_dialogue_with_npc:
-			in_dialogue_with_npc.hide_dialogue()
-			in_dialogue_with_npc = null
-
+	
 	if (has_destination):
 		$AnimatedSprite2D.play("run")
 	else:

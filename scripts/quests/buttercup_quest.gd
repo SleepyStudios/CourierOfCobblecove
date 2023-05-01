@@ -2,7 +2,7 @@ extends QuestData
 class_name ButtercupQuest
 
 func _get_text() -> String:
-	if get_data("lead_given", true):
+	if get_data("lead_given"):
 		return "Moo?"
 		
 	return "Moooooo"

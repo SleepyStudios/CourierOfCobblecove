@@ -28,7 +28,7 @@ func set_data_for_quest(quest_name: String, key: String, val: Variant):
 	safety_check_data(quest_name)
 	global_quest_data[quest_name][key] = val
 
-func get_data_for_quest(quest_name: String, key: String, val: Variant) -> Variant:
+func get_data_for_quest(quest_name: String, key: String) -> Variant:
 	safety_check_data(quest_name)	
 	return (global_quest_data[quest_name] as Dictionary).get(key)
 
