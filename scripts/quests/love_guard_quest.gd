@@ -3,7 +3,7 @@ class_name LoveGuardQuest
 
 func _get_text() -> String:
 	if get_data("just_started"):
-		return "Here, deliver this to my love. She mentioned that she would visit the beach today - she's always down there"
+		return "Here, take this to the beach. You'll know who this is for when you see her."
 	
 	if get_data("just_completed"):
 		return "You have something for me? Thank you messenger. I'll pass on your delivery."

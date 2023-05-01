@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://bcf7cioq5t8xt"]
 
 [ext_resource type="Script" path="res://scripts/item_data.gd" id="1_w0mdr"]
-[ext_resource type="Texture2D" uid="uid://bjpegdpjxpmpk" path="res://sprites/items/mermaids_letter.png" id="2_2vjuc"]
+[ext_resource type="Texture2D" uid="uid://bj5sndyuvlj3a" path="res://sprites/items/shell_necklace.png" id="2_qxaal"]
 
 [resource]
 script = ExtResource("1_w0mdr")
-name = "Mermaid's Letter"
-description = "A note for her admirer at the castle gates"
+name = "Shell Necklace"
+description = "A token of the mermaid's love (but not for you)"
 stackable = false
-texture = ExtResource("2_2vjuc")
+texture = ExtResource("2_qxaal")

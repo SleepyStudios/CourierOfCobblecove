@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dumk0rwvbho68"
-path="res://.godot/imported/shiny_shell.png-8f000404786585a58efb7c926b015875.ctex"
+uid="uid://bj5sndyuvlj3a"
+path="res://.godot/imported/shell_necklace.png-f6856153f3844aac2fb8dc8b20a9c391.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/items/shiny_shell.png"
-dest_files=["res://.godot/imported/shiny_shell.png-8f000404786585a58efb7c926b015875.ctex"]
+source_file="res://sprites/items/shell_necklace.png"
+dest_files=["res://.godot/imported/shell_necklace.png-f6856153f3844aac2fb8dc8b20a9c391.ctex"]
 
 [params]
 
