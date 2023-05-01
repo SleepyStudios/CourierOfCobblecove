@@ -51,8 +51,8 @@ rotation = 1.5708
 zone = "c2"
 anchor = "Left"
 
-[node name="TopAnchor" type="Node2D" parent="."]
-position = Vector2(606, 173)
+[node name="BottomAnchor" type="Node2D" parent="."]
+position = Vector2(599, 707)
 
 [node name="RightAnchor" type="Node2D" parent="."]
 position = Vector2(1101, 479)
