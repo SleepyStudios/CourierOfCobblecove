@@ -31,6 +31,10 @@ func _physics_process(delta):
 	if grabbed_slot.visible:
 		grabbed_slot.global_position = get_global_mouse_position() - Vector2(24, 32)
 
+func play_sfx():
+	$DropPlayer.pitch_scale = RandomNumberGenerator.new().randf_range(0.9, 1.1)
+	$DropPlayer.play()	
+
 func update_grabbed_slot(index: int = -1):
 	if grabbed_slot_data:
 		grabbed_slot.show()
@@ -39,3 +43,5 @@ func update_grabbed_slot(index: int = -1):
 	else:
 		grabbed_slot.hide()
 		Global.cursor.stop_dragging()
+
+	play_sfx()

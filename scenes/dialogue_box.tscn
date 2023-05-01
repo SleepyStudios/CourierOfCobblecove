@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://ducnshsxgo8ag"]
+[gd_scene load_steps=6 format=3 uid="uid://ducnshsxgo8ag"]
 
 [ext_resource type="Theme" uid="uid://ehq1gd12dyb" path="res://resources/theme.tres" id="1_f5gsv"]
 [ext_resource type="Script" path="res://scripts/dialogue_box.gd" id="1_jff0e"]
+[ext_resource type="AudioStream" uid="uid://ctd5tmniqevc8" path="res://sounds/dialogue_open.wav" id="3_teq23"]
+[ext_resource type="AudioStream" uid="uid://dtxhnyphcbb2" path="res://sounds/dialogue_option.wav" id="4_nv5y3"]
+[ext_resource type="AudioStream" uid="uid://bukbc3kxb37al" path="res://sounds/quest_complete.wav" id="4_ygps0"]
 
 [node name="DialogueBox" type="ColorRect"]
 anchors_preset = 8
@@ -45,3 +48,14 @@ layout_mode = 2
 size_flags_vertical = 8
 theme_override_constants/separation = 8
 alignment = 2
+
+[node name="DialogueOpenPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_teq23")
+volume_db = -10.0
+
+[node name="QuestCompletePlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ygps0")
+volume_db = -15.0
+
+[node name="DialogueOptionPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_nv5y3")
