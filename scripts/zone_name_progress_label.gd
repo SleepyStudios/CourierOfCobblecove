@@ -5,7 +5,7 @@ func _ready():
 
 func _on_scene_changed(new_scene_path: String):
 	var regex = RegEx.new()
-	regex.compile("(?<=zones\\/)[a-z]\\d(?=\\.tscn)")
+	regex.compile("(?<=zones\\/)[a-z]\\d")
 	var current_zone = regex.search(new_scene_path).get_string()
 	
 	var zone_name = "Name not set :("
@@ -22,6 +22,7 @@ func _on_scene_changed(new_scene_path: String):
 		"c5": zone_name = "THE MOUNTAIN"
 		"c6": zone_name = "THE COVE"
 		"d1": zone_name = "THE CROSSING"
+		"d1_restored": zone_name = "THE CROSSING"
 		"d3": zone_name = "NORTH CROSSROADS"
 		"d4": zone_name = "SOUTH CROSSROADS"
 		"d5": zone_name = "THE BOUNDARY"

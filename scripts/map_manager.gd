@@ -27,7 +27,7 @@ func _on_scene_changed(new_scene_path: String):
 	var old_zone = current_zone
 	
 	var regex = RegEx.new()
-	regex.compile("(?<=zones\\/)[a-z]\\d(?=\\.tscn)")
+	regex.compile("(?<=zones\\/)[a-z]\\d")
 	current_zone = regex.search(new_scene_path).get_string()
 	
 	if not picked_up.has(current_zone):
