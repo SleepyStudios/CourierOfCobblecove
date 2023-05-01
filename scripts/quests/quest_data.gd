@@ -20,6 +20,8 @@ func complete_quest():
 func check_is_completed():
 	if is_quest_completed():
 		_handle_quest_completed(true)
+	else:
+		_handle_quest_not_completed()
 
 func set_data(key: String, val: Variant):
 	Global.quest_manager.set_data_for_quest(_get_quest_name(), key, val)
@@ -45,9 +47,15 @@ func _handle_quest_started():
 func _handle_quest_completed(from_check: bool):
 	pass
 	
-func _on_option_chosen(action_id: String):
+func _handle_quest_not_completed():
 	pass
 	
+func _on_option_chosen(action_id: String):
+	pass
+
+func _on_dialogue_opened():
+	pass
+
 func _on_dialogue_closed():
 	pass
 

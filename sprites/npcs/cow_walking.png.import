@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ci0ds70nu2vu1"
-path="res://.godot/imported/buttercup_with_lead.png-d5edb2f69cf66c266ccedfa2666a9c31.ctex"
+uid="uid://btp3v1e8dc3th"
+path="res://.godot/imported/cow_walking.png-160c8423bda1e7a1d7089223633e5e47.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/npcs/buttercup_with_lead.png"
-dest_files=["res://.godot/imported/buttercup_with_lead.png-d5edb2f69cf66c266ccedfa2666a9c31.ctex"]
+source_file="res://sprites/npcs/cow_walking.png"
+dest_files=["res://.godot/imported/cow_walking.png-160c8423bda1e7a1d7089223633e5e47.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5hpqbj65qpno"
-path="res://.godot/imported/cow_lead.png-605fd63b074d8619efa2575eb04d0bcc.ctex"
+uid="uid://7pkxet658chm"
+path="res://.godot/imported/carrot.png-9477cffe2d7875b46bb4e58a87462885.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/items/cow_lead.png"
-dest_files=["res://.godot/imported/cow_lead.png-605fd63b074d8619efa2575eb04d0bcc.ctex"]
+source_file="res://sprites/items/carrot.png"
+dest_files=["res://.godot/imported/carrot.png-9477cffe2d7875b46bb4e58a87462885.ctex"]
 
 [params]
 

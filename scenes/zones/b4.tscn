@@ -1,10 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://qwddombq55df"]
+[gd_scene load_steps=10 format=3 uid="uid://qwddombq55df"]
 
 [ext_resource type="Texture2D" uid="uid://br1wgqkaoq8kn" path="res://sprites/zones/b4.png" id="1_iscab"]
 [ext_resource type="PackedScene" uid="uid://dm5txbfgjhjlf" path="res://scenes/player.tscn" id="2_xeqlf"]
 [ext_resource type="Texture2D" uid="uid://brqbkqwwvcaph" path="res://sprites/zones/b4_overlay.png" id="3_8macn"]
 [ext_resource type="PackedScene" uid="uid://do3axeenpwefl" path="res://scenes/teleporter.tscn" id="4_q5mfn"]
-[ext_resource type="PackedScene" uid="uid://ccpyxcgucmmup" path="res://scenes/npcs/buttercup.tscn" id="6_3fuq0"]
+[ext_resource type="PackedScene" uid="uid://2fi7i8ry3fty" path="res://scenes/npcs/buttercup.tscn" id="6_3fuq0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qc31m"]
 size = Vector2(1920, 166.375)
@@ -15,13 +15,19 @@ size = Vector2(68, 116)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w6nc2"]
 size = Vector2(468, 986)
 
+[sub_resource type="Curve2D" id="Curve2D_jmbli"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 515, 538, 0, 0, 0, 0, 740, 629, 0, 0, 0, 0, 848, 604, 0, 0, 0, 0, 1046, 600, 0, 0, 0, 0, 1200, 597, 0, 0, 0, 0, 1518, 539)
+}
+point_count = 6
+
 [node name="B4" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -400.0
-offset_top = -500.0
-offset_right = 1600.0
-offset_bottom = 1500.0
+offset_left = -401.0
+offset_top = -484.0
+offset_right = 1599.0
+offset_bottom = 1516.0
 mouse_filter = 1
 color = Color(0, 0, 0, 1)
 
@@ -74,11 +80,21 @@ shape = SubResource("RectangleShape2D_nfskc")
 [node name="RightAnchor" type="Node2D" parent="."]
 position = Vector2(1104, 532)
 
-[node name="Buttercup" parent="." instance=ExtResource("6_3fuq0")]
-position = Vector2(515, 539)
-
 [node name="LeftCollision" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftCollision"]
 position = Vector2(162, 639)
 shape = SubResource("RectangleShape2D_w6nc2")
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_jmbli")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(515, 538)
+rotation = 0.806316
+rotates = false
+loop = false
+
+[node name="Buttercup" parent="Path2D/PathFollow2D" instance=ExtResource("6_3fuq0")]
+position = Vector2(0.72168, 0.692169)
+rotation = -0.806316

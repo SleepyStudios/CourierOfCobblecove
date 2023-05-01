@@ -10,6 +10,10 @@ const DialogueAction = preload("res://scenes/dialogue_action.tscn")
 func _ready():
 	quest_data.check_is_completed()
 
+func _gui_input(event):
+	if event.is_action_pressed("click") and visible:
+		Global.player.hide_dialogue()
+
 func handle_ui():
 	dialogue_text.text = quest_data._get_text()
 	toggle_options()
@@ -20,6 +24,8 @@ func show_dialogue():
 	show()
 	$DialogueOpenPlayer.pitch_scale = RandomNumberGenerator.new().randf_range(0.9, 1.1)		
 	$DialogueOpenPlayer.play()
+	
+	quest_data._on_dialogue_opened()
 	handle_ui()
 	
 func hide_dialogue():

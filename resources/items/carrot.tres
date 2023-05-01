@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://bscx5tweu7p20"]
+
+[ext_resource type="Script" path="res://scripts/item_data.gd" id="1_c4wwe"]
+[ext_resource type="Texture2D" uid="uid://7pkxet658chm" path="res://sprites/items/carrot.png" id="2_sj2si"]
+
+[resource]
+script = ExtResource("1_c4wwe")
+name = "Carrot"
+description = "A tasty treat for a lost cow"
+stackable = false
+texture = ExtResource("2_sj2si")

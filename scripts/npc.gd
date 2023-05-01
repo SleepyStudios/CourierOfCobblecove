@@ -7,9 +7,11 @@ const DialogueBox = preload("res://scenes/dialogue_box.tscn")
 @onready var animation = $Animation
 
 var dialogue_box: DialogueBox
+var speed: float
+var path_follow: PathFollow2D
 
 func _ready():
-	$Animation.play("idle")
+	animation.play("idle")
 	if quest_data:
 		dialogue_box = DialogueBox.instantiate()
 		dialogue_box.quest_data = quest_data
@@ -24,3 +26,12 @@ func show_dialogue():
 func hide_dialogue():
 	if quest_data:	
 		dialogue_box.hide_dialogue()
+		
+func follow_path(speed: float):
+	self.speed = speed
+	path_follow = get_parent()
+	animation.play("walking")
+
+func _physics_process(delta):
+	if path_follow:
+		path_follow.set_progress(path_follow.get_progress() + speed * delta)
