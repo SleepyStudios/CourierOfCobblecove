@@ -15,6 +15,8 @@ func handle_ui():
 	toggle_options()
 
 func show_dialogue():
+	if visible: return
+	
 	show()
 	$DialogueOpenPlayer.pitch_scale = RandomNumberGenerator.new().randf_range(0.9, 1.1)		
 	$DialogueOpenPlayer.play()

@@ -25,7 +25,6 @@ func _unhandled_input(event):
 				in_dialogue_with_npc.hide_dialogue()
 				in_dialogue_with_npc = null
 
-
 			on_destination_set.emit(destination)
 
 func get_input():
@@ -43,10 +42,7 @@ func get_input():
 func _physics_process(delta):
 	get_input()
 	
-	move_and_slide()
-
-	var collision_count = get_slide_collision_count()
-	if collision_count > 0 or position.distance_to(destination) <= MIN_MOVE_RANGE:
+	if move_and_slide() or position.distance_to(destination) <= MIN_MOVE_RANGE:
 		has_destination = false
 	
 	if (has_destination):
@@ -54,8 +50,8 @@ func _physics_process(delta):
 	else:
 		$AnimatedSprite2D.play("idle")
 
-	if collision_count > 0:
-		for i in collision_count:
+	if get_slide_collision_count() > 0:
+		for i in get_slide_collision_count():
 			var collider = get_slide_collision(i).get_collider()
 			if collider.get_groups().has("NPCs") and not in_dialogue_with_npc:
 				in_dialogue_with_npc = collider

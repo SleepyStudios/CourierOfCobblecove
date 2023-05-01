@@ -81,3 +81,4 @@ position = Vector2(70, 230)
 [node name="DroppedItem" parent="." instance=ExtResource("5_dt1ra")]
 position = Vector2(389, 464)
 slot_data = SubResource("Resource_hfdtf")
+drop_id = "Dull Shell-389-464"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://dh66ffb4uw0yu"]
+
+[ext_resource type="Script" path="res://scripts/item_data.gd" id="1_x3h84"]
+[ext_resource type="Texture2D" uid="uid://dumk0rwvbho68" path="res://sprites/items/shiny_shell.png" id="2_cq5ih"]
+
+[resource]
+script = ExtResource("1_x3h84")
+name = "Shiny Shell"
+description = "It's making strange noises..."
+stackable = false
+texture = ExtResource("2_cq5ih")

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://bcf7cioq5t8xt"]
+
+[ext_resource type="Script" path="res://scripts/item_data.gd" id="1_w0mdr"]
+[ext_resource type="Texture2D" uid="uid://bjpegdpjxpmpk" path="res://sprites/items/mermaids_letter.png" id="2_2vjuc"]
+
+[resource]
+script = ExtResource("1_w0mdr")
+name = "Mermaid's Letter"
+description = "A note for her admirer at the castle gates"
+stackable = false
+texture = ExtResource("2_2vjuc")

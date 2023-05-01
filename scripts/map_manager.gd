@@ -13,7 +13,6 @@ func _on_dropped_item_registered(dropped_item: DroppedItem):
 	if picked_up[current_zone].has(dropped_item.drop_id):
 		dropped_item.queue_free()
 	elif not dropped_item.comes_with_scene:
-		
 		dropped[current_zone].push_back(dropped_item)
 
 func _on_dropped_item_unregistered(dropped_item: DroppedItem):

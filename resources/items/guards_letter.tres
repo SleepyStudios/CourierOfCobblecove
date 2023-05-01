@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://33rbk7xo818b"]
+
+[ext_resource type="Script" path="res://scripts/item_data.gd" id="1_pwbgj"]
+[ext_resource type="Texture2D" uid="uid://s75ugtg0mt67" path="res://sprites/items/love_letter.png" id="2_dr63x"]
+
+[resource]
+script = ExtResource("1_pwbgj")
+name = "Guard's Letter"
+description = "A letter for someone fond of the sea"
+stackable = false
+texture = ExtResource("2_dr63x")

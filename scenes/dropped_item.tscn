@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://i1l0jr3mfww4"]
+[gd_scene load_steps=4 format=3 uid="uid://i1l0jr3mfww4"]
 
 [ext_resource type="Script" path="res://scripts/dropped_item.gd" id="1_5iowc"]
+[ext_resource type="AudioStream" uid="uid://o0q8surdpppo" path="res://sounds/pickup.wav" id="2_ebnc2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bjtrj"]
 size = Vector2(64, 64)
@@ -26,6 +27,7 @@ shape = SubResource("RectangleShape2D_bjtrj")
 texture_filter = 1
 
 [node name="PickupPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_ebnc2")
 volume_db = -15.0
 
 [connection signal="timeout" from="ReadyTimer" to="." method="_on_ready_timer_timeout"]
