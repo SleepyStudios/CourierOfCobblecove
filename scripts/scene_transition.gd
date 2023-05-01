@@ -13,4 +13,6 @@ func change_scene(target: String, anim: = "black"):
 	get_tree().change_scene_to_file(target)
 	$AnimationPlayer.play_backwards(anim)
 	
-	on_scene_changed.emit(target)
+	if not target.contains("ending"):
+		on_scene_changed.emit(target)
+		

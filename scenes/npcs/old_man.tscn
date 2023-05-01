@@ -1,18 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://cwc8cxbrj717a"]
+[gd_scene load_steps=9 format=3 uid="uid://cwc8cxbrj717a"]
 
 [ext_resource type="Script" path="res://scripts/npc.gd" id="1_shgcf"]
-[ext_resource type="Resource" uid="uid://boujrhtj1pgae" path="res://resources/items/box.tres" id="2_kslsm"]
 [ext_resource type="Texture2D" uid="uid://bs1kvnurwwgc7" path="res://sprites/npcs/old_man_idle.png" id="2_vn6y6"]
-[ext_resource type="Script" path="res://scripts/dialogue_data.gd" id="2_wciva"]
+[ext_resource type="Script" path="res://scripts/quests/old_man_quest.gd" id="2_yulhl"]
 
-[sub_resource type="Resource" id="Resource_khmam"]
-script = ExtResource("2_wciva")
-default_text = "Hello!"
-post_success_text = "Post success"
-action_options = Array[String](["Yeah I have it right here!"])
-action_requirements = Array[Resource("res://scripts/item_data.gd")]([ExtResource("2_kslsm")])
-action_success_texts = Array[String](["Oh look my blue dust!"])
-action_callbacks = Array[String]([""])
+[sub_resource type="Resource" id="Resource_032uv"]
+script = ExtResource("2_yulhl")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hp1tn"]
 size = Vector2(133, 167)
@@ -41,7 +34,7 @@ animations = [{
 
 [node name="OldMan" type="StaticBody2D" groups=["NPCs"]]
 script = ExtResource("1_shgcf")
-dialogue_data = SubResource("Resource_khmam")
+quest_data = SubResource("Resource_032uv")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2(-13.5, 38.5)

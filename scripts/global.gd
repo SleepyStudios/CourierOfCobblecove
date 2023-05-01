@@ -8,6 +8,7 @@ var inventory_data = preload("res://resources/inventory.tres")
 @onready var cursor = $CanvasLayer/Cursor
 @onready var scene_transition = $SceneTransition
 @onready var map_manager = $MapManager
+@onready var ui = $UI
 
 var post_teleport_data: Dictionary
 var player: Player
