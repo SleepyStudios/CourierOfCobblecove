@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cijsbj5edbq1f"]
+[gd_scene load_steps=7 format=3 uid="uid://cijsbj5edbq1f"]
 
 [ext_resource type="Script" path="res://scripts/inventory_ui.gd" id="1_4lhr3"]
 [ext_resource type="Theme" uid="uid://ehq1gd12dyb" path="res://resources/theme.tres" id="1_26ytd"]
 [ext_resource type="Script" path="res://scripts/zone_name_progress_label.gd" id="2_p52yk"]
 [ext_resource type="PackedScene" uid="uid://chn0p0xyugfe3" path="res://scenes/inventory_slot.tscn" id="2_rgcj3"]
 [ext_resource type="PackedScene" uid="uid://dfrgxp4rwlufe" path="res://scenes/inventory.tscn" id="3_arbb8"]
+[ext_resource type="AudioStream" uid="uid://dtxhnyphcbb2" path="res://sounds/dialogue_option.wav" id="6_s1r04"]
 
 [node name="UI" type="CanvasLayer"]
 
@@ -63,3 +64,7 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="DropPlayer" type="AudioStreamPlayer2D" parent="InventoryInterface"]
+stream = ExtResource("6_s1r04")
+volume_db = -15.0

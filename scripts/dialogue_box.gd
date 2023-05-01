@@ -25,6 +25,9 @@ func is_successful():
 	return Global.quest_manager.is_quest_completed(npc.name)
 
 func show_dialogue():
+	$DialogueOpenPlayer.pitch_scale = RandomNumberGenerator.new().randf_range(0.9, 1.1)		
+	$DialogueOpenPlayer.play()
+
 	if is_successful():
 		$MarginContainer/Text.text = dialogue_data.post_success_text
 	else:
@@ -45,9 +48,14 @@ func _on_button_pressed(index: int):
 	Global.quest_manager.complete_quest(npc.name, index)
 	toggle_options()
 	handle_quest_completed(index)
+	
+	$DialogueOptionPlayer.play()
 
 func handle_quest_completed(index: int, from_ready = false):
 	quest_already_completed = from_ready
+	
+	if not from_ready:
+		$QuestCompletePlayer.play()
 	
 	if dialogue_data.action_callbacks[index].is_empty():
 		return

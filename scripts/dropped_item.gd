@@ -28,8 +28,10 @@ func _ready():
 func _on_area_2d_body_entered(body):
 	if can_pick_up:
 		if Global.inventory_data.pickup_item(slot_data):
-			Global.unregister_dropped_item(self)			
-			queue_free()
+			$PickupPlayer.pitch_scale = RandomNumberGenerator.new().randf_range(0.9, 1.1)
+			$PickupPlayer.play()
+			can_pick_up = false
+			hide()
 
 func _on_ready_timer_timeout():
 	can_pick_up = true
@@ -37,3 +39,8 @@ func _on_ready_timer_timeout():
 func _process(delta):
 	if not sprite_2d.texture and slot_data and slot_data.item_data and Engine.is_editor_hint():
 		sprite_2d.texture = slot_data.item_data.texture		
+
+
+func _on_pickup_player_finished():
+	Global.unregister_dropped_item(self)			
+	queue_free()
