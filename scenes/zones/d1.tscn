@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://efpgmpv0vxnh"]
+[gd_scene load_steps=7 format=3 uid="uid://efpgmpv0vxnh"]
 
 [ext_resource type="Texture2D" uid="uid://cdxdjl0s7ydsl" path="res://sprites/zones/d1.png" id="1_txjhc"]
 [ext_resource type="PackedScene" uid="uid://dm5txbfgjhjlf" path="res://scenes/player.tscn" id="2_j4oa0"]
 [ext_resource type="Texture2D" uid="uid://brqbkqwwvcaph" path="res://sprites/zones/b4_overlay.png" id="3_yrxx7"]
 [ext_resource type="PackedScene" uid="uid://do3axeenpwefl" path="res://scenes/teleporter.tscn" id="4_lrdja"]
+[ext_resource type="PackedScene" uid="uid://dx8ph8342dsa7" path="res://scenes/npcs/water_demon.tscn" id="5_on60r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nsc0x"]
 size = Vector2(1920, 166.375)
@@ -69,3 +70,6 @@ position = Vector2(600, 950)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomCollision"]
 shape = SubResource("RectangleShape2D_nsc0x")
+
+[node name="WaterDemon" parent="." instance=ExtResource("5_on60r")]
+position = Vector2(641, 195)

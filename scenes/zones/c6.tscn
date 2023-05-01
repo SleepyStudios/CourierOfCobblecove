@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://dsa7m0qpw1ias"]
+[gd_scene load_steps=9 format=3 uid="uid://dsa7m0qpw1ias"]
 
 [ext_resource type="Texture2D" uid="uid://cywvxl3vu6o88" path="res://sprites/zones/c6.png" id="1_3g2wl"]
 [ext_resource type="PackedScene" uid="uid://dm5txbfgjhjlf" path="res://scenes/player.tscn" id="2_s3vwy"]
 [ext_resource type="Texture2D" uid="uid://nwiea7ndaabl" path="res://sprites/zones/c4_overlay.png" id="3_l78hs"]
+[ext_resource type="Texture2D" uid="uid://bae3fg04dbokv" path="res://sprites/zones/c6_waves.png" id="4_5kq1i"]
 [ext_resource type="PackedScene" uid="uid://do3axeenpwefl" path="res://scenes/teleporter.tscn" id="4_g40p2"]
 [ext_resource type="PackedScene" uid="uid://cgx7yv2bgrq8s" path="res://scenes/npcs/mermaid.tscn" id="5_vpyj7"]
+[ext_resource type="Script" path="res://scripts/waves.gd" id="5_xols5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qc31m"]
 size = Vector2(1920, 166.375)
@@ -31,6 +33,12 @@ visible = false
 z_index = 999
 position = Vector2(600, 450)
 texture = ExtResource("3_l78hs")
+
+[node name="Waves" type="Sprite2D" parent="."]
+z_index = 999
+position = Vector2(600, 470)
+texture = ExtResource("4_5kq1i")
+script = ExtResource("5_xols5")
 
 [node name="OverlayRect" type="ColorRect" parent="."]
 z_index = 999
