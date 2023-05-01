@@ -35,4 +35,4 @@ func _on_scene_changed(new_scene_path: String):
 	
 	var deliveries = len(Global.quest_manager.completed_quests)
 	var word = "DELIVERY" if deliveries == 1 else "DELIVERIES"
-	text = "%s\n%s %s COMPLETED" % [zone_name, deliveries, word]
+	text = "%s\n%s %s MADE" % [zone_name, deliveries, word]

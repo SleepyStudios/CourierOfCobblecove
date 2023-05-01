@@ -6,7 +6,7 @@ func _get_text() -> String:
 		return "Here, take this to the cove. You'll know who this is for when you see her."
 	
 	if get_data("just_completed"):
-		return "You have something for me? Thank you messenger. I'll pass on your delivery."
+		return "Are these for me? Are they from who I think they're from? I knew it! Thank you messenger, I'll pass on your delivery."
 	
 	if is_quest_started():
 		return "Have you delivered my letter yet?"
@@ -25,9 +25,9 @@ func _get_options() -> Array[Dictionary]:
 
 	return [
 		{
-			"action_id": "give_letter",
-			"enabled": Global.inventory_data.has_item("Mermaid's Letter"),
-			"text": "[Hand over letter]"
+			"action_id": "give_flowers",
+			"enabled": Global.inventory_data.has_item("Flowers"),
+			"text": "[Hand over flowers]"
 		},
 		{
 			"action_id": "take_letter",
@@ -38,8 +38,8 @@ func _get_options() -> Array[Dictionary]:
 
 func _on_option_chosen(action_id: String):
 	match action_id:
-		"give_letter":
-			Global.inventory_data.remove_item("Mermaid's Letter")
+		"give_flowers":
+			Global.inventory_data.remove_item("Flowers")
 			Global.inventory_data.remove_item("Box")
 			complete_quest()
 		"take_letter":

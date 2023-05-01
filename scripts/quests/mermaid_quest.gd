@@ -3,7 +3,7 @@ class_name MermaidQuest
 
 func _get_text() -> String:
 	if get_data("handed_over_letter"):
-		return "Ah... interesting. I know who she is, but my heart is set on another. Please deliver this necklace to them."
+		return "Ah... interesting. I know who she is, but my heart is set on another. Please deliver this necklace to the baker."
 
 	return "You know, you shouldn't stare. Have you never seen a mermaid before?"
 
