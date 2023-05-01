@@ -1,12 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://b1t1em5yd0ll4"]
+[gd_scene load_steps=8 format=3 uid="uid://b1t1em5yd0ll4"]
 
 [ext_resource type="Texture2D" uid="uid://caqdahpemrrha" path="res://sprites/zones/c5.png" id="1_dwusb"]
 [ext_resource type="PackedScene" uid="uid://dm5txbfgjhjlf" path="res://scenes/player.tscn" id="2_58aj1"]
-[ext_resource type="Texture2D" uid="uid://nwiea7ndaabl" path="res://sprites/zones/c4_overlay.png" id="3_olmjr"]
-[ext_resource type="PackedScene" uid="uid://do3axeenpwefl" path="res://scenes/teleporter.tscn" id="4_mxt7x"]
+[ext_resource type="Texture2D" uid="uid://b6uwnbbknyjth" path="res://sprites/zones/c5_overlay.png" id="3_lagom"]
+[ext_resource type="PackedScene" path="res://scenes/teleporter.tscn" id="4_mxt7x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qc31m"]
-size = Vector2(1920, 166.375)
+size = Vector2(1920, 208.188)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i0grb"]
+size = Vector2(758, 1349)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mvt4u"]
+size = Vector2(72, 91)
 
 [node name="C5" type="Node2D"]
 
@@ -26,10 +32,9 @@ texture = ExtResource("1_dwusb")
 position = Vector2(1047, 563)
 
 [node name="Overlay" type="Sprite2D" parent="."]
-visible = false
 z_index = 999
 position = Vector2(600, 450)
-texture = ExtResource("3_olmjr")
+texture = ExtResource("3_lagom")
 
 [node name="OverlayRect" type="ColorRect" parent="."]
 z_index = 999
@@ -48,14 +53,32 @@ shape = SubResource("RectangleShape2D_qc31m")
 [node name="BottomCollision" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomCollision"]
-position = Vector2(600, 980)
+position = Vector2(600, 959.094)
 shape = SubResource("RectangleShape2D_qc31m")
 
 [node name="Teleporter d5" parent="." instance=ExtResource("4_mxt7x")]
-position = Vector2(1152, 500)
+position = Vector2(1181, 502)
 rotation = 1.5708
 zone = "d5"
 anchor = "Left"
 
 [node name="RightAnchor" type="Node2D" parent="."]
 position = Vector2(1048, 540)
+
+[node name="LeftCollision" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftCollision"]
+position = Vector2(-192, 513.5)
+shape = SubResource("RectangleShape2D_i0grb")
+
+[node name="RockCollision" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RockCollision"]
+position = Vector2(324, 285.5)
+shape = SubResource("RectangleShape2D_mvt4u")
+
+[node name="RockCollision2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RockCollision2"]
+position = Vector2(749, 689)
+shape = SubResource("RectangleShape2D_mvt4u")
