@@ -1,20 +1,32 @@
-[gd_scene load_steps=9 format=3 uid="uid://c34jgvcchl8p2"]
+[gd_scene load_steps=13 format=3 uid="uid://c34jgvcchl8p2"]
 
 [ext_resource type="Texture2D" uid="uid://ci867u5oy53a" path="res://sprites/zones/e3.png" id="1_hi1xr"]
 [ext_resource type="PackedScene" uid="uid://dm5txbfgjhjlf" path="res://scenes/player.tscn" id="2_45g22"]
-[ext_resource type="Texture2D" uid="uid://nwiea7ndaabl" path="res://sprites/zones/c4_overlay.png" id="3_iw5vl"]
-[ext_resource type="PackedScene" uid="uid://do3axeenpwefl" path="res://scenes/teleporter.tscn" id="4_kkndt"]
+[ext_resource type="Texture2D" uid="uid://rlc7w1ffry2s" path="res://sprites/zones/e3_overlay.png" id="3_obmsj"]
+[ext_resource type="PackedScene" path="res://scenes/teleporter.tscn" id="4_kkndt"]
 [ext_resource type="PackedScene" uid="uid://2fi7i8ry3fty" path="res://scenes/npcs/buttercup.tscn" id="6_p5kb2"]
 [ext_resource type="PackedScene" uid="uid://e6r2uucaxi5a" path="res://scenes/npcs/farmer.tscn" id="9_kad0o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qc31m"]
-size = Vector2(1920, 166.375)
+size = Vector2(1920, 212.188)
 
 [sub_resource type="Curve2D" id="Curve2D_4nf03"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 269, 672, 0, 0, 0, 0, 246, 475, 0, 0, 0, 0, 149, 407, 0, 0, 0, 0, -289, 416)
 }
 point_count = 4
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3slr8"]
+size = Vector2(164, 1061)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ab8o8"]
+size = Vector2(164, 1061)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uecu0"]
+size = Vector2(164, 1061)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8r6mi"]
+size = Vector2(362, 157)
 
 [node name="E3" type="Node2D"]
 
@@ -34,10 +46,9 @@ texture = ExtResource("1_hi1xr")
 position = Vector2(457, 308)
 
 [node name="Overlay" type="Sprite2D" parent="."]
-visible = false
 z_index = 999
 position = Vector2(600, 450)
-texture = ExtResource("3_iw5vl")
+texture = ExtResource("3_obmsj")
 
 [node name="OverlayRect" type="ColorRect" parent="."]
 z_index = 999
@@ -50,17 +61,17 @@ color = Color(0, 0, 0, 1)
 [node name="TopCollision" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopCollision"]
-position = Vector2(600, 0)
+position = Vector2(587, 50)
 shape = SubResource("RectangleShape2D_qc31m")
 
 [node name="BottomCollision" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomCollision"]
-position = Vector2(600, 980)
+position = Vector2(591, 1003)
 shape = SubResource("RectangleShape2D_qc31m")
 
 [node name="Teleporter d3" parent="." instance=ExtResource("4_kkndt")]
-position = Vector2(-32, 500)
+position = Vector2(2, 423)
 rotation = 1.5708
 zone = "d3"
 anchor = "Right"
@@ -69,7 +80,7 @@ anchor = "Right"
 position = Vector2(145, 408)
 
 [node name="Farmer" parent="." instance=ExtResource("9_kad0o")]
-position = Vector2(834, 346)
+position = Vector2(773, 592)
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_4nf03")
@@ -83,3 +94,27 @@ loop = false
 [node name="Buttercup" parent="Path2D/PathFollow2D" instance=ExtResource("6_p5kb2")]
 position = Vector2(4.50244, 4.55286)
 rotation = 1.68702
+
+[node name="RightCollision" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightCollision"]
+position = Vector2(1222, 428.5)
+shape = SubResource("RectangleShape2D_3slr8")
+
+[node name="BottomLeftCollision" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomLeftCollision"]
+position = Vector2(-25, 1062)
+shape = SubResource("RectangleShape2D_ab8o8")
+
+[node name="TopLeftCollision" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopLeftCollision"]
+position = Vector2(-23, -221)
+shape = SubResource("RectangleShape2D_uecu0")
+
+[node name="WaterTroughCollision" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterTroughCollision"]
+position = Vector2(623, 148.5)
+shape = SubResource("RectangleShape2D_8r6mi")
