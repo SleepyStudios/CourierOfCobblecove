@@ -31,3 +31,6 @@ func set_data_for_quest(quest_name: String, key: String, val: Variant):
 func get_data_for_quest(quest_name: String, key: String, val: Variant) -> Variant:
 	safety_check_data(quest_name)	
 	return (global_quest_data[quest_name] as Dictionary).get(key)
+
+func reset_data_for_quest(quest_name: String):
+	global_quest_data[quest_name] = {}

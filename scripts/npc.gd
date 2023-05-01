@@ -22,5 +22,5 @@ func show_dialogue():
 		dialogue_box.show_dialogue()
 
 func hide_dialogue():
-	dialogue_box.hide_dialogue()
-	
+	if quest_data:	
+		dialogue_box.hide_dialogue()

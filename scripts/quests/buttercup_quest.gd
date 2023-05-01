@@ -17,12 +17,6 @@ func _get_options() -> Array[Dictionary]:
 			"text": "[Give Buttercup her lead]"
 		}
 	]
-
-func _handle_quest_started():
-	pass
-
-func _handle_quest_completed(from_check: bool):
-	pass
 	
 func _on_option_chosen(action_id: String):
 	match action_id:

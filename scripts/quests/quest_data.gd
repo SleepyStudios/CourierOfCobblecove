@@ -27,6 +27,9 @@ func set_data(key: String, val: Variant):
 func get_data(key: String, val: Variant) -> Variant:
 	return Global.quest_manager.get_data_for_quest(_get_quest_name(), key, val)
 
+func reset_data():
+	Global.quest_manager.reset_data_for_quest(_get_quest_name())
+
 func _get_quest_name() -> String:
 	return npc.name
 
