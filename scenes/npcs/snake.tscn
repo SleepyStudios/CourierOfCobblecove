@@ -1,7 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cqyhxiaawm6gs"]
+[gd_scene load_steps=9 format=3 uid="uid://cqyhxiaawm6gs"]
 
 [ext_resource type="Script" path="res://scripts/npc.gd" id="1_fijrh"]
+[ext_resource type="Script" path="res://scripts/quests/snake_quest.gd" id="2_xkcag"]
 [ext_resource type="Texture2D" uid="uid://cpkdt6yvr5pq8" path="res://sprites/npcs/snake_idle.png" id="4_4fvll"]
+
+[sub_resource type="Resource" id="Resource_oqik8"]
+script = ExtResource("2_xkcag")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hp1tn"]
 size = Vector2(154.02, 102.085)
@@ -30,6 +34,7 @@ animations = [{
 
 [node name="Snake" type="StaticBody2D" groups=["NPCs"]]
 script = ExtResource("1_fijrh")
+quest_data = SubResource("Resource_oqik8")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2(-15.015, 0.0345607)

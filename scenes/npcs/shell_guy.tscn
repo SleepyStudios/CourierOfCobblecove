@@ -1,0 +1,85 @@
+[gd_scene load_steps=9 format=3 uid="uid://dxxx1s2qg5gs2"]
+
+[ext_resource type="Script" path="res://scripts/npc.gd" id="1_7buyc"]
+[ext_resource type="Texture2D" uid="uid://cpkdt6yvr5pq8" path="res://sprites/npcs/snake_idle.png" id="4_8f58b"]
+
+[sub_resource type="GDScript" id="GDScript_7bjut"]
+script/source = "extends QuestData
+class_name ShellGuyQuest
+
+func _get_text() -> String:
+	if get_data(\"just_completed\"):
+		return \"It's enchanted? I know everything there is to know about shells but I've never heard of an enchanted one before. Have this one, it makes strange noises sometimes\"
+	
+	if is_quest_completed():
+		return \"I just love shells, don't you?\"
+
+	return \"Hey! You! Have you seen any nice shells recently? I'll trade you for one of mine\"
+
+func _get_options() -> Array[Dictionary]:
+	return [
+		{
+			\"action_id\": \"trade_shell\",
+			\"enabled\": Global.inventory_data.has_item(\"Dull Shell\"),
+			\"text\": \"[Trade Dull Shell]\"
+		}
+	]
+
+func _on_option_chosen(action_id: String):
+	match action_id:
+		\"trade_shell\":
+			Global.inventory_data.remove_item(\"Dull Shell\")
+			Global.inventory_data.try_add_item(\"Shiny Shell\")
+			complete_quest()
+
+func _handle_quest_completed(from_check: bool):
+	set_data(\"just_completed\", !from_check)
+
+func _on_dialogue_closed():
+	reset_data()
+"
+
+[sub_resource type="Resource" id="Resource_0anth"]
+script = SubResource("GDScript_7bjut")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hp1tn"]
+size = Vector2(154.02, 102.085)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_10y23"]
+atlas = ExtResource("4_8f58b")
+region = Rect2(0, 0, 150, 126)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mbuwh"]
+atlas = ExtResource("4_8f58b")
+region = Rect2(150, 0, 150, 126)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_irtma"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_10y23")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mbuwh")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}]
+
+[node name="ShellGuy" type="StaticBody2D" groups=["NPCs"]]
+script = ExtResource("1_7buyc")
+quest_data = SubResource("Resource_0anth")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2(-15.015, 0.0345607)
+shape = SubResource("RectangleShape2D_hp1tn")
+
+[node name="Animation" type="AnimatedSprite2D" parent="."]
+z_index = 2
+sprite_frames = SubResource("SpriteFrames_irtma")
+animation = &"idle"
+frame_progress = 0.930962
+flip_h = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
