@@ -1,9 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bsa8f3vqkih0k"]
+[gd_scene load_steps=11 format=3 uid="uid://bsa8f3vqkih0k"]
 
 [ext_resource type="Script" path="res://scripts/npc.gd" id="1_yaoqw"]
 [ext_resource type="Resource" uid="uid://bemqdctbp7t36" path="res://resources/items/cow_bell.tres" id="2_khrtu"]
 [ext_resource type="Script" path="res://scripts/dialogue_data.gd" id="3_sggxv"]
-[ext_resource type="Texture2D" uid="uid://b00j08u3qyq3y" path="res://sprites/npcs/farmer.png" id="4_mg24u"]
+[ext_resource type="Texture2D" uid="uid://btvoym420xyij" path="res://sprites/farmer_idle.png" id="4_vysd6"]
 
 [sub_resource type="Resource" id="Resource_v1g27"]
 script = ExtResource("3_sggxv")
@@ -15,13 +15,31 @@ action_success_texts = Array[String](["She's alive! Take these coins, it's the l
 action_callbacks = Array[String](["add_item,Coins"])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hp1tn"]
-size = Vector2(231, 400)
+size = Vector2(384, 164)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2vwq7"]
+atlas = ExtResource("4_vysd6")
+region = Rect2(0, 0, 426, 258)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ldlmw"]
+atlas = ExtResource("4_vysd6")
+region = Rect2(426, 0, 426, 258)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_414vb"]
+atlas = ExtResource("4_vysd6")
+region = Rect2(852, 0, 426, 258)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y3ytj"]
 animations = [{
 "frames": [{
+"duration": 2.5,
+"texture": SubResource("AtlasTexture_2vwq7")
+}, {
 "duration": 1.0,
-"texture": ExtResource("4_mg24u")
+"texture": SubResource("AtlasTexture_ldlmw")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_414vb")
 }],
 "loop": true,
 "name": &"idle",
@@ -33,12 +51,13 @@ script = ExtResource("1_yaoqw")
 dialogue_data = SubResource("Resource_v1g27")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
-position = Vector2(17.5, -1)
+position = Vector2(-11, 42)
 shape = SubResource("RectangleShape2D_hp1tn")
 
 [node name="Animation" type="AnimatedSprite2D" parent="."]
 z_index = 2
 sprite_frames = SubResource("SpriteFrames_y3ytj")
 animation = &"idle"
+frame_progress = 0.902993
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
