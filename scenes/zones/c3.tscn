@@ -1,19 +1,29 @@
-[gd_scene load_steps=8 format=3 uid="uid://bhuuwjugjk5yh"]
+[gd_scene load_steps=11 format=3 uid="uid://dhx28oifkrvy6"]
 
 [ext_resource type="Texture2D" uid="uid://bw8fnawm4tity" path="res://sprites/zones/c3.png" id="1_7xogw"]
 [ext_resource type="PackedScene" uid="uid://dm5txbfgjhjlf" path="res://scenes/player.tscn" id="2_ymiyr"]
-[ext_resource type="Texture2D" uid="uid://brqbkqwwvcaph" path="res://sprites/zones/b4_overlay.png" id="3_ll1dv"]
-[ext_resource type="PackedScene" uid="uid://do3axeenpwefl" path="res://scenes/teleporter.tscn" id="4_cwmdi"]
-[ext_resource type="PackedScene" uid="uid://yvod41sq654j" path="res://scenes/npcs/bear.tscn" id="6_oys5k"]
+[ext_resource type="Texture2D" uid="uid://c1tal3mjrfwr8" path="res://sprites/zones/c3_overlay.png" id="3_w6qno"]
+[ext_resource type="PackedScene" path="res://scenes/teleporter.tscn" id="4_cwmdi"]
+[ext_resource type="PackedScene" path="res://scenes/npcs/bear.tscn" id="6_oys5k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nsc0x"]
-size = Vector2(1920, 166.375)
+size = Vector2(1920, 183.188)
 
 [sub_resource type="Curve2D" id="Curve2D_txsn5"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 560, 116, 0, 0, 0, 0, 452, 151, 0, 0, 0, 0, 371, 197, 0, 0, 0, 0, 248, 186)
+"points": PackedVector2Array(0, 0, 0, 0, 560, 116, 0, 0, 0, 0, 666, 149, 0, 0, 0, 0, 764, 164, 0, 0, 0, 0, 895, 208)
 }
 point_count = 4
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mj03r"]
+size = Vector2(630, 337)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jgjxf"]
+radius = 50.7739
+height = 419.466
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jqjr0"]
+size = Vector2(299.098, 761.041)
 
 [node name="C3" type="Node2D"]
 
@@ -30,13 +40,12 @@ position = Vector2(600, 450)
 texture = ExtResource("1_7xogw")
 
 [node name="Player" parent="." instance=ExtResource("2_ymiyr")]
-position = Vector2(711, 715)
+position = Vector2(908, 490)
 
 [node name="Overlay" type="Sprite2D" parent="."]
-visible = false
 z_index = 999
 position = Vector2(600, 450)
-texture = ExtResource("3_ll1dv")
+texture = ExtResource("3_w6qno")
 
 [node name="OverlayRect" type="ColorRect" parent="."]
 visible = false
@@ -48,18 +57,18 @@ offset_bottom = 1000.0
 color = Color(0, 0, 0, 1)
 
 [node name="Teleporter c2" parent="." instance=ExtResource("4_cwmdi")]
-position = Vector2(600, -20)
+position = Vector2(595, 20)
 zone = "c2"
 anchor = "Bottom"
 
 [node name="Teleporter d3" parent="." instance=ExtResource("4_cwmdi")]
-position = Vector2(1220, 500)
+position = Vector2(1193, 500)
 rotation = 1.5708
 zone = "d3"
 anchor = "Left"
 
 [node name="Teleporter b3" parent="." instance=ExtResource("4_cwmdi")]
-position = Vector2(0, 500)
+position = Vector2(24, 478)
 rotation = 1.5708
 zone = "b3"
 anchor = "Right"
@@ -68,19 +77,20 @@ anchor = "Right"
 position = Vector2(606, 173)
 
 [node name="RightAnchor" type="Node2D" parent="."]
-position = Vector2(1101, 479)
+position = Vector2(1072, 466)
 
 [node name="LeftAnchor" type="Node2D" parent="."]
-position = Vector2(94, 441)
+position = Vector2(143, 435)
 
 [node name="BottomCollision" type="StaticBody2D" parent="."]
 position = Vector2(600, 950)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomCollision"]
+position = Vector2(0, -29.4063)
 shape = SubResource("RectangleShape2D_nsc0x")
 
 [node name="Path2D" type="Path2D" parent="."]
-position = Vector2(147, -11)
+position = Vector2(128, -11)
 curve = SubResource("Curve2D_txsn5")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
@@ -89,7 +99,32 @@ rotates = false
 loop = false
 
 [node name="Bear" parent="Path2D/PathFollow2D" instance=ExtResource("6_oys5k")]
+position = Vector2(-19, 0)
 
 [node name="64578" type="Timer" parent="Path2D/PathFollow2D"]
 wait_time = 0.2
 one_shot = true
+
+[node name="TopLeftCollision" type="StaticBody2D" parent="."]
+position = Vector2(600, 950)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopLeftCollision"]
+position = Vector2(-423, -865.5)
+shape = SubResource("RectangleShape2D_mj03r")
+
+[node name="CrackCollision" type="StaticBody2D" parent="."]
+position = Vector2(600, 950)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CrackCollision"]
+position = Vector2(-33, -642)
+rotation = -0.82205
+shape = SubResource("CapsuleShape2D_jgjxf")
+
+[node name="TopRightCollision" type="StaticBody2D" parent="."]
+position = Vector2(600, 950)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopRightCollision"]
+position = Vector2(377, -973)
+rotation = -1.30202
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_jqjr0")
