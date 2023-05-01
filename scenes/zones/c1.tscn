@@ -1,0 +1,74 @@
+[gd_scene load_steps=6 format=3 uid="uid://ct1q82rdic8hu"]
+
+[ext_resource type="Texture2D" uid="uid://bo5jg1cojdnap" path="res://sprites/zones/c1.png" id="1_n08k8"]
+[ext_resource type="PackedScene" uid="uid://dm5txbfgjhjlf" path="res://scenes/player.tscn" id="2_6js31"]
+[ext_resource type="Texture2D" uid="uid://brqbkqwwvcaph" path="res://sprites/zones/b4_overlay.png" id="3_ndxdy"]
+[ext_resource type="PackedScene" uid="uid://do3axeenpwefl" path="res://scenes/teleporter.tscn" id="4_apmfj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nsc0x"]
+size = Vector2(1920, 166.375)
+
+[node name="C1" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -400.0
+offset_top = -500.0
+offset_right = 1600.0
+offset_bottom = 1500.0
+mouse_filter = 1
+color = Color(0, 0, 0, 1)
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(600, 450)
+texture = ExtResource("1_n08k8")
+
+[node name="Player" parent="." instance=ExtResource("2_6js31")]
+position = Vector2(711, 715)
+
+[node name="Overlay" type="Sprite2D" parent="."]
+visible = false
+z_index = 999
+position = Vector2(600, 450)
+texture = ExtResource("3_ndxdy")
+
+[node name="OverlayRect" type="ColorRect" parent="."]
+visible = false
+z_index = 999
+offset_left = -400.0
+offset_top = 900.0
+offset_right = 1600.0
+offset_bottom = 1000.0
+color = Color(0, 0, 0, 1)
+
+[node name="Teleporter d1" parent="." instance=ExtResource("4_apmfj")]
+position = Vector2(1220, 500)
+rotation = 1.5708
+zone = "d1"
+anchor = "Left"
+
+[node name="Teleporter c2" parent="." instance=ExtResource("4_apmfj")]
+position = Vector2(600, 930)
+zone = "c2"
+anchor = "Top"
+
+[node name="RightAnchor" type="Node2D" parent="."]
+position = Vector2(1086, 392)
+
+[node name="LeftAnchor" type="Node2D" parent="."]
+position = Vector2(86, 506)
+
+[node name="BottomAnchor" type="Node2D" parent="."]
+position = Vector2(592, 723)
+
+[node name="TopCollision" type="StaticBody2D" parent="."]
+position = Vector2(600, -50)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopCollision"]
+shape = SubResource("RectangleShape2D_nsc0x")
+
+[node name="LeftCollision" type="StaticBody2D" parent="."]
+position = Vector2(-70, 500)
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftCollision"]
+shape = SubResource("RectangleShape2D_nsc0x")
