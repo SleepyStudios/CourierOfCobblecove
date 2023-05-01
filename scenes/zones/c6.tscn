@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dsa7m0qpw1ias"]
+[gd_scene load_steps=7 format=3 uid="uid://dsa7m0qpw1ias"]
 
 [ext_resource type="Texture2D" uid="uid://cywvxl3vu6o88" path="res://sprites/zones/c6.png" id="1_3g2wl"]
 [ext_resource type="PackedScene" uid="uid://dm5txbfgjhjlf" path="res://scenes/player.tscn" id="2_s3vwy"]
 [ext_resource type="Texture2D" uid="uid://nwiea7ndaabl" path="res://sprites/zones/c4_overlay.png" id="3_l78hs"]
-[ext_resource type="PackedScene" path="res://scenes/teleporter.tscn" id="4_g40p2"]
+[ext_resource type="PackedScene" uid="uid://do3axeenpwefl" path="res://scenes/teleporter.tscn" id="4_g40p2"]
+[ext_resource type="PackedScene" uid="uid://cgx7yv2bgrq8s" path="res://scenes/npcs/mermaid.tscn" id="5_vpyj7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qc31m"]
 size = Vector2(1920, 166.375)
@@ -66,3 +67,6 @@ anchor = "Left"
 
 [node name="RightAnchor" type="Node2D" parent="."]
 position = Vector2(1106, 265)
+
+[node name="Mermaid" parent="." instance=ExtResource("5_vpyj7")]
+position = Vector2(435, 288)

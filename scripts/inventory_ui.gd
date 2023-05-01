@@ -4,7 +4,6 @@ var grabbed_slot_data: SlotData
 
 @onready var player_inventory = $PlayerInventory
 @onready var grabbed_slot = $GrabbedSlot
-@onready var player = $"../../Player"
 
 func _ready():
 	Global.inventory_data.inventory_interact.connect(_on_inventory_interact)

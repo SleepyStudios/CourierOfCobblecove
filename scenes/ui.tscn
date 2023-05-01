@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cijsbj5edbq1f"]
 
 [ext_resource type="Script" path="res://scripts/inventory_ui.gd" id="1_4lhr3"]
-[ext_resource type="Theme" uid="uid://ehq1gd12dyb" path="res://resources/theme.tres" id="1_26ytd"]
+[ext_resource type="Theme" uid="uid://bfkgfg7f1oya1" path="res://resources/theme.tres" id="1_26ytd"]
 [ext_resource type="Script" path="res://scripts/zone_name_progress_label.gd" id="2_p52yk"]
 [ext_resource type="PackedScene" uid="uid://chn0p0xyugfe3" path="res://scenes/inventory_slot.tscn" id="2_rgcj3"]
 [ext_resource type="PackedScene" uid="uid://dfrgxp4rwlufe" path="res://scenes/inventory.tscn" id="3_arbb8"]
@@ -13,10 +13,10 @@
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 16.0
-offset_top = -76.0
-offset_right = 228.0
-offset_bottom = -10.0
+offset_left = 8.0
+offset_top = -72.0
+offset_right = 220.0
+offset_bottom = -6.0
 grow_vertical = 0
 theme = ExtResource("1_26ytd")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -32,10 +32,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -296.0
-offset_top = -60.0
-offset_right = -296.0
-offset_bottom = -28.0
+offset_left = -292.0
+offset_top = -56.0
+offset_right = -292.0
+offset_bottom = -24.0
 grow_horizontal = 0
 grow_vertical = 0
 size_flags_horizontal = 8

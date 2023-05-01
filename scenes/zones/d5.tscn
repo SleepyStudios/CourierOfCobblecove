@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://bo306gqnd35c7"]
+[gd_scene load_steps=6 format=3 uid="uid://bo306gqnd35c7"]
 
 [ext_resource type="Texture2D" uid="uid://cfnkhayb5tx0m" path="res://sprites/zones/d5.png" id="1_eeevy"]
 [ext_resource type="PackedScene" uid="uid://dm5txbfgjhjlf" path="res://scenes/player.tscn" id="2_wg2xp"]
 [ext_resource type="Texture2D" uid="uid://brqbkqwwvcaph" path="res://sprites/zones/b4_overlay.png" id="3_4u7uw"]
-[ext_resource type="PackedScene" path="res://scenes/teleporter.tscn" id="4_sp42f"]
+[ext_resource type="PackedScene" uid="uid://do3axeenpwefl" path="res://scenes/teleporter.tscn" id="4_sp42f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nsc0x"]
+size = Vector2(1920, 166.375)
 
 [node name="D5" type="Node2D"]
 
@@ -54,11 +57,6 @@ position = Vector2(600, 950)
 zone = "d6"
 anchor = "Top"
 
-[node name="Teleporter d4" parent="." instance=ExtResource("4_sp42f")]
-position = Vector2(600, -41)
-zone = "d4"
-anchor = "Bottom"
-
 [node name="LeftAnchor" type="Node2D" parent="."]
 position = Vector2(56, 408)
 
@@ -70,3 +68,10 @@ position = Vector2(1119, 453)
 
 [node name="BottomAnchor" type="Node2D" parent="."]
 position = Vector2(600, 687)
+
+[node name="TopCollision" type="StaticBody2D" parent="."]
+position = Vector2(0, -580)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopCollision"]
+position = Vector2(600, 522.625)
+shape = SubResource("RectangleShape2D_nsc0x")

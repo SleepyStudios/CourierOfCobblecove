@@ -21,16 +21,11 @@ TooltipLabel/fonts/font = ExtResource("1_fr41l")
 TooltipPanel/styles/panel = SubResource("StyleBoxFlat_c1xqq")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rdam3"]
-bg_color = Color(0.117647, 0.117647, 0.117647, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.235294, 0.235294, 0.235294, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
+bg_color = Color(0.180392, 0.160784, 0.137255, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 corner_detail = 12
 
 [node name="InventorySlot" type="PanelContainer"]
