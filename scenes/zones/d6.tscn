@@ -61,6 +61,7 @@ position = Vector2(600, 579)
 rotation = 0.0698132
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomCollision"]
+position = Vector2(2.79028, 39.9025)
 shape = SubResource("RectangleShape2D_qc31m")
 
 [node name="Teleporter d5" parent="." instance=ExtResource("4_vktbm")]
