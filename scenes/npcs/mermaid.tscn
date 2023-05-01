@@ -24,7 +24,7 @@ action_success_texts = Array[String](["Thought so, I'll take this"])
 action_callbacks = Array[String]([""])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hp1tn"]
-size = Vector2(147.955, 256.5)
+size = Vector2(201.991, 218)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wjb7y"]
 atlas = ExtResource("4_itxdb")
@@ -67,13 +67,13 @@ script = ExtResource("1_atq0a")
 dialogue_data = SubResource("Resource_ggk30")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
-position = Vector2(60, -11)
-rotation = -0.00431322
+position = Vector2(49.9955, 7)
 shape = SubResource("RectangleShape2D_hp1tn")
 
 [node name="Animation" type="AnimatedSprite2D" parent="."]
 z_index = 2
 sprite_frames = SubResource("SpriteFrames_rf1xg")
 animation = &"idle"
+frame_progress = 0.893052
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

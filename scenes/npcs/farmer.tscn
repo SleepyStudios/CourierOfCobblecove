@@ -1,9 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://bsa8f3vqkih0k"]
+[gd_scene load_steps=11 format=3]
 
 [ext_resource type="Script" path="res://scripts/npc.gd" id="1_yaoqw"]
 [ext_resource type="Resource" uid="uid://bemqdctbp7t36" path="res://resources/items/cow_bell.tres" id="2_khrtu"]
 [ext_resource type="Script" path="res://scripts/dialogue_data.gd" id="3_sggxv"]
-[ext_resource type="Texture2D" uid="uid://btvoym420xyij" path="res://sprites/farmer_idle.png" id="4_vysd6"]
+[ext_resource type="Texture2D" uid="uid://btvoym420xyij" path="res://sprites/npcs/farmer_idle.png" id="4_vysd6"]
 
 [sub_resource type="Resource" id="Resource_v1g27"]
 script = ExtResource("3_sggxv")
