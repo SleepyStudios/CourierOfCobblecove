@@ -53,7 +53,7 @@ zone = "f4"
 anchor = "Left"
 
 [node name="Teleporter e5" parent="." instance=ExtResource("4_2d23q")]
-position = Vector2(611, 915)
+position = Vector2(608, 900)
 zone = "e5"
 anchor = "Top"
 

@@ -8,8 +8,9 @@
 [sub_resource type="Resource" id="Resource_8wrud"]
 script = ExtResource("2_0cery")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hp1tn"]
-size = Vector2(321, 238)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1hgd7"]
+radius = 103.0
+height = 326.24
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sxk1i"]
 atlas = ExtResource("5_t75i0")
@@ -71,8 +72,9 @@ script = ExtResource("1_jfc7w")
 quest_data = SubResource("Resource_8wrud")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
-position = Vector2(10.5, 1)
-shape = SubResource("RectangleShape2D_hp1tn")
+position = Vector2(-9, 11)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_1hgd7")
 
 [node name="Animation" type="AnimatedSprite2D" parent="."]
 z_index = 2
