@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dm5txbfgjhjlf" path="res://scenes/player.tscn" id="2_db83d"]
 [ext_resource type="Texture2D" uid="uid://nwiea7ndaabl" path="res://sprites/zones/c4_overlay.png" id="3_rvdp6"]
 [ext_resource type="Texture2D" uid="uid://oq642l1tlj3r" path="res://sprites/zones/d6_waves.png" id="4_ou6ie"]
-[ext_resource type="PackedScene" uid="uid://do3axeenpwefl" path="res://scenes/teleporter.tscn" id="4_vktbm"]
+[ext_resource type="PackedScene" path="res://scenes/teleporter.tscn" id="4_vktbm"]
 [ext_resource type="Script" path="res://scripts/waves.gd" id="5_354lv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qc31m"]
@@ -81,7 +81,7 @@ zone = "d5"
 anchor = "Bottom"
 
 [node name="Teleporter c6" parent="." instance=ExtResource("4_vktbm")]
-position = Vector2(-40, 500)
+position = Vector2(8, 487)
 rotation = 1.5708
 zone = "c6"
 anchor = "Right"
@@ -90,4 +90,4 @@ anchor = "Right"
 position = Vector2(595, 146)
 
 [node name="LeftAnchor" type="Node2D" parent="."]
-position = Vector2(70, 230)
+position = Vector2(119, 236)
