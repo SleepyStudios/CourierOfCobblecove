@@ -39,7 +39,6 @@ func _handle_quest_completed(from_check: bool):
 			npc.animation.play("walking")			
 			npc.follow_path(300.0, 0.5)
 			npc.hide_dialogue()
-			npc.quest_data = null
 	else:
 		if from_check and get_data("potion_given"):
 			npc.queue_free()

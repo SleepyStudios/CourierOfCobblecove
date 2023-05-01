@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://yvod41sq654j"]
+
+[ext_resource type="Script" path="res://scripts/npc.gd" id="1_7rtw4"]
+[ext_resource type="Script" path="res://scripts/quests/bear_quest.gd" id="2_461bg"]
+[ext_resource type="Texture2D" uid="uid://b8fr5i8wj2f8k" path="res://sprites/npcs/bear.png" id="3_y1t0h"]
+
+[sub_resource type="Resource" id="Resource_j3b04"]
+script = ExtResource("2_461bg")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hp1tn"]
+size = Vector2(116, 110.077)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ai4k0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_y1t0h")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}]
+
+[node name="Bear" type="StaticBody2D" groups=["NPCs"]]
+script = ExtResource("1_7rtw4")
+quest_data = SubResource("Resource_j3b04")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2(-9.53674e-07, -3.96147)
+shape = SubResource("RectangleShape2D_hp1tn")
+
+[node name="Animation" type="AnimatedSprite2D" parent="."]
+z_index = 2
+sprite_frames = SubResource("SpriteFrames_ai4k0")
+animation = &"idle"
+flip_h = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
