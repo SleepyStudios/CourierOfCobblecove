@@ -1,12 +1,27 @@
-[gd_scene load_steps=6 format=3 uid="uid://b8jlo2d51beci"]
+[gd_scene load_steps=11 format=3 uid="uid://b8jlo2d51beci"]
 
 [ext_resource type="Texture2D" uid="uid://b1aevwci4u1ww" path="res://sprites/zones/d3.png" id="1_ukiva"]
 [ext_resource type="PackedScene" uid="uid://dm5txbfgjhjlf" path="res://scenes/player.tscn" id="2_bj23m"]
-[ext_resource type="Texture2D" uid="uid://brqbkqwwvcaph" path="res://sprites/zones/b4_overlay.png" id="3_e3kb5"]
-[ext_resource type="PackedScene" uid="uid://do3axeenpwefl" path="res://scenes/teleporter.tscn" id="4_27eud"]
+[ext_resource type="Texture2D" uid="uid://c0ge1bg4tu17s" path="res://sprites/zones/d3_overlay.png" id="3_vyw6k"]
+[ext_resource type="PackedScene" path="res://scenes/teleporter.tscn" id="4_27eud"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qc31m"]
 size = Vector2(1920, 166.375)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p7lml"]
+size = Vector2(148, 317.188)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2cax5"]
+size = Vector2(148, 405.594)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ltmpy"]
+size = Vector2(400, 117)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nqu47"]
+size = Vector2(754.5, 336.013)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nm3e3"]
+size = Vector2(309.337, 222.882)
 
 [node name="D3" type="Node2D"]
 
@@ -23,13 +38,12 @@ position = Vector2(600, 450)
 texture = ExtResource("1_ukiva")
 
 [node name="Player" parent="." instance=ExtResource("2_bj23m")]
-position = Vector2(100, 460)
+position = Vector2(132, 437)
 
 [node name="Overlay" type="Sprite2D" parent="."]
-visible = false
 z_index = 999
 position = Vector2(600, 450)
-texture = ExtResource("3_e3kb5")
+texture = ExtResource("3_vyw6k")
 
 [node name="OverlayRect" type="ColorRect" parent="."]
 visible = false
@@ -41,19 +55,19 @@ offset_bottom = 1000.0
 color = Color(0, 0, 0, 1)
 
 [node name="Teleporter c3" parent="." instance=ExtResource("4_27eud")]
-position = Vector2(-30, 500.625)
+position = Vector2(6, 499)
 rotation = 1.5708
 zone = "c3"
 anchor = "Right"
 
 [node name="Teleporter e3" parent="." instance=ExtResource("4_27eud")]
-position = Vector2(1234, 500.625)
+position = Vector2(1192, 495)
 rotation = 1.5708
 zone = "e3"
 anchor = "Left"
 
 [node name="Teleporter d4" parent="." instance=ExtResource("4_27eud")]
-position = Vector2(600, 952)
+position = Vector2(603, 917)
 zone = "d4"
 anchor = "Top"
 
@@ -61,14 +75,51 @@ anchor = "Top"
 position = Vector2(0, -580)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopCollision"]
-position = Vector2(600, 522.625)
+position = Vector2(595, 632)
 shape = SubResource("RectangleShape2D_qc31m")
 
 [node name="LeftAnchor" type="Node2D" parent="."]
-position = Vector2(104, 540)
+position = Vector2(123, 533)
 
 [node name="RightAnchor" type="Node2D" parent="."]
-position = Vector2(1115, 499)
+position = Vector2(1066, 458)
 
 [node name="BottomAnchor" type="Node2D" parent="."]
-position = Vector2(608, 755)
+position = Vector2(601, 713)
+
+[node name="TopLeftCollision" type="StaticBody2D" parent="."]
+position = Vector2(0, -580)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopLeftCollision"]
+position = Vector2(10, 771.406)
+shape = SubResource("RectangleShape2D_p7lml")
+
+[node name="BottomLeftCollision" type="StaticBody2D" parent="."]
+position = Vector2(0, -580)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomLeftCollision"]
+position = Vector2(9, 1369.2)
+shape = SubResource("RectangleShape2D_2cax5")
+
+[node name="BottomLeftCollision2" type="StaticBody2D" parent="."]
+position = Vector2(0, -580)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomLeftCollision2"]
+position = Vector2(132, 1487.5)
+shape = SubResource("RectangleShape2D_ltmpy")
+
+[node name="BottomRightCollision" type="StaticBody2D" parent="."]
+position = Vector2(0, -580)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomRightCollision"]
+position = Vector2(1114.16, 1370.6)
+rotation = -0.71733
+shape = SubResource("RectangleShape2D_nqu47")
+
+[node name="RightCollision" type="StaticBody2D" parent="."]
+position = Vector2(0, -580)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightCollision"]
+position = Vector2(1119.39, 780.03)
+rotation = -0.118682
+shape = SubResource("RectangleShape2D_nm3e3")
