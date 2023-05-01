@@ -6,7 +6,6 @@
 [resource]
 script = ExtResource("1_8x502")
 name = "Coins"
-description = "Some currency
-"
+description = "The King's judgemental face is staring back at you"
 stackable = false
 texture = ExtResource("2_h5pw0")
