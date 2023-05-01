@@ -1,7 +1,7 @@
 extends Sprite2D
 
-@export_range(0, 1000) var frequency: float = 0.5
-@export_range(0, 1000) var amplitude: float = 150
+@export_range(0, 100) var frequency: float = 0.5
+@export_range(0, 100) var amplitude: float = 10
 var time = 0
  
 func _physics_process(delta):

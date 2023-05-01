@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://dx8ph8342dsa7"]
+
+[ext_resource type="Script" path="res://scripts/npc.gd" id="1_x2410"]
+[ext_resource type="Texture2D" uid="uid://bwkieducaeovd" path="res://sprites/npcs/water_demon.png" id="2_jf4bq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hp1tn"]
+size = Vector2(422, 304)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jgiva"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jf4bq")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="WaterDemon" type="StaticBody2D" groups=["NPCs"]]
+script = ExtResource("1_x2410")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2(-106, 48)
+shape = SubResource("RectangleShape2D_hp1tn")
+
+[node name="Animation" type="AnimatedSprite2D" parent="."]
+z_index = 2
+sprite_frames = SubResource("SpriteFrames_jgiva")
+animation = &"idle"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
