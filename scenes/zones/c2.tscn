@@ -1,19 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://b5u2homcj78p4"]
+[gd_scene load_steps=6 format=3 uid="uid://dw3xbf6helec7"]
 
-[ext_resource type="Texture2D" uid="uid://e5ia00dcam0f" path="res://sprites/zones/c2.png" id="1_6ko3x"]
+[ext_resource type="Texture2D" uid="uid://bo5jg1cojdnap" path="res://sprites/zones/c2.png" id="1_6ko3x"]
 [ext_resource type="PackedScene" uid="uid://dm5txbfgjhjlf" path="res://scenes/player.tscn" id="2_aeixr"]
 [ext_resource type="Texture2D" uid="uid://brqbkqwwvcaph" path="res://sprites/zones/b4_overlay.png" id="3_c8abp"]
 [ext_resource type="PackedScene" uid="uid://do3axeenpwefl" path="res://scenes/teleporter.tscn" id="4_6ghvt"]
-[ext_resource type="PackedScene" uid="uid://yvod41sq654j" path="res://scenes/npcs/bear.tscn" id="5_gxfli"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nsc0x"]
 size = Vector2(1920, 166.375)
-
-[sub_resource type="Curve2D" id="Curve2D_r3dht"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 560, 116, 0, 0, 0, 0, 434, 176, 0, 0, 0, 0, 294, 227, 0, 0, 0, 0, 144, 208)
-}
-point_count = 4
 
 [node name="C2" type="Node2D"]
 
@@ -47,24 +40,19 @@ offset_right = 1600.0
 offset_bottom = 1000.0
 color = Color(0, 0, 0, 1)
 
-[node name="Teleporter c1" parent="." instance=ExtResource("4_6ghvt")]
-position = Vector2(600, -20)
-zone = "c1"
-anchor = "Bottom"
+[node name="Teleporter d2" parent="." instance=ExtResource("4_6ghvt")]
+position = Vector2(1220, 500)
+rotation = 1.5708
+zone = "d2"
+anchor = "Left"
 
 [node name="Teleporter c3" parent="." instance=ExtResource("4_6ghvt")]
 position = Vector2(600, 930)
 zone = "c3"
 anchor = "Top"
 
-[node name="Teleporter b2" parent="." instance=ExtResource("4_6ghvt")]
-position = Vector2(-30, 500)
-rotation = 1.5708
-zone = "b2"
-anchor = "Right"
-
-[node name="TopAnchor" type="Node2D" parent="."]
-position = Vector2(606, 173)
+[node name="RightAnchor" type="Node2D" parent="."]
+position = Vector2(1086, 392)
 
 [node name="LeftAnchor" type="Node2D" parent="."]
 position = Vector2(86, 506)
@@ -72,19 +60,15 @@ position = Vector2(86, 506)
 [node name="BottomAnchor" type="Node2D" parent="."]
 position = Vector2(592, 723)
 
-[node name="RightCollision" type="StaticBody2D" parent="."]
-position = Vector2(1250, 500)
-rotation = 1.5708
+[node name="TopCollision" type="StaticBody2D" parent="."]
+position = Vector2(600, -50)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RightCollision"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopCollision"]
 shape = SubResource("RectangleShape2D_nsc0x")
 
-[node name="Path2D" type="Path2D" parent="."]
-curve = SubResource("Curve2D_r3dht")
+[node name="LeftCollision" type="StaticBody2D" parent="."]
+position = Vector2(-70, 500)
+rotation = 1.5708
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(560, 116)
-rotates = false
-loop = false
-
-[node name="Bear" parent="Path2D/PathFollow2D" instance=ExtResource("5_gxfli")]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftCollision"]
+shape = SubResource("RectangleShape2D_nsc0x")

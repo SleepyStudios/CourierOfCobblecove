@@ -28,4 +28,4 @@ func _on_option_chosen(action_id: String):
 			complete_quest()
 		"stand_back":
 			npc.hide_dialogue()
-			Global.go_to_zone("d1", "Left", "white")
+			Global.go_to_zone("d2", "Left", "white")

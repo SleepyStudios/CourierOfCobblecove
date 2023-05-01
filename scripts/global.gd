@@ -17,8 +17,8 @@ func _ready():
 	scene_transition.load_initial_scene()
 
 func go_to_zone(zone: String, anchor: String, anim = "black"):
-	if zone == "d1" and quest_manager.is_quest_completed("WaterDemon"):
-		zone = "d1_restored"
+	if zone == "d2" and quest_manager.is_quest_completed("WaterDemon"):
+		zone = "d2_restored"
 
 	scene_transition.change_scene("res://scenes/zones/%s.tscn" % zone, anim)
 	post_teleport_data = player.get_teleport_data()
