@@ -1,7 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://wlrb2r63n5ch"]
+[gd_scene load_steps=11 format=3 uid="uid://wlrb2r63n5ch"]
 
 [ext_resource type="Script" path="res://scripts/npc.gd" id="1_cp23n"]
+[ext_resource type="Script" path="res://scripts/quests/wizard_quest.gd" id="2_21prm"]
 [ext_resource type="Texture2D" uid="uid://bxra3kagbirlg" path="res://sprites/npcs/wizard_idle.png" id="4_louql"]
+
+[sub_resource type="Resource" id="Resource_mpvue"]
+script = ExtResource("2_21prm")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hp1tn"]
 size = Vector2(262.972, 256.5)
@@ -44,6 +48,7 @@ animations = [{
 
 [node name="Wizard" type="StaticBody2D" groups=["NPCs"]]
 script = ExtResource("1_cp23n")
+quest_data = SubResource("Resource_mpvue")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2(-19.5001, 28.9763)
