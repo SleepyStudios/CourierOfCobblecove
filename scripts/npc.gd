@@ -21,7 +21,7 @@ func _ready():
 		$CanvasLayer.add_child(dialogue_box)
 
 func show_dialogue():
-	if quest_data:
+	if quest_data and not path_follow:
 		dialogue_box.show_dialogue()
 
 func hide_dialogue():
@@ -37,5 +37,5 @@ func _physics_process(delta):
 	if path_follow:
 		path_follow.set_progress(path_follow.get_progress() + speed * delta)
 		if disable_collision_at_ratio > 0 and path_follow.progress_ratio >= disable_collision_at_ratio:
-			if $CollisionShape:
+			if get_node_or_null("CollisionShape"):
 				$CollisionShape.queue_free()

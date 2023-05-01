@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://efloh7qv5sg"]
+
+[ext_resource type="Script" path="res://scripts/item_data.gd" id="1_t44gc"]
+[ext_resource type="Texture2D" uid="uid://5umhcb2nafa4" path="res://sprites/items/honey.png" id="2_u8bak"]
+
+[resource]
+script = ExtResource("1_t44gc")
+name = "Honey"
+description = "Also known as bear's delight"
+stackable = false
+texture = ExtResource("2_u8bak")
