@@ -47,8 +47,18 @@ rotation = 1.5708
 zone = "c3"
 anchor = "Left"
 
+[node name="Teleporter a3" parent="." instance=ExtResource("4_nw5qc")]
+position = Vector2(231, 568)
+rotation = -0.118682
+scale = Vector2(0.06, 2.2)
+zone = "a3"
+anchor = "Right"
+
 [node name="RightAnchor" type="Node2D" parent="."]
 position = Vector2(1093, 476)
+
+[node name="LeftAnchor" type="Node2D" parent="."]
+position = Vector2(434, 516)
 
 [node name="TopCollision" type="StaticBody2D" parent="."]
 position = Vector2(600, -40)

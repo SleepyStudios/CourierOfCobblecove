@@ -1,11 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://yvod41sq654j"]
+[gd_scene load_steps=7 format=3 uid="uid://7pd5lutxgmjs"]
 
-[ext_resource type="Script" path="res://scripts/npc.gd" id="1_7rtw4"]
-[ext_resource type="Script" path="res://scripts/quests/bear_quest.gd" id="2_461bg"]
-[ext_resource type="Texture2D" uid="uid://b8fr5i8wj2f8k" path="res://sprites/npcs/bear.png" id="3_y1t0h"]
+[ext_resource type="Script" path="res://scripts/npc.gd" id="1_6d0t4"]
+[ext_resource type="Script" path="res://scripts/quests/villager2_quest.gd" id="2_yewxe"]
+[ext_resource type="Texture2D" uid="uid://dowyyjhfib3s4" path="res://sprites/npcs/villager2.png" id="3_mn53y"]
 
-[sub_resource type="Resource" id="Resource_j3b04"]
-script = ExtResource("2_461bg")
+[sub_resource type="Resource" id="Resource_bhe3d"]
+script = ExtResource("2_yewxe")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hp1tn"]
 size = Vector2(116, 110.077)
@@ -14,16 +14,16 @@ size = Vector2(116, 110.077)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_y1t0h")
+"texture": ExtResource("3_mn53y")
 }],
 "loop": true,
 "name": &"idle",
 "speed": 2.0
 }]
 
-[node name="Bear" type="StaticBody2D" groups=["NPCs"]]
-script = ExtResource("1_7rtw4")
-quest_data = SubResource("Resource_j3b04")
+[node name="Villager2" type="StaticBody2D" groups=["NPCs"]]
+script = ExtResource("1_6d0t4")
+quest_data = SubResource("Resource_bhe3d")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2(-9.53674e-07, -3.96147)

@@ -8,7 +8,7 @@ func _get_options() -> Array[Dictionary]:
 	return [
 		{
 			"action_id": "complete",
-			"enabled": !is_quest_started(),
+			"enabled": Global.inventory_data.has_item("Honey"),
 			"text": "[Wake the bear with honey]"
 		}
 	]
