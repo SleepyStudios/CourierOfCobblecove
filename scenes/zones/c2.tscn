@@ -34,7 +34,6 @@ position = Vector2(600, 450)
 texture = ExtResource("3_c8abp")
 
 [node name="OverlayRect" type="ColorRect" parent="."]
-visible = false
 z_index = 999
 offset_left = -400.0
 offset_top = 900.0
@@ -42,16 +41,16 @@ offset_right = 1600.0
 offset_bottom = 1000.0
 color = Color(0, 0, 0, 1)
 
+[node name="Teleporter c3" parent="." instance=ExtResource("4_6ghvt")]
+position = Vector2(600, 910)
+zone = "c3"
+anchor = "Top"
+
 [node name="Teleporter d2" parent="." instance=ExtResource("4_6ghvt")]
 position = Vector2(1220, 500)
 rotation = 1.5708
 zone = "d2"
 anchor = "Left"
-
-[node name="Teleporter c3" parent="." instance=ExtResource("4_6ghvt")]
-position = Vector2(600, 930)
-zone = "c3"
-anchor = "Top"
 
 [node name="RightAnchor" type="Node2D" parent="."]
 position = Vector2(1086, 392)
@@ -60,7 +59,7 @@ position = Vector2(1086, 392)
 position = Vector2(86, 506)
 
 [node name="BottomAnchor" type="Node2D" parent="."]
-position = Vector2(592, 723)
+position = Vector2(600, 713)
 
 [node name="TopCollision" type="StaticBody2D" parent="."]
 position = Vector2(600, -50)
