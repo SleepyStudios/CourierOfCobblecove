@@ -10,11 +10,11 @@ script = ExtResource("2_hm8kp")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hp1tn"]
 size = Vector2(103, 178)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cyvxb"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_cx0b1"]
 atlas = ExtResource("3_c640u")
 region = Rect2(0, 0, 126, 198)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_x5qha"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujsqt"]
 atlas = ExtResource("3_c640u")
 region = Rect2(126, 0, 126, 198)
 
@@ -22,10 +22,10 @@ region = Rect2(126, 0, 126, 198)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cyvxb")
+"texture": SubResource("AtlasTexture_cx0b1")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_x5qha")
+"texture": SubResource("AtlasTexture_ujsqt")
 }],
 "loop": true,
 "name": &"idle",
@@ -44,8 +44,8 @@ shape = SubResource("RectangleShape2D_hp1tn")
 
 [node name="Animation" type="AnimatedSprite2D" parent="."]
 z_index = 2
-scale = Vector2(1e-05, 1e-05)
 sprite_frames = SubResource("SpriteFrames_cb6ce")
 animation = &"idle"
+frame_progress = 0.334082
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

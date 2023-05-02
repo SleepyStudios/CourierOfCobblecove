@@ -22,6 +22,7 @@ func _on_option_chosen(action_id: String):
 			Global.inventory_data.remove_item("Guard's Letter")
 			Global.inventory_data.try_add_item("Shell Necklace")
 			set_data("handed_over_letter", true)
+			complete_quest()
 
 func _on_dialogue_closed():
 	reset_data()

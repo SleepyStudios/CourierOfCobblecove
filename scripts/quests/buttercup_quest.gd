@@ -30,6 +30,7 @@ func _on_option_chosen(action_id: String):
 			npc.animation.play("goblin")
 			npc.animator_play_anim("shrink")
 			npc.hide_dialogue()
+			npc.quest_data = null
 
 func _handle_quest_completed(from_check: bool):
 	if Global.map_manager.current_zone == "b4":

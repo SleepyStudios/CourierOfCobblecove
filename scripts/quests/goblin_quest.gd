@@ -8,7 +8,7 @@ func _get_text() -> String:
 	if is_quest_completed():
 		return "Stick make you strong!"
 	
-	return "Beware wizard's magic! Friend no longer friend. Moo! Better to stay far away, yes?"
+	return "Beware wizard's magic! Friend no longer friend. Moo! Need potion to bring back! Stop moo!"
 	
 func _get_options() -> Array[Dictionary]:
 	return []
@@ -22,6 +22,7 @@ func _handle_quest_completed(from_check: bool):
 func _on_dialogue_opened():
 	if is_quest_started() and not is_quest_completed():
 		Global.inventory_data.try_add_item('"Best" Stick')
+		npc.animation.play("no_stick")
 		complete_quest()
 
 func _on_dialogue_closed():

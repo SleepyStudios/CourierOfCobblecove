@@ -42,6 +42,7 @@ func _on_option_chosen(action_id: String):
 			Global.inventory_data.remove_item("Flower")
 			Global.inventory_data.remove_item("Box")
 			complete_quest()
+			complete_quest()
 		"take_letter":
 			Global.inventory_data.try_add_item("Guard's Letter")			
 			start_quest()

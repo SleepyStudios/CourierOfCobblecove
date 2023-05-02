@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://baix6hqrj113q"]
+[gd_scene load_steps=12 format=3 uid="uid://baix6hqrj113q"]
 
 [ext_resource type="Script" path="res://scripts/npc.gd" id="1_vtdjc"]
 [ext_resource type="Script" path="res://scripts/quests/goblin_quest.gd" id="2_kig2y"]
 [ext_resource type="Texture2D" uid="uid://bqdmokc5y2yvg" path="res://sprites/npcs/goblin1_idle.png" id="3_16hi0"]
+[ext_resource type="Texture2D" uid="uid://bxvlvrq8pvig2" path="res://sprites/npcs/goblin1_no_stick.png" id="4_cr0e0"]
 
 [sub_resource type="Resource" id="Resource_w508c"]
 script = ExtResource("2_kig2y")
@@ -10,25 +11,44 @@ script = ExtResource("2_kig2y")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hp1tn"]
 size = Vector2(100, 171)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_u42pp"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_lg3tv"]
 atlas = ExtResource("3_16hi0")
+region = Rect2(0, 0, 174, 198)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1h6pe"]
+atlas = ExtResource("3_16hi0")
+region = Rect2(174, 0, 174, 198)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8on2h"]
+atlas = ExtResource("4_cr0e0")
 region = Rect2(0, 0, 126, 198)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wp4hh"]
-atlas = ExtResource("3_16hi0")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujotn"]
+atlas = ExtResource("4_cr0e0")
 region = Rect2(126, 0, 126, 198)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tog5e"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_u42pp")
+"texture": SubResource("AtlasTexture_lg3tv")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wp4hh")
+"texture": SubResource("AtlasTexture_1h6pe")
 }],
 "loop": true,
 "name": &"idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8on2h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujotn")
+}],
+"loop": true,
+"name": &"no_stick",
 "speed": 2.0
 }]
 
