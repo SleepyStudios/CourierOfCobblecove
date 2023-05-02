@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dcf4syia0tcle" path="res://sprites/zones/e2.png" id="1_7d7np"]
 [ext_resource type="PackedScene" uid="uid://dm5txbfgjhjlf" path="res://scenes/player.tscn" id="2_f2418"]
 [ext_resource type="Texture2D" uid="uid://brqbkqwwvcaph" path="res://sprites/zones/b4_overlay.png" id="3_v7vi2"]
-[ext_resource type="PackedScene" uid="uid://do3axeenpwefl" path="res://scenes/teleporter.tscn" id="4_y8rk4"]
+[ext_resource type="PackedScene" path="res://scenes/teleporter.tscn" id="4_y8rk4"]
 [ext_resource type="PackedScene" uid="uid://cwc8cxbrj717a" path="res://scenes/npcs/old_man.tscn" id="5_u0u2j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nsc0x"]
@@ -45,13 +45,13 @@ offset_bottom = 1000.0
 color = Color(0, 0, 0, 1)
 
 [node name="Teleporter d2" parent="." instance=ExtResource("4_y8rk4")]
-position = Vector2(-20, 499)
+position = Vector2(10, 521)
 rotation = 1.5708
 zone = "d2"
 anchor = "Right"
 
 [node name="LeftAnchor" type="Node2D" parent="."]
-position = Vector2(96, 440)
+position = Vector2(144, 491)
 
 [node name="TopCollision" type="StaticBody2D" parent="."]
 position = Vector2(600, 310)
@@ -65,7 +65,6 @@ rotation = 0.670206
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hut Collision"]
 position = Vector2(150.753, 22.8585)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_carel")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 

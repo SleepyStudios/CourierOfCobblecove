@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://bo5jg1cojdnap" path="res://sprites/zones/c2.png" id="1_6ko3x"]
 [ext_resource type="PackedScene" uid="uid://dm5txbfgjhjlf" path="res://scenes/player.tscn" id="2_aeixr"]
 [ext_resource type="Texture2D" uid="uid://b4l0f06gmkkw8" path="res://sprites/zones/c2_overlay.png" id="3_pt7pw"]
-[ext_resource type="PackedScene" uid="uid://do3axeenpwefl" path="res://scenes/teleporter.tscn" id="4_6ghvt"]
-[ext_resource type="PackedScene" uid="uid://bjj3vuba5ierb" path="res://scenes/npcs/villager1.tscn" id="5_f527k"]
+[ext_resource type="PackedScene" path="res://scenes/teleporter.tscn" id="4_6ghvt"]
+[ext_resource type="PackedScene" path="res://scenes/npcs/villager1.tscn" id="5_f527k"]
 [ext_resource type="PackedScene" uid="uid://7pd5lutxgmjs" path="res://scenes/npcs/villager2.tscn" id="6_51uj0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nsc0x"]
@@ -49,13 +49,13 @@ zone = "c3"
 anchor = "Top"
 
 [node name="Teleporter d2" parent="." instance=ExtResource("4_6ghvt")]
-position = Vector2(1220, 500)
+position = Vector2(1188, 497)
 rotation = 1.5708
 zone = "d2"
 anchor = "Left"
 
 [node name="RightAnchor" type="Node2D" parent="."]
-position = Vector2(1086, 392)
+position = Vector2(1069, 395)
 
 [node name="LeftAnchor" type="Node2D" parent="."]
 position = Vector2(86, 506)
@@ -110,7 +110,7 @@ position = Vector2(746.5, 53.4048)
 shape = SubResource("RectangleShape2D_3qsu5")
 
 [node name="Villager1" parent="." instance=ExtResource("5_f527k")]
-position = Vector2(574, 149)
+position = Vector2(284, 167)
 
 [node name="Villager2" parent="." instance=ExtResource("6_51uj0")]
-position = Vector2(277, 174)
+position = Vector2(161, 277)

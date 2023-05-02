@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://sf4yxqipgnbv" path="res://sprites/zones/d2_restored.png" id="1_5nd35"]
 [ext_resource type="PackedScene" uid="uid://dm5txbfgjhjlf" path="res://scenes/player.tscn" id="2_j4oa0"]
 [ext_resource type="Texture2D" uid="uid://bew2oxuaujcwx" path="res://sprites/zones/d2_overlay.png" id="3_6sb3h"]
-[ext_resource type="PackedScene" uid="uid://do3axeenpwefl" path="res://scenes/teleporter.tscn" id="4_lrdja"]
+[ext_resource type="PackedScene" path="res://scenes/teleporter.tscn" id="4_lrdja"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nsc0x"]
 size = Vector2(1920, 166.375)
@@ -48,22 +48,22 @@ offset_bottom = 1000.0
 color = Color(0, 0, 0, 1)
 
 [node name="Teleporter c2" parent="." instance=ExtResource("4_lrdja")]
-position = Vector2(-22, 500)
+position = Vector2(10, 498)
 rotation = 1.5708
 zone = "c2"
 anchor = "Right"
 
 [node name="Teleporter e2" parent="." instance=ExtResource("4_lrdja")]
-position = Vector2(1220, 500)
+position = Vector2(1188, 502)
 rotation = 1.5708
 zone = "e2"
 anchor = "Left"
 
 [node name="LeftAnchor" type="Node2D" parent="."]
-position = Vector2(86, 506)
+position = Vector2(119, 503)
 
 [node name="RightAnchor" type="Node2D" parent="."]
-position = Vector2(1101, 385)
+position = Vector2(1057, 404)
 
 [node name="TopCollision" type="StaticBody2D" parent="."]
 position = Vector2(600, 10)
@@ -92,7 +92,6 @@ rotation = -2.00887
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomCollision5"]
 position = Vector2(-859.889, 39.1363)
 rotation = 0.118682
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_8cg3q")
 
 [node name="BottomCollision6" type="StaticBody2D" parent="."]
@@ -102,7 +101,6 @@ rotation = -2.00887
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomCollision6"]
 position = Vector2(-859.889, 39.1363)
 rotation = 0.118682
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_8cg3q")
 
 [node name="BottomCollision2" type="StaticBody2D" parent="."]
