@@ -24,6 +24,7 @@ Global="*res://scenes/global.tscn"
 window/size/viewport_width=1200
 window/size/viewport_height=980
 window/size/resizable=false
+window/stretch/mode="viewport"
 mouse_cursor/tooltip_position_offset=Vector2(12, -90)
 
 [editor_plugins]

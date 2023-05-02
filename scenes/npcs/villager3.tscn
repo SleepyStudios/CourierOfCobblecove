@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlfxeuunxgupi"]
+
+[ext_resource type="Script" path="res://scripts/npc.gd" id="1_3rdds"]
+[ext_resource type="Texture2D" uid="uid://d00nagcgmeu62" path="res://sprites/npcs/villager3.png" id="2_1eahx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hp1tn"]
+size = Vector2(72, 165)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gde78"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1eahx")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}]
+
+[node name="Villager3" type="StaticBody2D" groups=["NPCs"]]
+script = ExtResource("1_3rdds")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -0.5)
+shape = SubResource("RectangleShape2D_hp1tn")
+
+[node name="Animation" type="AnimatedSprite2D" parent="."]
+z_index = 2
+sprite_frames = SubResource("SpriteFrames_gde78")
+animation = &"idle"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
