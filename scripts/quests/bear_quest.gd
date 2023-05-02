@@ -20,10 +20,9 @@ func _on_option_chosen(action_id: String):
 			complete_quest()
 
 func _handle_quest_completed(from_check: bool):
-	npc.follow_path(200.0)
-	
 	if from_check:
-		npc.path_follow.set_progress_ratio(1.0)
+		npc.queue_free()
 	else:
-		#npc.animation.play("walking")			
+		npc.animation.play("running")
+		npc.follow_path(200.0)	
 		npc.hide_dialogue()

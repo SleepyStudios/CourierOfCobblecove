@@ -3,17 +3,17 @@
 [ext_resource type="Texture2D" uid="uid://bw8fnawm4tity" path="res://sprites/zones/c3.png" id="1_7xogw"]
 [ext_resource type="PackedScene" uid="uid://dm5txbfgjhjlf" path="res://scenes/player.tscn" id="2_ymiyr"]
 [ext_resource type="Texture2D" uid="uid://c1tal3mjrfwr8" path="res://sprites/zones/c3_overlay.png" id="3_w6qno"]
-[ext_resource type="PackedScene" path="res://scenes/teleporter.tscn" id="4_cwmdi"]
-[ext_resource type="PackedScene" path="res://scenes/npcs/bear.tscn" id="6_oys5k"]
+[ext_resource type="PackedScene" uid="uid://do3axeenpwefl" path="res://scenes/teleporter.tscn" id="4_cwmdi"]
+[ext_resource type="PackedScene" uid="uid://yvod41sq654j" path="res://scenes/npcs/bear.tscn" id="6_oys5k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nsc0x"]
 size = Vector2(1920, 183.188)
 
 [sub_resource type="Curve2D" id="Curve2D_txsn5"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 560, 116, 0, 0, 0, 0, 666, 149, 0, 0, 0, 0, 764, 164, 0, 0, 0, 0, 895, 208)
+"points": PackedVector2Array(0, 0, 0, 0, 560, 116, 0, 0, 0, 0, 354, -386)
 }
-point_count = 4
+point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mj03r"]
 size = Vector2(630, 337)
@@ -90,7 +90,7 @@ position = Vector2(0, -29.4063)
 shape = SubResource("RectangleShape2D_nsc0x")
 
 [node name="Path2D" type="Path2D" parent="."]
-position = Vector2(128, -11)
+position = Vector2(200, 73)
 curve = SubResource("Curve2D_txsn5")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
@@ -126,5 +126,4 @@ position = Vector2(600, 950)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopRightCollision"]
 position = Vector2(377, -973)
 rotation = -1.30202
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_jqjr0")

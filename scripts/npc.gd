@@ -25,7 +25,7 @@ func show_dialogue():
 		dialogue_box.show_dialogue()
 
 func hide_dialogue():
-	if quest_data:	
+	if quest_data:
 		dialogue_box.hide_dialogue()
 		
 func follow_path(speed: float, disable_collision_at_ratio = -1):
