@@ -26,7 +26,7 @@ func _get_options() -> Array[Dictionary]:
 	return [
 		{
 			"action_id": "give_flowers",
-			"enabled": Global.inventory_data.has_item("Flowers"),
+			"enabled": Global.inventory_data.has_item("Flower"),
 			"text": "[Hand over flowers]"
 		},
 		{
@@ -39,7 +39,7 @@ func _get_options() -> Array[Dictionary]:
 func _on_option_chosen(action_id: String):
 	match action_id:
 		"give_flowers":
-			Global.inventory_data.remove_item("Flowers")
+			Global.inventory_data.remove_item("Flower")
 			Global.inventory_data.remove_item("Box")
 			complete_quest()
 		"take_letter":

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://dv5flgew66y24"]
+
+[ext_resource type="Script" path="res://scripts/item_data.gd" id="1_5c5mb"]
+[ext_resource type="Texture2D" uid="uid://bq6wsgvg50xqa" path="res://sprites/items/flower.png" id="2_dkp3l"]
+
+[resource]
+script = ExtResource("1_5c5mb")
+name = "Flower"
+description = "Freshly-picked by the local baker"
+stackable = false
+texture = ExtResource("2_dkp3l")

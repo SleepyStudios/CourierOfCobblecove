@@ -9,7 +9,7 @@ func _get_options() -> Array[Dictionary]:
 		{
 			"action_id": "0",
 			"enabled": get_data("step") == 0,
-			"text": "Are you missing a red gem?"
+			"text": "Are you missing a large gem?"
 		},
 		{
 			"action_id": "1",

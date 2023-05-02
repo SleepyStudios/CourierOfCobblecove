@@ -136,7 +136,7 @@ shape = SubResource("CapsuleShape2D_1hgd7")
 [node name="Animation" type="AnimatedSprite2D" parent="."]
 z_index = 2
 sprite_frames = SubResource("SpriteFrames_7j183")
-animation = &"goblin"
+animation = &"idle"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
