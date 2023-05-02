@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://sf4yxqipgnbv" path="res://sprites/zones/d2_restored.png" id="1_5nd35"]
 [ext_resource type="PackedScene" uid="uid://dm5txbfgjhjlf" path="res://scenes/player.tscn" id="2_j4oa0"]
 [ext_resource type="Texture2D" uid="uid://bew2oxuaujcwx" path="res://sprites/zones/d2_overlay.png" id="3_6sb3h"]
-[ext_resource type="PackedScene" path="res://scenes/teleporter.tscn" id="4_lrdja"]
+[ext_resource type="PackedScene" uid="uid://do3axeenpwefl" path="res://scenes/teleporter.tscn" id="4_lrdja"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nsc0x"]
 size = Vector2(1920, 166.375)

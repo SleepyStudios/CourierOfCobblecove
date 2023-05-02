@@ -9,22 +9,7 @@ const INTERACTION_EVENT_SLOT_DROPPED = "slot_dropped"
 
 @export var slots: Array[SlotData]
 var recipes: Array[RecipeData]
-var items: Array[ItemData]
-
-func _init():
-	#load_data("recipes", recipes)
-	load_data("items", items)
-
-func load_data(subfolder: String, array: Array):
-	var base_path = "res://resources/" + subfolder
-	var dir = DirAccess.open(base_path)
-	dir.list_dir_begin()
-
-	var file_name = dir.get_next()
-	while file_name != "":
-		if not dir.current_is_dir():
-			array.push_back(load(base_path + "/" + file_name))
-		file_name = dir.get_next()
+@export var items: Array[ItemData]
 
 func _on_slot_clicked(index: int):
 	inventory_interact.emit(self, index, INTERACTION_EVENT_SLOT_CLICKED)
