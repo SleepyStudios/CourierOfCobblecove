@@ -35,7 +35,7 @@ func _on_option_chosen(action_id: String):
 			set_data("text", "Why, yes, I am. I lost it somewhere at the bottom of the cliffs")
 		"1":
 			set_data("step", 2)
-			set_data("text", "Many thanks indeed! This gem and I are on and the same...")
+			set_data("text", "Many thanks indeed! This gem and I are one and the same...")
 		"2":
 			set_data("step", 3)
 			set_data("text", "You know I rarely have visitors up here, so far away. Would you like some tea? It's a long story...")

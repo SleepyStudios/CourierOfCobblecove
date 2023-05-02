@@ -4,7 +4,10 @@ const CursorAnim = preload("res://scenes/cursor_anim.tscn")
 
 func _ready():
 	set_frame_and_progress(1, 1)
-	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED_HIDDEN)
+	if OS.has_feature("web"):
+		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)		
+	else:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED_HIDDEN)
 
 func _unhandled_input(event):
 	if event.is_action_pressed("click"):
