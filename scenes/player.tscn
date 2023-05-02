@@ -76,3 +76,6 @@ frame_progress = 0.622102
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-6, 96)
 shape = SubResource("RectangleShape2D_hfoaj")
+
+[node name="FootstepPlayer" type="AudioStreamPlayer2D" parent="."]
+volume_db = -5.0

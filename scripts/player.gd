@@ -12,6 +12,12 @@ var has_destination: bool
 var in_dialogue_with_npc: NPC
 var hide_dialogue_this_frame: bool
 
+@onready var footstep_player = $FootstepPlayer
+var step_left = preload("res://sounds/step_left.wav")
+var step_right = preload("res://sounds/step_right.wav")
+var steps = 0
+var tmr_footstep = 0
+
 func _ready():
 	Global.register_player(self)
 
@@ -51,8 +57,21 @@ func get_input():
 	else:
 		$AnimatedSprite2D.flip_h = false;
 
+func play_footstep(delta):
+	if velocity != Vector2.ZERO:
+		tmr_footstep += delta
+	
+	if tmr_footstep >= 0.3:
+		footstep_player.pitch_scale = RandomNumberGenerator.new().randf_range(1, 1.1)
+		footstep_player.stream = step_left if steps % 2 == 0 else step_right
+		footstep_player.play()
+		steps += 1
+		tmr_footstep = 0
+
 func _physics_process(delta):
 	get_input()
+	
+	play_footstep(delta)	
 	
 	if move_and_slide() or position.distance_to(destination) <= MIN_MOVE_RANGE:
 		has_destination = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://esdpm2jrxnpr"]
+[gd_scene load_steps=11 format=3 uid="uid://esdpm2jrxnpr"]
 
 [ext_resource type="Script" path="res://scripts/global.gd" id="1_kkwxs"]
 [ext_resource type="PackedScene" uid="uid://c8hkbr3ewl6ef" path="res://scenes/scene_transition.tscn" id="2_7hg2b"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cijsbj5edbq1f" path="res://scenes/ui.tscn" id="5_lrij6"]
 [ext_resource type="Texture2D" uid="uid://bpm0nhaybabnx" path="res://sprites/cursor_grab.png" id="6_kxn8n"]
 [ext_resource type="Script" path="res://scripts/cursor.gd" id="7_mjail"]
+[ext_resource type="AudioStream" uid="uid://bvppyemw62eis" path="res://sounds/itsallhappeningintheforest.mp3" id="9_yckwb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a3l28"]
 animations = [{
@@ -43,3 +44,7 @@ layer = 2
 sprite_frames = SubResource("SpriteFrames_a3l28")
 centered = false
 script = ExtResource("7_mjail")
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_yckwb")
+volume_db = -10.0
