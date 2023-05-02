@@ -9,17 +9,17 @@ func _get_options() -> Array[Dictionary]:
 		{
 			"action_id": "0",
 			"enabled": get_data("step") == 0,
-			"text": "I gave it an offering"
+			"text": "Are you missing a red gem?"
 		},
 		{
 			"action_id": "1",
 			"enabled": get_data("step") == 1,
-			"text": "A small ruby gem"
+			"text": "I found it"
 		},
 		{
 			"action_id": "2",
 			"enabled": get_data("step") == 2,
-			"text": "Where did you find it?"
+			"text": "It sounds like you've got a story to tell"
 		},
 		{
 			"action_id": "3",
@@ -32,10 +32,10 @@ func _on_option_chosen(action_id: String):
 	match action_id:
 		"0":
 			set_data("step", 1)
-			set_data("text", "An offering? What sort of offering?")
+			set_data("text", "Why, yes, I am. I lost it somewhere at the bottom of the cliffs")
 		"1":
 			set_data("step", 2)
-			set_data("text", "A red gem you say... I suppose it makes sense. I knew I'd finally lose it one day")
+			set_data("text", "Many thanks indeed! This gem and I are on and the same...")
 		"2":
 			set_data("step", 3)
 			set_data("text", "You know I rarely have visitors up here, so far away. Would you like some tea? It's a long story...")
@@ -46,4 +46,4 @@ func _on_option_chosen(action_id: String):
 
 func _on_dialogue_opened():
 	set_data("step", 0)
-	set_data("text", "You there! How did you get here? There was a demon... guarding the river!")
+	set_data("text", "Hello? How can I help you?")

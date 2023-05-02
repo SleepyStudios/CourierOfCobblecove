@@ -28,8 +28,7 @@ func _on_option_chosen(action_id: String):
 			Global.quest_manager.start_quest("Goblin")
 			set_data("potion_given", true)
 			npc.animation.play("goblin")
-			npc.z_index = 5
-			npc.follow_path(350.0, 0.3)
+			npc.animator_play_anim("shrink")
 			npc.hide_dialogue()
 
 func _handle_quest_completed(from_check: bool):

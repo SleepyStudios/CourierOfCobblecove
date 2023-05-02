@@ -1,15 +1,23 @@
-[gd_scene load_steps=7 format=3 uid="uid://cih4dyijc6c3"]
+[gd_scene load_steps=9 format=3 uid="uid://ckovplnfaoh87"]
 
-[ext_resource type="Texture2D" uid="uid://cdxdjl0s7ydsl" path="res://sprites/zones/d2.png" id="1_docbg"]
+[ext_resource type="Texture2D" uid="uid://sf4yxqipgnbv" path="res://sprites/zones/d2_restored.png" id="1_5nd35"]
 [ext_resource type="PackedScene" uid="uid://dm5txbfgjhjlf" path="res://scenes/player.tscn" id="2_j4oa0"]
-[ext_resource type="Texture2D" uid="uid://brqbkqwwvcaph" path="res://sprites/zones/b4_overlay.png" id="3_yrxx7"]
+[ext_resource type="Texture2D" uid="uid://bew2oxuaujcwx" path="res://sprites/zones/d2_overlay.png" id="3_6sb3h"]
 [ext_resource type="PackedScene" uid="uid://do3axeenpwefl" path="res://scenes/teleporter.tscn" id="4_lrdja"]
-[ext_resource type="PackedScene" uid="uid://dx8ph8342dsa7" path="res://scenes/npcs/water_demon.tscn" id="5_on60r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nsc0x"]
 size = Vector2(1920, 166.375)
 
-[node name="D2" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wffvj"]
+size = Vector2(1455.15, 325.879)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8cg3q"]
+size = Vector2(416.941, 325.879)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ysonr"]
+size = Vector2(792.735, 265)
+
+[node name="D2Restored" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -400.0
@@ -21,19 +29,17 @@ color = Color(0, 0, 0, 1)
 
 [node name="BG" type="Sprite2D" parent="."]
 position = Vector2(600, 450)
-texture = ExtResource("1_docbg")
+texture = ExtResource("1_5nd35")
 
 [node name="Player" parent="." instance=ExtResource("2_j4oa0")]
 position = Vector2(207, 461)
 
 [node name="Overlay" type="Sprite2D" parent="."]
-visible = false
 z_index = 999
 position = Vector2(600, 450)
-texture = ExtResource("3_yrxx7")
+texture = ExtResource("3_6sb3h")
 
 [node name="OverlayRect" type="ColorRect" parent="."]
-visible = false
 z_index = 999
 offset_left = -400.0
 offset_top = 900.0
@@ -42,7 +48,7 @@ offset_bottom = 1000.0
 color = Color(0, 0, 0, 1)
 
 [node name="Teleporter c2" parent="." instance=ExtResource("4_lrdja")]
-position = Vector2(-30, 500)
+position = Vector2(-22, 500)
 rotation = 1.5708
 zone = "c2"
 anchor = "Right"
@@ -60,7 +66,7 @@ position = Vector2(86, 506)
 position = Vector2(1101, 385)
 
 [node name="TopCollision" type="StaticBody2D" parent="."]
-position = Vector2(600, -30)
+position = Vector2(600, 10)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopCollision"]
 shape = SubResource("RectangleShape2D_nsc0x")
@@ -71,5 +77,47 @@ position = Vector2(600, 950)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomCollision"]
 shape = SubResource("RectangleShape2D_nsc0x")
 
-[node name="WaterDemon" parent="." instance=ExtResource("5_on60r")]
-position = Vector2(641, 195)
+[node name="BottomCollision4" type="StaticBody2D" parent="."]
+position = Vector2(793, 932)
+rotation = -2.00887
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomCollision4"]
+position = Vector2(-340.782, 39.1362)
+shape = SubResource("RectangleShape2D_wffvj")
+
+[node name="BottomCollision5" type="StaticBody2D" parent="."]
+position = Vector2(101, -660)
+rotation = -2.00887
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomCollision5"]
+position = Vector2(-859.889, 39.1363)
+rotation = 0.118682
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_8cg3q")
+
+[node name="BottomCollision6" type="StaticBody2D" parent="."]
+position = Vector2(304, -67.0001)
+rotation = -2.00887
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomCollision6"]
+position = Vector2(-859.889, 39.1363)
+rotation = 0.118682
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_8cg3q")
+
+[node name="BottomCollision2" type="StaticBody2D" parent="."]
+position = Vector2(600, 950)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomCollision2"]
+position = Vector2(-274.917, -101.881)
+rotation = 0.315905
+shape = SubResource("RectangleShape2D_ysonr")
+
+[node name="BottomCollision3" type="StaticBody2D" parent="."]
+position = Vector2(1442, 528)
+rotation = -0.945968
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomCollision3"]
+position = Vector2(-274.917, -101.881)
+rotation = 0.315905
+shape = SubResource("RectangleShape2D_ysonr")

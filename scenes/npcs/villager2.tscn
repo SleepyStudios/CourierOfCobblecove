@@ -8,7 +8,7 @@
 script = ExtResource("2_yewxe")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hp1tn"]
-size = Vector2(116, 110.077)
+size = Vector2(66, 153)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ai4k0"]
 animations = [{
@@ -26,7 +26,7 @@ script = ExtResource("1_6d0t4")
 quest_data = SubResource("Resource_bhe3d")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
-position = Vector2(-9.53674e-07, -3.96147)
+position = Vector2(-3, 3.5)
 shape = SubResource("RectangleShape2D_hp1tn")
 
 [node name="Animation" type="AnimatedSprite2D" parent="."]

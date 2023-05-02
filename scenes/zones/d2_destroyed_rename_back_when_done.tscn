@@ -1,14 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://ckovplnfaoh87"]
+[gd_scene load_steps=7 format=3 uid="uid://cih4dyijc6c3"]
 
-[ext_resource type="Texture2D" uid="uid://sf4yxqipgnbv" path="res://sprites/zones/d2_restored.png" id="1_5kpa7"]
-[ext_resource type="PackedScene" uid="uid://dm5txbfgjhjlf" path="res://scenes/player.tscn" id="2_1f8r3"]
-[ext_resource type="Texture2D" uid="uid://brqbkqwwvcaph" path="res://sprites/zones/b4_overlay.png" id="3_r4unh"]
-[ext_resource type="PackedScene" uid="uid://do3axeenpwefl" path="res://scenes/teleporter.tscn" id="4_rq0ld"]
+[ext_resource type="Texture2D" uid="uid://cdxdjl0s7ydsl" path="res://sprites/zones/d2.png" id="1_smyhf"]
+[ext_resource type="PackedScene" uid="uid://dm5txbfgjhjlf" path="res://scenes/player.tscn" id="2_tccjl"]
+[ext_resource type="Texture2D" uid="uid://brqbkqwwvcaph" path="res://sprites/zones/b4_overlay.png" id="3_2y4cl"]
+[ext_resource type="PackedScene" uid="uid://do3axeenpwefl" path="res://scenes/teleporter.tscn" id="4_8jco2"]
+[ext_resource type="PackedScene" uid="uid://dx8ph8342dsa7" path="res://scenes/npcs/water_demon.tscn" id="5_1a3l4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nsc0x"]
 size = Vector2(1920, 166.375)
 
-[node name="D2Restored" type="Node2D"]
+[node name="D2" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -400.0
@@ -20,16 +21,16 @@ color = Color(0, 0, 0, 1)
 
 [node name="BG" type="Sprite2D" parent="."]
 position = Vector2(600, 450)
-texture = ExtResource("1_5kpa7")
+texture = ExtResource("1_smyhf")
 
-[node name="Player" parent="." instance=ExtResource("2_1f8r3")]
+[node name="Player" parent="." instance=ExtResource("2_tccjl")]
 position = Vector2(207, 461)
 
 [node name="Overlay" type="Sprite2D" parent="."]
 visible = false
 z_index = 999
 position = Vector2(600, 450)
-texture = ExtResource("3_r4unh")
+texture = ExtResource("3_2y4cl")
 
 [node name="OverlayRect" type="ColorRect" parent="."]
 visible = false
@@ -40,13 +41,13 @@ offset_right = 1600.0
 offset_bottom = 1000.0
 color = Color(0, 0, 0, 1)
 
-[node name="Teleporter c2" parent="." instance=ExtResource("4_rq0ld")]
+[node name="Teleporter c2" parent="." instance=ExtResource("4_8jco2")]
 position = Vector2(-30, 500)
 rotation = 1.5708
 zone = "c2"
 anchor = "Right"
 
-[node name="Teleporter e2" parent="." instance=ExtResource("4_rq0ld")]
+[node name="Teleporter e2" parent="." instance=ExtResource("4_8jco2")]
 position = Vector2(1220, 500)
 rotation = 1.5708
 zone = "e2"
@@ -69,3 +70,6 @@ position = Vector2(600, 950)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomCollision"]
 shape = SubResource("RectangleShape2D_nsc0x")
+
+[node name="WaterDemon" parent="." instance=ExtResource("5_1a3l4")]
+position = Vector2(641, 195)
