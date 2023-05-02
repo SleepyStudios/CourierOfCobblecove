@@ -1,20 +1,31 @@
-[gd_scene load_steps=7 format=3 uid="uid://xee701s6vps6"]
+[gd_scene load_steps=9 format=3 uid="uid://xee701s6vps6"]
 
 [ext_resource type="Script" path="res://scripts/npc.gd" id="1_mvw7f"]
 [ext_resource type="Script" path="res://scripts/quests/baker_quest.gd" id="2_6vq7y"]
-[ext_resource type="Texture2D" uid="uid://cr6dm4eh5ix16" path="res://sprites/npcs/baker.png" id="3_481ly"]
+[ext_resource type="Texture2D" uid="uid://ciyuxnuehe5ws" path="res://sprites/npcs/baker_idle.png" id="3_jawdf"]
 
 [sub_resource type="Resource" id="Resource_0tidw"]
 script = ExtResource("2_6vq7y")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hp1tn"]
-size = Vector2(143, 111.077)
+size = Vector2(105, 264)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j1aka"]
+atlas = ExtResource("3_jawdf")
+region = Rect2(0, 0, 126, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mr3i1"]
+atlas = ExtResource("3_jawdf")
+region = Rect2(126, 0, 126, 288)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_duyjj"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_481ly")
+"texture": SubResource("AtlasTexture_j1aka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mr3i1")
 }],
 "loop": true,
 "name": &"idle",
@@ -26,13 +37,14 @@ script = ExtResource("1_mvw7f")
 quest_data = SubResource("Resource_0tidw")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
-position = Vector2(2.5, -4.46147)
+position = Vector2(-2.5, -2)
 shape = SubResource("RectangleShape2D_hp1tn")
 
 [node name="Animation" type="AnimatedSprite2D" parent="."]
 z_index = 2
 sprite_frames = SubResource("SpriteFrames_duyjj")
 animation = &"idle"
+frame_progress = 0.595607
 flip_h = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

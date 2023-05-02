@@ -127,7 +127,7 @@ rotation = -0.118682
 shape = SubResource("RectangleShape2D_nm3e3")
 
 [node name="Baker" parent="." instance=ExtResource("5_hglk0")]
-position = Vector2(363, 301)
+position = Vector2(444, 307)
 
 [node name="SignD3" parent="." instance=ExtResource("6_gyfqv")]
 position = Vector2(621, 276)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cr6dm4eh5ix16"
-path="res://.godot/imported/baker.png-0a0586b48af5bdf87ee84a2d03d02d99.ctex"
+uid="uid://ciyuxnuehe5ws"
+path="res://.godot/imported/baker_idle.png-7519e8f2b018e14323e41fecb2bb2ea3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/npcs/baker.png"
-dest_files=["res://.godot/imported/baker.png-0a0586b48af5bdf87ee84a2d03d02d99.ctex"]
+source_file="res://sprites/npcs/baker_idle.png"
+dest_files=["res://.godot/imported/baker_idle.png-7519e8f2b018e14323e41fecb2bb2ea3.ctex"]
 
 [params]
 
