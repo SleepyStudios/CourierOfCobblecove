@@ -13,6 +13,10 @@ var inventory_data = preload("res://resources/inventory.tres")
 var post_teleport_data: Dictionary
 var player: Player
 
+func _init():
+	if OS.has_feature("macos"):
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+
 func _ready():
 	scene_transition.load_initial_scene()
 
