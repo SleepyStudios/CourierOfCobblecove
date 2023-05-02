@@ -20,7 +20,7 @@ func _handle_quest_completed(from_check: bool):
 	set_data("just_completed", !from_check)
 
 func _on_dialogue_opened():
-	if not is_quest_completed():
+	if is_quest_started() and not is_quest_completed():
 		Global.inventory_data.try_add_item('"Best" Stick')
 		complete_quest()
 

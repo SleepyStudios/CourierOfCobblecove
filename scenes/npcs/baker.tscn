@@ -44,7 +44,7 @@ shape = SubResource("RectangleShape2D_hp1tn")
 z_index = 2
 sprite_frames = SubResource("SpriteFrames_duyjj")
 animation = &"idle"
-frame_progress = 0.595607
+frame_progress = 0.960682
 flip_h = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
