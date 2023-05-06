@@ -14,11 +14,15 @@ var post_teleport_data: Dictionary
 var player: Player
 
 func _init():
-	if OS.has_feature("macos"):
+	if OS.has_feature("macos") and not OS.has_feature("debug"):
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 
 func _ready():
 	scene_transition.load_initial_scene()
+
+func _unhandled_input(event):
+	if event.is_action_pressed("ui_cancel"):
+		get_tree().quit()
 
 func go_to_zone(zone: String, anchor: String, anim = "black"):
 	if zone == "d2" and quest_manager.is_quest_completed("WaterDemon"):

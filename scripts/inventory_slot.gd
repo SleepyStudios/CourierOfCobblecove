@@ -4,7 +4,6 @@ signal slot_clicked(index: int)
 signal slot_dropped(index: int)
 
 @onready var texture_rect = $MarginContainer/TextureRect
-@onready var quantity_label = $MarginContainer2/QuantityLabel
 
 var _grabbed_slot: bool
 var _is_hovered: bool
@@ -21,12 +20,6 @@ func set_slot_data(slot_data: SlotData, grabbed_slot: bool, original_index: int 
 	var item_data = slot_data.item_data
 	texture_rect.texture = item_data.texture
 	tooltip_text = "%s\n%s" % [item_data.name, item_data.description]
-	
-	if slot_data.quantity > 1 and not grabbed_slot:
-		quantity_label.text = "x%s" % slot_data.quantity
-		quantity_label.show()
-	else:
-		quantity_label.hide()
 
 func _on_gui_input(event):
 	if event is InputEventMouseButton \

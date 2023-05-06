@@ -37,8 +37,9 @@ func _physics_process(delta):
 	if path_follow:
 		path_follow.set_progress(path_follow.get_progress() + speed * delta)
 		if disable_collision_at_ratio > 0 and path_follow.progress_ratio >= disable_collision_at_ratio:
-			if get_node_or_null("CollisionShape"):
-				$CollisionShape.queue_free()
+			var collision_shape = get_node_or_null("CollisionShape")
+			if collision_shape:
+				collision_shape.queue_free()
 
 func animator_play_anim(name: String):
 	$AnimationPlayer.play("shrink")

@@ -21,10 +21,10 @@ var tmr_footstep = 0
 func _ready():
 	Global.register_player(self)
 
-func hide_dialogue():
+func request_hide_dialogue():
 	hide_dialogue_this_frame = true
 	
-func exit_dialogue_immediately():
+func hide_dialogue():
 	in_dialogue_with_npc.hide_dialogue()
 	in_dialogue_with_npc = null
 
@@ -36,13 +36,13 @@ func _unhandled_input(event):
 			has_destination = true
 			
 			if in_dialogue_with_npc:
-				exit_dialogue_immediately()
+				hide_dialogue()
 
 			on_destination_set.emit(destination)
 
 func get_input():
 	if hide_dialogue_this_frame:
-		exit_dialogue_immediately()
+		hide_dialogue()
 		hide_dialogue_this_frame = false
 		return
 	

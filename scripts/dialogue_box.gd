@@ -12,7 +12,7 @@ func _ready():
 
 func _gui_input(event):
 	if event.is_action_pressed("click") and visible:
-		Global.player.hide_dialogue()
+		Global.player.request_hide_dialogue()
 
 func handle_ui():
 	dialogue_text.text = quest_data._get_text()
@@ -22,9 +22,7 @@ func show_dialogue():
 	if visible: return
 	
 	show()
-#	$DialogueOpenPlayer.pitch_scale = RandomNumberGenerator.new().randf_range(0.9, 1.1)		
-#	$DialogueOpenPlayer.play()
-	
+
 	quest_data._on_dialogue_opened()
 	handle_ui()
 	

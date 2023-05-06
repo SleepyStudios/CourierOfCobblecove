@@ -9,7 +9,27 @@ const INTERACTION_EVENT_SLOT_DROPPED = "slot_dropped"
 
 @export var slots: Array[SlotData]
 var recipes: Array[RecipeData]
-@export var items: Array[ItemData]
+var items: Array[ItemData]
+
+func _init():
+	load_items()
+
+func load_items():
+	var assets = [];
+	var base_path = "res://resources/items"
+	var dir = DirAccess.open(base_path)
+	dir.list_dir_begin()
+
+	var file_name = dir.get_next()
+	while file_name != "":
+		if file_name.ends_with(".remap"): # for exports
+			file_name = file_name.trim_suffix(".remap")
+
+		assets.push_back(base_path + "/" + file_name)
+		file_name = dir.get_next()
+
+	for asset in assets:
+		load(asset)
 
 func _on_slot_clicked(index: int):
 	inventory_interact.emit(self, index, INTERACTION_EVENT_SLOT_CLICKED)
@@ -37,9 +57,7 @@ func get_available_recipe(slot1: SlotData, slot2: SlotData) -> RecipeData:
 func drop_slot_data(grabbed_slot_data: SlotData, index: int, original_grabbed_index: int):
 	var slot_data = slots[index]
 	
-	if slot_data and slot_data.can_merge_with_slot(grabbed_slot_data):
-		slot_data.merge_with(grabbed_slot_data)
-	elif index == original_grabbed_index:
+	if index == original_grabbed_index:
 		slots[index] = grabbed_slot_data
 	else:
 		var temp = slots[index]
@@ -66,7 +84,6 @@ func pickup_item(slot_data: SlotData) -> bool:
 	
 func try_add_item(item_name: String):
 	var slot_data = SlotData.new()
-	slot_data.quantity = 1
 	slot_data.item_data = items.filter(func (i): return i.name == item_name).front()
 	
 	if not pickup_item(slot_data):
