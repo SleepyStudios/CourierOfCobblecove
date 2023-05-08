@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bo5jg1cojdnap" path="res://sprites/zones/c2.png" id="1_6ko3x"]
 [ext_resource type="PackedScene" uid="uid://dm5txbfgjhjlf" path="res://scenes/player.tscn" id="2_aeixr"]
 [ext_resource type="Texture2D" uid="uid://b4l0f06gmkkw8" path="res://sprites/zones/c2_overlay.png" id="3_pt7pw"]
-[ext_resource type="PackedScene" uid="uid://do3axeenpwefl" path="res://scenes/teleporter.tscn" id="4_6ghvt"]
+[ext_resource type="PackedScene" path="res://scenes/teleporter.tscn" id="4_6ghvt"]
 [ext_resource type="PackedScene" uid="uid://bjj3vuba5ierb" path="res://scenes/npcs/villager1.tscn" id="5_f527k"]
 [ext_resource type="PackedScene" uid="uid://7pd5lutxgmjs" path="res://scenes/npcs/villager2.tscn" id="6_51uj0"]
 [ext_resource type="PackedScene" uid="uid://dlfxeuunxgupi" path="res://scenes/npcs/villager3.tscn" id="7_gd031"]

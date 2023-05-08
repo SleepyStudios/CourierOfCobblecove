@@ -12,7 +12,7 @@ func _ready():
 
 func _gui_input(event):
 	if event.is_action_pressed("click") and visible:
-		Global.player.request_hide_dialogue()
+		Global.player.hide_dialogue()
 
 func handle_ui():
 	dialogue_text.text = quest_data._get_text()

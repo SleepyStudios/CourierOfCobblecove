@@ -3,64 +3,42 @@ class_name Player
 
 signal on_destination_set(destination: Vector2)
 
-const MIN_MOVE_RANGE = 4
-
 @export var speed = 300
 
-var destination: Vector2
-var has_destination: bool
 var in_dialogue_with_npc: NPC
-var hide_dialogue_this_frame: bool
+var tmr_dialogue_last_opened: float
 
 @onready var footstep_player = $FootstepPlayer
 var step_left = preload("res://sounds/step_left.wav")
 var step_right = preload("res://sounds/step_right.wav")
-var steps = 0
-var tmr_footstep = 0
+var steps: int
+var tmr_footstep: float
+
+@onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
+
+var position_last_frame: Vector2
 
 func _ready():
 	Global.register_player(self)
-
-func request_hide_dialogue():
-	hide_dialogue_this_frame = true
 	
+func set_in_dialogue_with_npc(npc: NPC):
+	if tmr_dialogue_last_opened >= 1:
+		in_dialogue_with_npc = npc
+		in_dialogue_with_npc.show_dialogue()
+		tmr_dialogue_last_opened = 0
+
 func hide_dialogue():
 	in_dialogue_with_npc.hide_dialogue()
 	in_dialogue_with_npc = null
 
 func _unhandled_input(event):
-	if event.is_action_pressed("click") and get_global_mouse_position().y < 900:
-		var possible = get_global_mouse_position() + Vector2(0, -96)
-		if position.distance_to(possible) >= MIN_MOVE_RANGE:
-			destination = possible
-			has_destination = true
-			
-			if in_dialogue_with_npc:
-				hide_dialogue()
-
-			on_destination_set.emit(destination)
-
-func get_input():
-	if hide_dialogue_this_frame:
-		hide_dialogue()
-		hide_dialogue_this_frame = false
-		return
-	
-	if not has_destination:
-		velocity = Vector2.ZERO
-		return
-
-	velocity = (destination - position).normalized() * speed
-	
-	if (velocity.x < 0):
-		$AnimatedSprite2D.flip_h = true;
-	else:
-		$AnimatedSprite2D.flip_h = false;
+	if event.is_action_pressed("click"):
+		var destination = get_global_mouse_position()
+		navigation_agent.target_position = destination
+		on_destination_set.emit(destination)
 
 func play_footstep(delta):
-	if velocity != Vector2.ZERO:
-		tmr_footstep += delta
-	
+	tmr_footstep += delta
 	if tmr_footstep >= 0.3:
 		footstep_player.pitch_scale = RandomNumberGenerator.new().randf_range(1, 1.1)
 		footstep_player.stream = step_left if steps % 2 == 0 else step_right
@@ -69,24 +47,33 @@ func play_footstep(delta):
 		tmr_footstep = 0
 
 func _physics_process(delta):
-	get_input()
-	
-	play_footstep(delta)	
-	
-	if move_and_slide() or position.distance_to(destination) <= MIN_MOVE_RANGE:
-		has_destination = false
-	
-	if (has_destination):
-		$AnimatedSprite2D.play("run")
-	else:
-		$AnimatedSprite2D.play("idle")
+	tmr_dialogue_last_opened += delta
+	position_last_frame = position
 
-	if not velocity == Vector2.ZERO and get_slide_collision_count() > 0:
-		for i in get_slide_collision_count():
-			var collider = get_slide_collision(i).get_collider()
-			if collider.get_groups().has("NPCs") and not in_dialogue_with_npc:
-				in_dialogue_with_npc = collider
-				in_dialogue_with_npc.show_dialogue()
+	if navigation_agent.is_navigation_finished():
+		$AnimatedSprite2D.play("idle")
+		return
+
+	velocity = position.direction_to(navigation_agent.get_next_path_position()).normalized() * speed
+	if move_and_slide():
+		position = position_last_frame
+		navigation_agent.target_position = position
+
+	if get_last_slide_collision():
+		var collider = get_last_slide_collision().get_collider()
+		if collider.get_groups().has("NPCs") and not in_dialogue_with_npc:
+			set_in_dialogue_with_npc(collider)
+	elif in_dialogue_with_npc:
+		hide_dialogue()
+
+	if (velocity.x < 0):
+		$AnimatedSprite2D.flip_h = true;
+	elif (velocity.x > 0):
+		$AnimatedSprite2D.flip_h = false;
+
+	if position.distance_to(navigation_agent.get_next_path_position()) >= 4:
+		$AnimatedSprite2D.play("run")
+		play_footstep(delta)	
 
 func set_post_teleport_data(data: Dictionary):
 	if data:
@@ -95,7 +82,7 @@ func set_post_teleport_data(data: Dictionary):
 		
 		match data.anchor:
 			"Top", "Bottom":
-				position.x = data.xPos				
+				position.x = data.xPos
 				position.y = anchor.position.y
 			"Left", "Right":
 				position.x = anchor.position.x
