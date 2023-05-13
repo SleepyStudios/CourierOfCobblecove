@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dw3xbf6helec7"]
+[gd_scene load_steps=9 format=3 uid="uid://dw3xbf6helec7"]
 
 [ext_resource type="Texture2D" uid="uid://bo5jg1cojdnap" path="res://sprites/zones/c2.png" id="1_6ko3x"]
 [ext_resource type="PackedScene" uid="uid://dm5txbfgjhjlf" path="res://scenes/player.tscn" id="2_aeixr"]
@@ -8,11 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://7pd5lutxgmjs" path="res://scenes/npcs/villager2.tscn" id="6_51uj0"]
 [ext_resource type="PackedScene" uid="uid://dlfxeuunxgupi" path="res://scenes/npcs/villager3.tscn" id="7_gd031"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nsc0x"]
-size = Vector2(1920, 166.375)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3qsu5"]
-size = Vector2(355.001, 401.184)
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_w41pi"]
+vertices = PackedVector2Array(710, 883, 53, 886, 55, 221, 737, 729, 843, 676, 878, 225, 871, 560, 1145, 255, 1147, 503, 1019, 561)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 3, 2, 5, 6), PackedInt32Array(6, 5, 7, 8, 9)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(878, 225, 1145, 255, 1147, 503, 1019, 561, 871, 560, 843, 676, 737, 729, 710, 883, 53, 886, 55, 221)])
 
 [node name="C2" type="Node2D"]
 
@@ -64,52 +63,6 @@ position = Vector2(86, 506)
 [node name="BottomAnchor" type="Node2D" parent="."]
 position = Vector2(600, 713)
 
-[node name="TopCollision" type="StaticBody2D" parent="."]
-position = Vector2(600, -50)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TopCollision"]
-shape = SubResource("RectangleShape2D_nsc0x")
-
-[node name="LeftCollision" type="StaticBody2D" parent="."]
-position = Vector2(-70, 500)
-rotation = 1.5708
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftCollision"]
-position = Vector2(-0.000213623, -64)
-shape = SubResource("RectangleShape2D_nsc0x")
-
-[node name="LeftCollision2" type="StaticBody2D" parent="."]
-position = Vector2(1032, -723)
-rotation = 1.5708
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftCollision2"]
-position = Vector2(746.5, 53.4048)
-shape = SubResource("RectangleShape2D_3qsu5")
-
-[node name="LeftCollision3" type="StaticBody2D" parent="."]
-position = Vector2(1099, 29)
-rotation = 1.5708
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftCollision3"]
-position = Vector2(746.5, 53.4048)
-shape = SubResource("RectangleShape2D_3qsu5")
-
-[node name="LeftCollision4" type="StaticBody2D" parent="."]
-position = Vector2(1359, -50)
-rotation = 1.5708
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftCollision4"]
-position = Vector2(746.5, 53.4048)
-shape = SubResource("RectangleShape2D_3qsu5")
-
-[node name="LeftCollision5" type="StaticBody2D" parent="."]
-position = Vector2(980, 234)
-rotation = 1.5708
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftCollision5"]
-position = Vector2(746.5, 53.4048)
-shape = SubResource("RectangleShape2D_3qsu5")
-
 [node name="Villager1" parent="." instance=ExtResource("5_f527k")]
 position = Vector2(615, 130)
 
@@ -118,3 +71,6 @@ position = Vector2(303, 134)
 
 [node name="Villager3" parent="." instance=ExtResource("7_gd031")]
 position = Vector2(428, 133)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_w41pi")

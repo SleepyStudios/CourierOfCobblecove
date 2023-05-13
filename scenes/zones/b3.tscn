@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bfcjtg4mlu2kp"]
+[gd_scene load_steps=8 format=3 uid="uid://bfcjtg4mlu2kp"]
 
 [ext_resource type="Texture2D" uid="uid://dusdslqg2860b" path="res://sprites/zones/b3.png" id="1_phm7n"]
 [ext_resource type="PackedScene" uid="uid://dm5txbfgjhjlf" path="res://scenes/player.tscn" id="2_eyfvq"]
@@ -7,14 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://baix6hqrj113q" path="res://scenes/npcs/goblin.tscn" id="5_hur75"]
 [ext_resource type="PackedScene" uid="uid://betvl0frt2ahx" path="res://scenes/npcs/goblin_rescued.tscn" id="6_j0var"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3uehk"]
-size = Vector2(1920, 352.188)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nsc0x"]
-size = Vector2(1920, 166.375)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2bs2r"]
-size = Vector2(400, 160)
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ebtiq"]
+vertices = PackedVector2Array(404, 673, 358, 360, 1180, 322, 1169, 763, 254, 820, 243, 691)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(0, 3, 4, 5)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(243, 691, 404, 673, 358, 360, 1180, 322, 1169, 763, 254, 820)])
 
 [node name="B3" type="Node2D"]
 
@@ -65,38 +61,11 @@ position = Vector2(1076, 478)
 [node name="LeftAnchor" type="Node2D" parent="."]
 position = Vector2(434, 516)
 
-[node name="Collision" type="StaticBody2D" parent="."]
-position = Vector2(600, 70)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision"]
-position = Vector2(2.08165e-12, 2.08165e-12)
-shape = SubResource("RectangleShape2D_3uehk")
-
-[node name="Collision2" type="StaticBody2D" parent="."]
-position = Vector2(600, 860)
-rotation = -0.0872665
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision2"]
-position = Vector2(2.08165e-12, 2.08165e-12)
-shape = SubResource("RectangleShape2D_nsc0x")
-
-[node name="Collision3" type="StaticBody2D" parent="."]
-position = Vector2(90, 500)
-rotation = 1.5708
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision3"]
-shape = SubResource("RectangleShape2D_nsc0x")
-
-[node name="Collision4" type="StaticBody2D" parent="."]
-position = Vector2(220, 370)
-rotation = 1.5708
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision4"]
-position = Vector2(2.08165e-12, 2.08165e-12)
-shape = SubResource("RectangleShape2D_2bs2r")
-
 [node name="Goblin" parent="." instance=ExtResource("5_hur75")]
 position = Vector2(472, 272)
 
 [node name="GoblinRescued" parent="." instance=ExtResource("6_j0var")]
 position = Vector2(350, 226)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_ebtiq")

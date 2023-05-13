@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dsa7m0qpw1ias"]
+[gd_scene load_steps=9 format=3 uid="uid://dsa7m0qpw1ias"]
 
 [ext_resource type="Texture2D" uid="uid://cywvxl3vu6o88" path="res://sprites/zones/c6.png" id="1_3g2wl"]
 [ext_resource type="PackedScene" uid="uid://dm5txbfgjhjlf" path="res://scenes/player.tscn" id="2_s3vwy"]
@@ -8,11 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://cgx7yv2bgrq8s" path="res://scenes/npcs/mermaid.tscn" id="5_vpyj7"]
 [ext_resource type="Script" path="res://scripts/waves.gd" id="5_xols5"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qc31m"]
-size = Vector2(1920, 166.375)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a2mqe"]
-size = Vector2(947, 246.188)
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_1k5h3"]
+vertices = PackedVector2Array(1161, 431, 584, 425, 586, 150, 1162, 153)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(1162, 153, 586, 150, 584, 425, 1161, 431)])
 
 [node name="C6" type="Node2D"]
 
@@ -51,26 +50,6 @@ offset_right = 1600.0
 offset_bottom = 1000.0
 color = Color(0, 0, 0, 1)
 
-[node name="LeftCollision" type="StaticBody2D" parent="."]
-position = Vector2(0, 500)
-rotation = 1.5708
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftCollision"]
-shape = SubResource("RectangleShape2D_qc31m")
-
-[node name="TopCollision" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TopCollision"]
-position = Vector2(600, 22)
-shape = SubResource("RectangleShape2D_qc31m")
-
-[node name="BottomCollision" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomCollision"]
-position = Vector2(600, 513)
-rotation = 0.0244346
-shape = SubResource("RectangleShape2D_qc31m")
-
 [node name="Teleporter d6" parent="." instance=ExtResource("4_g40p2")]
 position = Vector2(1189, 500)
 rotation = 1.5708
@@ -84,8 +63,5 @@ position = Vector2(1055, 264)
 z_index = 999
 position = Vector2(435, 288)
 
-[node name="TopCollision2" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TopCollision2"]
-position = Vector2(113.5, 61.9063)
-shape = SubResource("RectangleShape2D_a2mqe")
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_1k5h3")

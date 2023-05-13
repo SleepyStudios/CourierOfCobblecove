@@ -15,7 +15,7 @@ func _on_inventory_interact(inventory_data: InventoryData, index: int, event_nam
 		[null, InventoryData.INTERACTION_EVENT_SLOT_CLICKED]:
 			grabbed_slot_data = inventory_data.grab_slot_data(index)
 		[_, InventoryData.INTERACTION_EVENT_SLOT_DROPPED]:
-			inventory_data.drop_slot_data(grabbed_slot_data, index, grabbed_slot._original_index)
+			inventory_data.drop_slot_data(grabbed_slot_data, index, grabbed_slot.original_index)
 			grabbed_slot_data = null
 		
 	update_grabbed_slot(index)

@@ -8,7 +8,7 @@
 script = ExtResource("2_21prm")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hp1tn"]
-size = Vector2(252.986, 256.5)
+size = Vector2(166, 256.5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f3ybp"]
 atlas = ExtResource("4_louql")
@@ -51,7 +51,7 @@ script = ExtResource("1_cp23n")
 quest_data = SubResource("Resource_mpvue")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
-position = Vector2(-24.493, 28.9763)
+position = Vector2(-20, 28.9763)
 shape = SubResource("RectangleShape2D_hp1tn")
 
 [node name="Animation" type="AnimatedSprite2D" parent="."]

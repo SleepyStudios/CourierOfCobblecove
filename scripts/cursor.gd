@@ -17,7 +17,7 @@ func connect_player(player: Player):
 	player.on_destination_set.connect(_on_destination_set)
 
 func _process(delta):
-	position = get_global_mouse_position()
+	position = get_viewport().get_mouse_position()
 
 func _on_destination_set(destination: Vector2):
 	var cursor_anim = CursorAnim.instantiate()

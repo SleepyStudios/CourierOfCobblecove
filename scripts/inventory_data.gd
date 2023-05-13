@@ -25,11 +25,8 @@ func load_items():
 		if file_name.ends_with(".remap"): # for exports
 			file_name = file_name.trim_suffix(".remap")
 
-		assets.push_back(base_path + "/" + file_name)
+		items.push_back(load(base_path + "/" + file_name))
 		file_name = dir.get_next()
-
-	for asset in assets:
-		load(asset)
 
 func _on_slot_clicked(index: int):
 	inventory_interact.emit(self, index, INTERACTION_EVENT_SLOT_CLICKED)
@@ -77,7 +74,7 @@ func pickup_item(slot_data: SlotData) -> bool:
 	for i in range(0, slots.size()):
 		if !slots[i]:
 			slots[i] = slot_data
-			inventory_updated.emit(self)			
+			inventory_updated.emit(self)
 			return true
 			
 	return false
@@ -96,5 +93,5 @@ func remove_item(item_name: String):
 	for i in range(0, slots.size()):
 		if slots[i] and slots[i].item_data.name == item_name:
 			slots[i] = null
-			inventory_updated.emit(self)			
+			inventory_updated.emit(self)
 			break
