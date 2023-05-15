@@ -15,7 +15,6 @@ func _init():
 	load_items()
 
 func load_items():
-	var assets = [];
 	var base_path = "res://resources/items"
 	var dir = DirAccess.open(base_path)
 	dir.list_dir_begin()
@@ -52,8 +51,6 @@ func get_available_recipe(slot1: SlotData, slot2: SlotData) -> RecipeData:
 	return null
 
 func drop_slot_data(grabbed_slot_data: SlotData, index: int, original_grabbed_index: int):
-	var slot_data = slots[index]
-	
 	if index == original_grabbed_index:
 		slots[index] = grabbed_slot_data
 	else:

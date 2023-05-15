@@ -42,4 +42,4 @@ func _physics_process(delta):
 				collision_shape.queue_free()
 
 func animator_play_anim(name: String):
-	$AnimationPlayer.play("shrink")
+	$AnimationPlayer.play(name)
