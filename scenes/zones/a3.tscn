@@ -3,11 +3,13 @@
 [ext_resource type="Texture2D" uid="uid://ba3m1vhtqo1rm" path="res://sprites/zones/a3.png" id="1_cs7j1"]
 [ext_resource type="PackedScene" uid="uid://dm5txbfgjhjlf" path="res://scenes/player.tscn" id="2_b3eml"]
 [ext_resource type="Texture2D" uid="uid://brqbkqwwvcaph" path="res://sprites/zones/b4_overlay.png" id="3_l7xrp"]
-[ext_resource type="PackedScene" uid="uid://do3axeenpwefl" path="res://scenes/teleporter.tscn" id="4_re8k5"]
+[ext_resource type="PackedScene" path="res://scenes/teleporter.tscn" id="4_re8k5"]
 [ext_resource type="PackedScene" uid="uid://wlrb2r63n5ch" path="res://scenes/npcs/wizard.tscn" id="5_vmv7l"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nsc0x"]
-size = Vector2(1920, 166.375)
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_i82se"]
+vertices = PackedVector2Array(780, 676, 982, 613, 1064, 654, 968, 767, 816, 822, 657, 847, 512, 849, 697, 703)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5, 6, 7)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(780, 676, 982, 613, 1064, 654, 968, 767, 816, 822, 657, 847, 512, 849, 697, 703)])
 
 [node name="A3" type="Node2D"]
 
@@ -59,35 +61,8 @@ position = Vector2(725, 81)
 [node name="RightAnchor" type="Node2D" parent="."]
 position = Vector2(910, 614)
 
-[node name="BottomCollision" type="StaticBody2D" parent="."]
-position = Vector2(600, 930)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomCollision"]
-position = Vector2(0, -48)
-shape = SubResource("RectangleShape2D_nsc0x")
-
-[node name="BottomCollision4" type="StaticBody2D" parent="."]
-position = Vector2(1137, 810)
-rotation = -0.589921
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomCollision4"]
-position = Vector2(0, -48)
-shape = SubResource("RectangleShape2D_nsc0x")
-
-[node name="BottomCollision3" type="StaticBody2D" parent="."]
-position = Vector2(600, 500)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomCollision3"]
-position = Vector2(0, -48)
-shape = SubResource("RectangleShape2D_nsc0x")
-
-[node name="BottomCollision2" type="StaticBody2D" parent="."]
-position = Vector2(1165, 605)
-rotation = 1.5708
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomCollision2"]
-position = Vector2(0, -18)
-shape = SubResource("RectangleShape2D_nsc0x")
-
 [node name="Wizard" parent="." instance=ExtResource("5_vmv7l")]
 position = Vector2(627, 641)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_i82se")

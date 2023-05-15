@@ -1,29 +1,16 @@
-[gd_scene load_steps=13 format=3 uid="uid://b8jlo2d51beci"]
+[gd_scene load_steps=8 format=3 uid="uid://b8jlo2d51beci"]
 
 [ext_resource type="Texture2D" uid="uid://b1aevwci4u1ww" path="res://sprites/zones/d3.png" id="1_ukiva"]
 [ext_resource type="PackedScene" uid="uid://dm5txbfgjhjlf" path="res://scenes/player.tscn" id="2_bj23m"]
 [ext_resource type="Texture2D" uid="uid://c0ge1bg4tu17s" path="res://sprites/zones/d3_overlay.png" id="3_vyw6k"]
-[ext_resource type="PackedScene" uid="uid://do3axeenpwefl" path="res://scenes/teleporter.tscn" id="4_27eud"]
+[ext_resource type="PackedScene" path="res://scenes/teleporter.tscn" id="4_27eud"]
 [ext_resource type="PackedScene" uid="uid://xee701s6vps6" path="res://scenes/npcs/baker.tscn" id="5_hglk0"]
 [ext_resource type="PackedScene" uid="uid://c41wtrphcvh06" path="res://scenes/npcs/sign_d3.tscn" id="6_gyfqv"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qc31m"]
-size = Vector2(1920, 166.375)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p7lml"]
-size = Vector2(148, 317.188)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2cax5"]
-size = Vector2(148, 405.594)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ltmpy"]
-size = Vector2(400, 117)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nqu47"]
-size = Vector2(754.5, 336.013)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nm3e3"]
-size = Vector2(309.337, 222.882)
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_5vx7n"]
+vertices = PackedVector2Array(892, 398, 1148, 350, 1148, 410, 1084, 433, 643, 158, 1085, 158, 1081, 198, 891, 206, 846, 764, 762, 867, 224, 865, 222, 678, 540, 189, 1078, 594, 1036, 607, 949, 723, 55, 420, 290, 188, 55, 553)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(0, 8, 9, 10, 11, 12, 4, 7), PackedInt32Array(0, 3, 13, 14), PackedInt32Array(0, 14, 15, 8), PackedInt32Array(16, 17, 12, 11, 18)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(55, 420, 55, 553, 222, 678, 224, 865, 762, 867, 846, 764, 949, 723, 1036, 607, 1078, 594, 1084, 433, 1148, 410, 1148, 350, 892, 398, 891, 206, 1081, 198, 1085, 158, 643, 158, 540, 189, 290, 188)])
 
 [node name="D3" type="Node2D"]
 
@@ -72,13 +59,6 @@ position = Vector2(603, 909)
 zone = "d4"
 anchor = "Top"
 
-[node name="TopCollision" type="StaticBody2D" parent="."]
-position = Vector2(0, -580)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TopCollision"]
-position = Vector2(595, 632)
-shape = SubResource("RectangleShape2D_qc31m")
-
 [node name="LeftAnchor" type="Node2D" parent="."]
 position = Vector2(123, 533)
 
@@ -86,47 +66,13 @@ position = Vector2(123, 533)
 position = Vector2(1066, 458)
 
 [node name="BottomAnchor" type="Node2D" parent="."]
-position = Vector2(612, 731)
-
-[node name="TopLeftCollision" type="StaticBody2D" parent="."]
-position = Vector2(0, -580)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TopLeftCollision"]
-position = Vector2(10, 771.406)
-shape = SubResource("RectangleShape2D_p7lml")
-
-[node name="BottomLeftCollision" type="StaticBody2D" parent="."]
-position = Vector2(0, -580)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomLeftCollision"]
-position = Vector2(9, 1369.2)
-shape = SubResource("RectangleShape2D_2cax5")
-
-[node name="BottomLeftCollision2" type="StaticBody2D" parent="."]
-position = Vector2(0, -580)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomLeftCollision2"]
-position = Vector2(132, 1471.5)
-shape = SubResource("RectangleShape2D_ltmpy")
-
-[node name="BottomRightCollision" type="StaticBody2D" parent="."]
-position = Vector2(0, -580)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomRightCollision"]
-position = Vector2(1114.16, 1370.6)
-rotation = -0.71733
-shape = SubResource("RectangleShape2D_nqu47")
-
-[node name="RightCollision" type="StaticBody2D" parent="."]
-position = Vector2(0, -580)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RightCollision"]
-position = Vector2(1119.39, 780.03)
-rotation = -0.118682
-shape = SubResource("RectangleShape2D_nm3e3")
+position = Vector2(612, 761)
 
 [node name="Baker" parent="." instance=ExtResource("5_hglk0")]
 position = Vector2(444, 307)
 
 [node name="SignD3" parent="." instance=ExtResource("6_gyfqv")]
 position = Vector2(621, 276)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_5vx7n")

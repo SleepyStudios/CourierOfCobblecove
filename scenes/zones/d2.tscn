@@ -1,21 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://ckovplnfaoh87"]
+[gd_scene load_steps=6 format=3 uid="uid://ckovplnfaoh87"]
 
 [ext_resource type="Texture2D" uid="uid://sf4yxqipgnbv" path="res://sprites/zones/d2_restored.png" id="1_5nd35"]
 [ext_resource type="PackedScene" uid="uid://dm5txbfgjhjlf" path="res://scenes/player.tscn" id="2_j4oa0"]
 [ext_resource type="Texture2D" uid="uid://bew2oxuaujcwx" path="res://sprites/zones/d2_overlay.png" id="3_6sb3h"]
-[ext_resource type="PackedScene" uid="uid://do3axeenpwefl" path="res://scenes/teleporter.tscn" id="4_lrdja"]
+[ext_resource type="PackedScene" path="res://scenes/teleporter.tscn" id="4_lrdja"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nsc0x"]
-size = Vector2(1920, 166.375)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wffvj"]
-size = Vector2(1455.15, 325.879)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8cg3q"]
-size = Vector2(416.941, 325.879)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ysonr"]
-size = Vector2(792.735, 265)
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_g1xom"]
+vertices = PackedVector2Array(796, 237, 748, 165, 988, 214, 451, 542, 503, 650, 227, 627, 62, 635, 56, 191, 378, 254, 429, 394, 518, 458, 561, 317, 585, 420, 685, 307, 832, 351, 1153, 365, 1033, 564, 971, 660, 859, 554, 858, 467, 681, 405, 779, 425, 1156, 549)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5), PackedInt32Array(5, 6, 7, 8, 9, 3), PackedInt32Array(10, 3, 9, 11), PackedInt32Array(12, 10, 11, 13), PackedInt32Array(14, 0, 2), PackedInt32Array(15, 16, 17, 18, 19, 2), PackedInt32Array(20, 12, 13, 14), PackedInt32Array(21, 20, 14), PackedInt32Array(19, 21, 14, 2), PackedInt32Array(15, 22, 16)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(56, 191, 378, 254, 429, 394, 561, 317, 685, 307, 832, 351, 796, 237, 748, 165, 988, 214, 1153, 365, 1156, 549, 1033, 564, 971, 660, 859, 554, 858, 467, 779, 425, 681, 405, 585, 420, 518, 458, 451, 542, 503, 650, 227, 627, 62, 635)])
 
 [node name="D2Restored" type="Node2D"]
 
@@ -65,57 +58,5 @@ position = Vector2(119, 503)
 [node name="RightAnchor" type="Node2D" parent="."]
 position = Vector2(1057, 404)
 
-[node name="TopCollision" type="StaticBody2D" parent="."]
-position = Vector2(600, 10)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TopCollision"]
-shape = SubResource("RectangleShape2D_nsc0x")
-
-[node name="BottomCollision" type="StaticBody2D" parent="."]
-position = Vector2(600, 950)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomCollision"]
-shape = SubResource("RectangleShape2D_nsc0x")
-
-[node name="BottomCollision4" type="StaticBody2D" parent="."]
-position = Vector2(793, 932)
-rotation = -2.00887
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomCollision4"]
-position = Vector2(-340.782, 39.1362)
-shape = SubResource("RectangleShape2D_wffvj")
-
-[node name="BottomCollision5" type="StaticBody2D" parent="."]
-position = Vector2(101, -660)
-rotation = -2.00887
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomCollision5"]
-position = Vector2(-859.889, 39.1363)
-rotation = 0.118682
-shape = SubResource("RectangleShape2D_8cg3q")
-
-[node name="BottomCollision6" type="StaticBody2D" parent="."]
-position = Vector2(304, -67.0001)
-rotation = -2.00887
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomCollision6"]
-position = Vector2(-859.889, 39.1363)
-rotation = 0.118682
-shape = SubResource("RectangleShape2D_8cg3q")
-
-[node name="BottomCollision2" type="StaticBody2D" parent="."]
-position = Vector2(600, 950)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomCollision2"]
-position = Vector2(-274.917, -101.881)
-rotation = 0.315905
-shape = SubResource("RectangleShape2D_ysonr")
-
-[node name="BottomCollision3" type="StaticBody2D" parent="."]
-position = Vector2(1442, 528)
-rotation = -0.945968
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomCollision3"]
-position = Vector2(-274.917, -101.881)
-rotation = 0.315905
-shape = SubResource("RectangleShape2D_ysonr")
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_g1xom")

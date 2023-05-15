@@ -22,9 +22,7 @@ func show_dialogue():
 	if visible: return
 	
 	show()
-#	$DialogueOpenPlayer.pitch_scale = RandomNumberGenerator.new().randf_range(0.9, 1.1)		
-#	$DialogueOpenPlayer.play()
-	
+
 	quest_data._on_dialogue_opened()
 	handle_ui()
 	

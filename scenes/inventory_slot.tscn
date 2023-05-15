@@ -29,6 +29,7 @@ corner_radius_bottom_left = 4
 corner_detail = 12
 
 [node name="InventorySlot" type="PanelContainer"]
+texture_filter = 1
 custom_minimum_size = Vector2(64, 64)
 offset_right = 40.0
 offset_bottom = 40.0
@@ -48,20 +49,6 @@ texture_filter = 1
 layout_mode = 2
 expand_mode = 1
 stretch_mode = 5
-
-[node name="MarginContainer2" type="MarginContainer" parent="."]
-layout_mode = 2
-theme_override_constants/margin_right = 4
-
-[node name="QuantityLabel" type="Label" parent="MarginContainer2"]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 4
-text = "x99
-"
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

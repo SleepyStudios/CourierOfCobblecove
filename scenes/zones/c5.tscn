@@ -1,26 +1,21 @@
-[gd_scene load_steps=12 format=3 uid="uid://b1t1em5yd0ll4"]
+[gd_scene load_steps=10 format=3 uid="uid://b1t1em5yd0ll4"]
 
 [ext_resource type="Texture2D" uid="uid://caqdahpemrrha" path="res://sprites/zones/c5.png" id="1_dwusb"]
 [ext_resource type="PackedScene" uid="uid://dm5txbfgjhjlf" path="res://scenes/player.tscn" id="2_58aj1"]
 [ext_resource type="Texture2D" uid="uid://b6uwnbbknyjth" path="res://sprites/zones/c5_overlay.png" id="3_lagom"]
 [ext_resource type="PackedScene" path="res://scenes/teleporter.tscn" id="4_mxt7x"]
 [ext_resource type="PackedScene" uid="uid://i1l0jr3mfww4" path="res://scenes/dropped_item.tscn" id="5_22rlq"]
-[ext_resource type="Resource" path="res://resources/items/gem.tres" id="6_p0axn"]
+[ext_resource type="Resource" uid="uid://37egmraddmwf" path="res://resources/items/gem.tres" id="6_p0axn"]
 [ext_resource type="Script" path="res://scripts/slot_data.gd" id="7_8ehfq"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qc31m"]
-size = Vector2(1920, 208.188)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i0grb"]
-size = Vector2(758, 1349)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mvt4u"]
-size = Vector2(72, 91)
 
 [sub_resource type="Resource" id="Resource_5b5li"]
 script = ExtResource("7_8ehfq")
 item_data = ExtResource("6_p0axn")
-quantity = 1
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_t7ylo"]
+vertices = PackedVector2Array(832, 773, 956, 782, 758, 804, 667, 769, 265, 671, 231, 316, 180, 212, 246, 212, 239, 298, 251, 367, 245, 374, 581, 163, 668, 603, 311, 522, 405, 369, 1160, 210, 1160, 669, 829, 606, 986, 149, 782, 143, 403, 212)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 2, 4), PackedInt32Array(5, 6, 7, 8), PackedInt32Array(5, 8, 9, 10), PackedInt32Array(11, 12, 3, 4, 13, 14), PackedInt32Array(15, 16, 1, 0, 17, 18), PackedInt32Array(19, 18, 17, 12, 11), PackedInt32Array(14, 20, 11), PackedInt32Array(14, 13, 10, 9)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(265, 671, 311, 522, 245, 374, 231, 316, 180, 212, 246, 212, 239, 298, 251, 367, 405, 369, 403, 212, 581, 163, 782, 143, 986, 149, 1160, 210, 1160, 669, 956, 782, 758, 804), PackedVector2Array(668, 603, 829, 606, 832, 773, 667, 769)])
 
 [node name="C5" type="Node2D"]
 
@@ -52,18 +47,6 @@ offset_right = 1600.0
 offset_bottom = 1000.0
 color = Color(0, 0, 0, 1)
 
-[node name="TopCollision" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TopCollision"]
-position = Vector2(600, 0)
-shape = SubResource("RectangleShape2D_qc31m")
-
-[node name="BottomCollision" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomCollision"]
-position = Vector2(600, 959.094)
-shape = SubResource("RectangleShape2D_qc31m")
-
 [node name="Teleporter d5" parent="." instance=ExtResource("4_mxt7x")]
 position = Vector2(1189, 500)
 rotation = 1.5708
@@ -73,25 +56,10 @@ anchor = "Left"
 [node name="RightAnchor" type="Node2D" parent="."]
 position = Vector2(1048, 540)
 
-[node name="LeftCollision" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftCollision"]
-position = Vector2(-192, 513.5)
-shape = SubResource("RectangleShape2D_i0grb")
-
-[node name="RockCollision" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RockCollision"]
-position = Vector2(324, 285.5)
-shape = SubResource("RectangleShape2D_mvt4u")
-
-[node name="RockCollision2" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RockCollision2"]
-position = Vector2(749, 689)
-shape = SubResource("RectangleShape2D_mvt4u")
-
 [node name="DroppedItem" parent="." instance=ExtResource("5_22rlq")]
 position = Vector2(607, 387)
 slot_data = SubResource("Resource_5b5li")
 drop_id = "Gem-607-387"
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_t7ylo")

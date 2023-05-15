@@ -1,13 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://dhx28oifkrvy6"]
+[gd_scene load_steps=8 format=3 uid="uid://dhx28oifkrvy6"]
 
 [ext_resource type="Texture2D" uid="uid://bw8fnawm4tity" path="res://sprites/zones/c3.png" id="1_7xogw"]
 [ext_resource type="PackedScene" uid="uid://dm5txbfgjhjlf" path="res://scenes/player.tscn" id="2_ymiyr"]
 [ext_resource type="Texture2D" uid="uid://c1tal3mjrfwr8" path="res://sprites/zones/c3_overlay.png" id="3_w6qno"]
-[ext_resource type="PackedScene" uid="uid://do3axeenpwefl" path="res://scenes/teleporter.tscn" id="4_cwmdi"]
+[ext_resource type="PackedScene" path="res://scenes/teleporter.tscn" id="4_cwmdi"]
 [ext_resource type="PackedScene" uid="uid://yvod41sq654j" path="res://scenes/npcs/bear.tscn" id="6_oys5k"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nsc0x"]
-size = Vector2(1920, 183.188)
 
 [sub_resource type="Curve2D" id="Curve2D_txsn5"]
 _data = {
@@ -15,15 +12,10 @@ _data = {
 }
 point_count = 2
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mj03r"]
-size = Vector2(630, 337)
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jgjxf"]
-radius = 50.7739
-height = 419.466
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jqjr0"]
-size = Vector2(299.098, 761.041)
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_4tsga"]
+vertices = PackedVector2Array(762, 371, 593, 223, 480, 68, 686, 66, 1160, 238, 1154, 772, 68, 771, 76, 314, 642, 501, 791, 436, 744, 501, 424, 315)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 8), PackedInt32Array(0, 4, 5, 9), PackedInt32Array(10, 9, 5), PackedInt32Array(7, 11, 8), PackedInt32Array(10, 5, 8)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(686, 66, 1160, 238, 1154, 772, 68, 771, 76, 314, 424, 315, 642, 501, 744, 501, 791, 436, 762, 371, 593, 223, 480, 68)])
 
 [node name="C3" type="Node2D"]
 
@@ -81,13 +73,6 @@ position = Vector2(1072, 466)
 [node name="LeftAnchor" type="Node2D" parent="."]
 position = Vector2(143, 435)
 
-[node name="BottomCollision" type="StaticBody2D" parent="."]
-position = Vector2(600, 950)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomCollision"]
-position = Vector2(0, -29.4063)
-shape = SubResource("RectangleShape2D_nsc0x")
-
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2(200, 73)
 curve = SubResource("Curve2D_txsn5")
@@ -104,25 +89,5 @@ position = Vector2(-19, 0)
 wait_time = 0.2
 one_shot = true
 
-[node name="TopLeftCollision" type="StaticBody2D" parent="."]
-position = Vector2(600, 950)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TopLeftCollision"]
-position = Vector2(-423, -865.5)
-shape = SubResource("RectangleShape2D_mj03r")
-
-[node name="CrackCollision" type="StaticBody2D" parent="."]
-position = Vector2(600, 950)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CrackCollision"]
-position = Vector2(-33, -642)
-rotation = -0.82205
-shape = SubResource("CapsuleShape2D_jgjxf")
-
-[node name="TopRightCollision" type="StaticBody2D" parent="."]
-position = Vector2(600, 950)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TopRightCollision"]
-position = Vector2(377, -973)
-rotation = -1.30202
-shape = SubResource("RectangleShape2D_jqjr0")
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_4tsga")

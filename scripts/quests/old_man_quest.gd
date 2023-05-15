@@ -8,7 +8,7 @@ func _get_options() -> Array[Dictionary]:
 	return [
 		{
 			"action_id": "0",
-			"enabled": get_data("step") == 0,
+			"enabled": get_data("step") == 0 and Global.inventory_data.has_item("Gem"),
 			"text": "Are you missing a large gem?"
 		},
 		{

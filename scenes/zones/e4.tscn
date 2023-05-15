@@ -3,10 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://bkodbyb3jocof" path="res://sprites/zones/e4.png" id="1_ghitq"]
 [ext_resource type="PackedScene" uid="uid://dm5txbfgjhjlf" path="res://scenes/player.tscn" id="2_68yr7"]
 [ext_resource type="Texture2D" uid="uid://brqbkqwwvcaph" path="res://sprites/zones/b4_overlay.png" id="3_xhw6q"]
-[ext_resource type="PackedScene" uid="uid://do3axeenpwefl" path="res://scenes/teleporter.tscn" id="4_2d23q"]
+[ext_resource type="PackedScene" path="res://scenes/teleporter.tscn" id="4_2d23q"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qc31m"]
-size = Vector2(1920, 211.188)
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_atjx8"]
+vertices = PackedVector2Array(46, 301, 252, 218, 1153, 207, 1153, 864, 49, 859)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(46, 301, 252, 218, 1153, 207, 1153, 864, 49, 859)])
 
 [node name="E4" type="Node2D"]
 
@@ -56,13 +58,6 @@ position = Vector2(608, 900)
 zone = "e5"
 anchor = "Top"
 
-[node name="TopCollision" type="StaticBody2D" parent="."]
-position = Vector2(0, -600)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TopCollision"]
-position = Vector2(593, 681.594)
-shape = SubResource("RectangleShape2D_qc31m")
-
 [node name="LeftAnchor" type="Node2D" parent="."]
 position = Vector2(147, 453)
 
@@ -70,4 +65,7 @@ position = Vector2(147, 453)
 position = Vector2(1115, 499)
 
 [node name="BottomAnchor" type="Node2D" parent="."]
-position = Vector2(618, 698)
+position = Vector2(618, 758)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_atjx8")
