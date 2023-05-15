@@ -25,6 +25,11 @@ func _get_options() -> Array[Dictionary]:
 			"action_id": "3",
 			"enabled": get_data("step") == 3,
 			"text": "I'd like that"
+		},
+		{
+			"action_id": "4",
+			"enabled": get_data("step") == 3,
+			"text": "I need to make some deliveries first"
 		}
 	]
 
@@ -43,7 +48,12 @@ func _on_option_chosen(action_id: String):
 			npc.hide_dialogue()
 			Global.ui.queue_free()
 			Global.scene_transition.change_scene("res://scenes/ending.tscn", "white")
+		"4":
+			npc.hide_dialogue()
 
 func _on_dialogue_opened():
 	set_data("step", 0)
 	set_data("text", "Hello? How can I help you?")
+
+func _on_dialogue_closed():
+	reset_data()
