@@ -14,6 +14,7 @@ config/name="The Courier of Cobblecove"
 run/main_scene="res://scenes/zones/b4.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://sprites/items/love_letter.png"
+config/windows_native_icon="res://windows_icon.ico"
 
 [autoload]
 
