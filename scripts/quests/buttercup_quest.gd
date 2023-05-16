@@ -28,6 +28,7 @@ func _on_option_chosen(action_id: String):
 			Global.quest_manager.start_quest("Goblin")
 			set_data("potion_given", true)
 			npc.animation.play("goblin")
+			npc.get_node_or_null("CollisionShape").queue_free()
 			npc.animator_play_anim("shrink")
 			npc.hide_dialogue()
 			npc.quest_data = null
@@ -37,7 +38,7 @@ func _handle_quest_completed(from_check: bool):
 		if from_check:
 			npc.queue_free()
 		else:
-			npc.animation.play("walking")			
+			npc.animation.play("walking")
 			npc.follow_path(300.0, 0.5)
 			npc.hide_dialogue()
 	else:
