@@ -33,6 +33,10 @@ mouse_cursor/tooltip_position_offset=Vector2(12, -90)
 
 enabled=PackedStringArray()
 
+[gui]
+
+timers/tooltip_delay_sec=0.0
+
 [input]
 
 click={
