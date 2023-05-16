@@ -9,9 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://dlfxeuunxgupi" path="res://scenes/npcs/villager3.tscn" id="7_gd031"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_w41pi"]
-vertices = PackedVector2Array(710, 883, 53, 886, 55, 221, 737, 729, 843, 676, 878, 225, 871, 560, 1145, 255, 1147, 503, 1019, 561)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 3, 2, 5, 6), PackedInt32Array(6, 5, 7, 8, 9)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(878, 225, 1145, 255, 1147, 503, 1019, 561, 871, 560, 843, 676, 737, 729, 710, 883, 53, 886, 55, 221)])
+vertices = PackedVector2Array(710, 883, 53, 886, 55, 221, 737, 729, 843, 676, 878, 225, 871, 560, 1019, 561, 1160, 280, 1160, 501)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 3, 2, 5, 6), PackedInt32Array(7, 6, 5, 8, 9)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(878, 225, 1160, 280, 1160, 501, 1019, 561, 871, 560, 843, 676, 737, 729, 710, 883, 53, 886, 55, 221)])
 
 [node name="C2" type="Node2D"]
 

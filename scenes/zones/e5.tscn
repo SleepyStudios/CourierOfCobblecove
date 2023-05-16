@@ -7,9 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://cqyhxiaawm6gs" path="res://scenes/npcs/snake.tscn" id="5_ajbo4"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_tgoiw"]
-vertices = PackedVector2Array(368, 79, 927, 77, 850, 165, 356, 177, 228, 701, 40, 773, 44, 201, 268, 229, 334, 639, 860, 343, 785, 485, 594, 590, 452, 644, 759, 614)
+vertices = PackedVector2Array(368, 54, 921, 54, 850, 165, 356, 177, 228, 701, 23, 773, 26, 203, 268, 229, 334, 639, 860, 343, 785, 485, 594, 590, 452, 644, 759, 614)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7, 8), PackedInt32Array(7, 3, 2, 9, 10, 11, 12, 8), PackedInt32Array(10, 13, 11)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(368, 79, 927, 77, 850, 165, 860, 343, 785, 485, 759, 614, 594, 590, 452, 644, 334, 639, 228, 701, 40, 773, 44, 201, 268, 229, 356, 177)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(368, 54, 921, 54, 850, 165, 860, 343, 785, 485, 759, 614, 594, 590, 452, 644, 334, 639, 228, 701, 23, 773, 26, 203, 268, 229, 356, 177)])
 
 [node name="E5" type="Node2D"]
 

@@ -8,9 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://d0e4jiewjujux" path="res://scenes/npcs/sign_d4.tscn" id="6_t2joa"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_elwgb"]
-vertices = PackedVector2Array(214, 876, 44, 721, 43, 432, 285, 432, 734, 880, 370, 398, 1016, 331, 1153, 389, 1152, 746, 447, 328, 835, 271, 763, 165, 450, 133, 501, 80, 712, 80)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(4, 3, 5), PackedInt32Array(6, 7, 8, 4, 5, 9, 10), PackedInt32Array(11, 10, 9, 12, 13), PackedInt32Array(11, 13, 14)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(501, 80, 712, 80, 763, 165, 835, 271, 1016, 331, 1153, 389, 1152, 746, 734, 880, 214, 876, 44, 721, 43, 432, 285, 432, 370, 398, 447, 328, 450, 133)])
+vertices = PackedVector2Array(835, 271, 1016, 331, 1176, 413, 1176, 743, 817, 444, 816, 265, 763, 165, 504, 71, 713, 71, 652, 268, 450, 133, 653, 444, 734, 880, 214, 876, 19, 718, 15, 434, 285, 432, 370, 398, 447, 328)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5), PackedInt32Array(6, 0, 5), PackedInt32Array(7, 8, 6, 5, 9, 10), PackedInt32Array(11, 4, 3, 12, 13), PackedInt32Array(13, 14, 15, 16, 11), PackedInt32Array(11, 16, 17), PackedInt32Array(11, 17, 18, 9), PackedInt32Array(9, 18, 10)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(504, 71, 713, 71, 763, 165, 835, 271, 1016, 331, 1176, 413, 1176, 743, 734, 880, 214, 876, 19, 718, 15, 434, 285, 432, 370, 398, 447, 328, 450, 133), PackedVector2Array(652, 268, 816, 265, 817, 444, 653, 444)])
 
 [node name="D4" type="Node2D"]
 

@@ -8,9 +8,9 @@
 [ext_resource type="Script" path="res://scripts/waves.gd" id="5_354lv"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_nxg2y"]
-vertices = PackedVector2Array(63, 200, 384, 78, 955, 79, 974, 521, 465, 516, 208, 482, 57, 442)
+vertices = PackedVector2Array(26, 208, 438, 48, 959, 41, 974, 521, 465, 516, 208, 482, 25, 441)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5, 6)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(63, 200, 384, 78, 955, 79, 974, 521, 465, 516, 208, 482, 57, 442)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(26, 208, 438, 48, 959, 41, 974, 521, 465, 516, 208, 482, 25, 441)])
 
 [node name="D6" type="Node2D"]
 

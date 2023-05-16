@@ -13,9 +13,9 @@ _data = {
 point_count = 2
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_4tsga"]
-vertices = PackedVector2Array(762, 371, 593, 223, 480, 68, 686, 66, 1160, 238, 1154, 772, 68, 771, 76, 314, 642, 501, 791, 436, 744, 501, 424, 315)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 8), PackedInt32Array(0, 4, 5, 9), PackedInt32Array(10, 9, 5), PackedInt32Array(7, 11, 8), PackedInt32Array(10, 5, 8)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(686, 66, 1160, 238, 1154, 772, 68, 771, 76, 314, 424, 315, 642, 501, 744, 501, 791, 436, 762, 371, 593, 223, 480, 68)])
+vertices = PackedVector2Array(593, 223, 478, 46, 682, 43, 762, 371, 51, 761, 49, 321, 424, 315, 642, 501, 1165, 776, 744, 501, 1160, 238, 791, 436)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(8, 4, 7, 9), PackedInt32Array(10, 8, 9, 11), PackedInt32Array(2, 10, 11, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(682, 43, 1160, 238, 1165, 776, 51, 761, 49, 321, 424, 315, 642, 501, 744, 501, 791, 436, 762, 371, 593, 223, 478, 46)])
 
 [node name="C3" type="Node2D"]
 

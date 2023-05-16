@@ -6,9 +6,9 @@
 [ext_resource type="PackedScene" path="res://scenes/teleporter.tscn" id="4_2d23q"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_atjx8"]
-vertices = PackedVector2Array(46, 301, 252, 218, 1153, 207, 1153, 864, 49, 859)
+vertices = PackedVector2Array(22, 308, 252, 218, 1182, 229, 1185, 878, 20, 882)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(46, 301, 252, 218, 1153, 207, 1153, 864, 49, 859)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(22, 308, 252, 218, 1182, 229, 1185, 878, 20, 882)])
 
 [node name="E4" type="Node2D"]
 

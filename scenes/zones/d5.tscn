@@ -6,9 +6,9 @@
 [ext_resource type="PackedScene" path="res://scenes/teleporter.tscn" id="4_sp42f"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_refmf"]
-vertices = PackedVector2Array(314, 569, 527, 498, 1152, 628, 907, 853, 306, 670, 267, 850, 226, 742, 207, 679, 1151, 203, 533, 389, 464, 336, 399, 277, 283, 490, 271, 501, 128, 679, 50, 648, 89, 609, 58, 205, 99, 516, 272, 367, 190, 475, 293, 311)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(4, 3, 5, 6, 7), PackedInt32Array(8, 2, 9, 10, 11), PackedInt32Array(1, 9, 2), PackedInt32Array(12, 1, 0, 13), PackedInt32Array(14, 7, 6), PackedInt32Array(14, 6, 15), PackedInt32Array(16, 14, 15), PackedInt32Array(16, 15, 17, 18), PackedInt32Array(19, 20, 18, 17, 21), PackedInt32Array(12, 13, 20, 19), PackedInt32Array(17, 8, 11), PackedInt32Array(21, 17, 11)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(58, 205, 1151, 203, 1152, 628, 907, 853, 267, 850, 226, 742, 50, 648), PackedVector2Array(293, 311, 399, 277, 464, 336, 533, 389, 527, 498, 283, 490, 272, 367), PackedVector2Array(99, 516, 190, 475, 271, 501, 314, 569, 306, 670, 207, 679, 128, 679, 89, 609)])
+vertices = PackedVector2Array(283, 490, 527, 498, 1166, 628, 909, 871, 597, 888, 314, 569, 271, 501, 304, 870, 306, 670, 226, 742, 207, 679, 1164, 202, 533, 389, 464, 336, 399, 277, 128, 679, 37, 651, 89, 609, 31, 205, 99, 516, 272, 367, 190, 475, 293, 311)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5, 6), PackedInt32Array(5, 4, 7, 8), PackedInt32Array(8, 7, 9, 10), PackedInt32Array(11, 2, 12, 13, 14), PackedInt32Array(1, 12, 2), PackedInt32Array(15, 10, 9), PackedInt32Array(15, 9, 16), PackedInt32Array(17, 15, 16), PackedInt32Array(17, 16, 18, 19), PackedInt32Array(20, 21, 19, 18, 22), PackedInt32Array(0, 6, 21, 20), PackedInt32Array(18, 11, 14), PackedInt32Array(22, 18, 14)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(31, 205, 1164, 202, 1166, 628, 909, 871, 597, 888, 304, 870, 226, 742, 37, 651), PackedVector2Array(293, 311, 399, 277, 464, 336, 533, 389, 527, 498, 283, 490, 272, 367), PackedVector2Array(99, 516, 190, 475, 271, 501, 314, 569, 306, 670, 207, 679, 128, 679, 89, 609)])
 
 [node name="D5" type="Node2D"]
 

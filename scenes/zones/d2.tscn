@@ -6,9 +6,9 @@
 [ext_resource type="PackedScene" path="res://scenes/teleporter.tscn" id="4_lrdja"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_g1xom"]
-vertices = PackedVector2Array(796, 237, 748, 165, 988, 214, 451, 542, 503, 650, 227, 627, 62, 635, 56, 191, 378, 254, 429, 394, 518, 458, 561, 317, 585, 420, 685, 307, 832, 351, 1153, 365, 1033, 564, 971, 660, 859, 554, 858, 467, 681, 405, 779, 425, 1156, 549)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5), PackedInt32Array(5, 6, 7, 8, 9, 3), PackedInt32Array(10, 3, 9, 11), PackedInt32Array(12, 10, 11, 13), PackedInt32Array(14, 0, 2), PackedInt32Array(15, 16, 17, 18, 19, 2), PackedInt32Array(20, 12, 13, 14), PackedInt32Array(21, 20, 14), PackedInt32Array(19, 21, 14, 2), PackedInt32Array(15, 22, 16)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(56, 191, 378, 254, 429, 394, 561, 317, 685, 307, 832, 351, 796, 237, 748, 165, 988, 214, 1153, 365, 1156, 549, 1033, 564, 971, 660, 859, 554, 858, 467, 779, 425, 681, 405, 585, 420, 518, 458, 451, 542, 503, 650, 227, 627, 62, 635)])
+vertices = PackedVector2Array(796, 237, 748, 165, 988, 214, 451, 542, 503, 650, 227, 627, 43, 607, 37, 189, 378, 254, 429, 394, 518, 458, 561, 317, 585, 420, 685, 307, 832, 351, 1160, 367, 1033, 564, 971, 660, 859, 554, 858, 467, 681, 405, 779, 425, 1162, 538)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5), PackedInt32Array(5, 6, 7, 8, 9, 3), PackedInt32Array(10, 3, 9, 11), PackedInt32Array(12, 10, 11, 13), PackedInt32Array(14, 0, 2, 15), PackedInt32Array(16, 17, 18, 19, 15), PackedInt32Array(20, 12, 13, 14), PackedInt32Array(21, 20, 14), PackedInt32Array(19, 21, 14, 15), PackedInt32Array(16, 15, 22)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(37, 189, 378, 254, 429, 394, 561, 317, 685, 307, 832, 351, 796, 237, 748, 165, 988, 214, 1160, 367, 1162, 538, 1033, 564, 971, 660, 859, 554, 858, 467, 779, 425, 681, 405, 585, 420, 518, 458, 451, 542, 503, 650, 227, 627, 43, 607)])
 
 [node name="D2Restored" type="Node2D"]
 

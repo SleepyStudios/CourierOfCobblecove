@@ -8,9 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://betvl0frt2ahx" path="res://scenes/npcs/goblin_rescued.tscn" id="6_j0var"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ebtiq"]
-vertices = PackedVector2Array(404, 673, 358, 360, 1180, 322, 1169, 763, 254, 820, 243, 691)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(0, 3, 4, 5)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(243, 691, 404, 673, 358, 360, 1180, 322, 1169, 763, 254, 820)])
+vertices = PackedVector2Array(239, 818, 215, 683, 404, 673, 1169, 763, 357, 353, 1180, 322)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(2, 4, 5, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(215, 683, 404, 673, 357, 353, 1180, 322, 1169, 763, 239, 818)])
 
 [node name="B3" type="Node2D"]
 

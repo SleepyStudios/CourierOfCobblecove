@@ -8,9 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://rjxyfqtvca26" path="res://scenes/npcs/bribe_guard.tscn" id="6_e82pt"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_5b0ya"]
-vertices = PackedVector2Array(229, 855, 48, 825, 48, 165, 370, 282, 432, 375, 478, 870, 592, 418, 715, 617, 826, 717, 994, 845, 1000, 772)
+vertices = PackedVector2Array(229, 855, 18, 819, 22, 156, 370, 282, 432, 375, 478, 870, 592, 418, 715, 617, 826, 717, 994, 845, 1000, 772)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5), PackedInt32Array(5, 4, 6, 7), PackedInt32Array(5, 7, 8), PackedInt32Array(9, 5, 8, 10)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(48, 165, 370, 282, 432, 375, 592, 418, 715, 617, 826, 717, 1000, 772, 994, 845, 478, 870, 229, 855, 48, 825)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(22, 156, 370, 282, 432, 375, 592, 418, 715, 617, 826, 717, 1000, 772, 994, 845, 478, 870, 229, 855, 18, 819)])
 
 [node name="F4" type="Node2D"]
 

@@ -14,9 +14,9 @@ _data = {
 point_count = 4
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_lg5du"]
-vertices = PackedVector2Array(368, 306, 130, 451, 47, 375, 129, 306, 363, 218, 863, 212, 1081, 211, 1083, 716, 991, 710, 940, 613, 851, 260, 812, 553, 768, 459, 767, 306, 681, 420, 599, 440, 592, 718, 136, 720, 595, 510, 132, 215)
+vertices = PackedVector2Array(368, 306, 130, 451, 18, 379, 129, 306, 363, 218, 863, 212, 1081, 211, 1083, 716, 991, 710, 940, 613, 851, 260, 812, 553, 768, 459, 767, 306, 681, 420, 599, 440, 592, 718, 136, 720, 595, 510, 132, 215)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 8, 9, 10), PackedInt32Array(10, 9, 11, 12, 13), PackedInt32Array(13, 12, 14), PackedInt32Array(0, 13, 14, 15, 1), PackedInt32Array(16, 17, 1, 18), PackedInt32Array(15, 18, 1), PackedInt32Array(3, 19, 4)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(132, 215, 363, 218, 368, 306, 767, 306, 851, 260, 863, 212, 1081, 211, 1083, 716, 991, 710, 940, 613, 812, 553, 768, 459, 681, 420, 599, 440, 595, 510, 592, 718, 136, 720, 130, 451, 47, 375, 129, 306)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(132, 215, 363, 218, 368, 306, 767, 306, 851, 260, 863, 212, 1081, 211, 1083, 716, 991, 710, 940, 613, 812, 553, 768, 459, 681, 420, 599, 440, 595, 510, 592, 718, 136, 720, 130, 451, 18, 379, 129, 306)])
 
 [node name="E3" type="Node2D"]
 
